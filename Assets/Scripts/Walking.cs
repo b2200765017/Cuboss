@@ -13,9 +13,9 @@ public class Walking : MonoBehaviour {
  
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A) & is_right == false) is_left = true;
-        if (Input.GetKeyDown(KeyCode.D) & is_left == false) is_right = true;
-        
+        if (Input.GetKey(KeyCode.A) & is_right == false) is_left = true;
+        if (Input.GetKey(KeyCode.D) & is_left == false) is_right = true;
+
         if (Input.GetKeyUp(KeyCode.A)) is_left = false;
         if (Input.GetKeyUp(KeyCode.D)) is_right = false;
         
