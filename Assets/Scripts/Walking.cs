@@ -1,6 +1,10 @@
+using System;
 using System.Collections;
 using System.Data;
 using System.Numerics;
+using JetBrains.Annotations;
+using UnityEditor;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using Quaternion = UnityEngine.Quaternion;
 using Vector3 = UnityEngine.Vector3;
@@ -10,9 +14,31 @@ public class Walking : MonoBehaviour {
     private bool _isMoving;
     private bool is_left = false;
     private bool is_right = false;
- 
+    [SerializeField] LayerMask layerMask;
+    private GameObject groundObj;
+
+    private World_Manager _worldManager;
+
+    private void Start()
+    {
+        _worldManager = GetComponent<World_Manager>();
+    }
+
     private void Update()
     {
+        //raycast system
+        RaycastHit hit;
+
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, 3f, layerMask))
+        {
+            Debug.Log(hit.transform.name);
+            if (!hit.transform.gameObject != groundObj) groundObj = hit.transform.gameObject;
+            groundObj.GetComponent<Material>().SetColor("_color",Color.white);
+        }
+        else
+        {
+            //Debug.Log("no hit");
+        }
         if (Input.GetKey(KeyCode.A) & is_right == false) is_left = true;
         if (Input.GetKey(KeyCode.D) & is_left == false) is_right = true;
 
@@ -43,6 +69,7 @@ public class Walking : MonoBehaviour {
             transform.RotateAround(anchor, axis, _rollSpeed);
             yield return new WaitForSeconds(0.01f);
         }
+
         _isMoving = false;
     }
 }
