@@ -11,6 +11,9 @@ using Vector3 = UnityEngine.Vector3;
 
 public class Walking : MonoBehaviour {
     [SerializeField] private float _rollSpeed = 5;
+    public int _points;
+    public int _combo=1;
+    public bool _isplay=false;
     private bool _isMoving;
     private bool is_left = false;
     private bool is_right = false;
@@ -39,16 +42,30 @@ public class Walking : MonoBehaviour {
         {
             //Debug.Log("no hit");
         }
-        if (Input.GetKey(KeyCode.A) & is_right == false) is_left = true;
-        if (Input.GetKey(KeyCode.D) & is_left == false) is_right = true;
 
-        if (Input.GetKeyUp(KeyCode.A)) is_left = false;
-        if (Input.GetKeyUp(KeyCode.D)) is_right = false;
+        if (_isplay)
+        {
+            if (Input.GetKey(KeyCode.A) & is_right == false) is_left = true;
+            if (Input.GetKey(KeyCode.D) & is_left == false) is_right = true;
+
+            if (Input.GetKeyUp(KeyCode.A)) is_left = false;
+            if (Input.GetKeyUp(KeyCode.D)) is_right = false;
         
-        if (_isMoving) return;
+            if (_isMoving) return;
 
-        if (is_left) Assemble(Vector3.left);
-        if(is_right) Assemble(Vector3.forward);
+            if (is_left)
+            {
+                _points+=_combo;
+                Assemble(Vector3.left);
+            }
+
+            if (is_right)
+            {
+                _points+=_combo;
+                Assemble(Vector3.forward);
+            }
+        }
+        
 
  
         void Assemble(Vector3 dir)
