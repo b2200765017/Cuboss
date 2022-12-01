@@ -34,9 +34,6 @@ public class Walking : MonoBehaviour {
 
         if (Physics.Raycast(transform.position, Vector3.down, out hit, 3f, layerMask))
         {
-            Debug.Log(hit.transform.name);
-            if (!hit.transform.gameObject != groundObj) groundObj = hit.transform.gameObject;
-            groundObj.GetComponent<Material>().SetColor("_color",Color.white);
         }
         else
         {
@@ -86,7 +83,7 @@ public class Walking : MonoBehaviour {
             transform.RotateAround(anchor, axis, _rollSpeed);
             yield return new WaitForSeconds(0.01f);
         }
-
+        _worldManager.PatternBuilder();
         _isMoving = false;
     }
 }

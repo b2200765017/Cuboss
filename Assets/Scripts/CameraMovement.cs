@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using JetBrains.Annotations;
 using UnityEngine;
 using Debug = UnityEngine.Debug;
 
@@ -8,7 +9,7 @@ public class CameraMovement : MonoBehaviour
 {
 
     public float movingSpeed;
-    public Transform m_playerTransform;
+    [CanBeNull] public Transform m_playerTransform;
     private Vector3 cameraOffset;
     void Start()
     {
@@ -16,11 +17,15 @@ public class CameraMovement : MonoBehaviour
     }
     void Update()
     {
-        float player_position = (m_playerTransform.position.x - m_playerTransform.position.z) / 2;
-        //float offset = vector_offset / Mathf.Pow(2, -2);    
-        //float dot = Vector2.Dot(new Vector2(normalized.x, normalized.z), new Vector2(transform.forward.x, transform.forward.z));
-        //Debug.Log(dot);
-        transform.position = new Vector3(player_position + cameraOffset.x ,
-            transform.position.y, -player_position + cameraOffset.z );
+        if (m_playerTransform != null)
+        {
+            float player_position = (m_playerTransform.position.x - m_playerTransform.position.z) / 2;
+            //float offset = vector_offset / Mathf.Pow(2, -2);    
+            //float dot = Vector2.Dot(new Vector2(normalized.x, normalized.z), new Vector2(transform.forward.x, transform.forward.z));
+            //Debug.Log(dot);
+            transform.position = new Vector3(player_position + cameraOffset.x ,
+                transform.position.y, -player_position + cameraOffset.z );  
+        }
+
     }
 }
