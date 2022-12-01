@@ -15,7 +15,7 @@ public class DeadManager : MonoBehaviour
     void Update()
     {
         float value = Mathf.Abs(_transform.position.x + _transform.position.z);
-        if (value > 9.6f | Input.GetKeyDown(KeyCode.H))
+        if (value > 7.6f | Input.GetKeyDown(KeyCode.H))
         {
             dead = true;
             _dead.gameObject.SetActive(true);

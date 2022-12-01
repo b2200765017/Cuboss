@@ -3,6 +3,7 @@ using System.Collections;
 using System.Data;
 using System.Numerics;
 using JetBrains.Annotations;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
@@ -14,6 +15,7 @@ public class Walking : MonoBehaviour {
     public int _points;
     public int _combo=1;
     public bool _isplay=false;
+    public bool _isCreated=false;
     private bool _isMoving;
     private bool is_left = false;
     private bool is_right = false;
@@ -34,6 +36,7 @@ public class Walking : MonoBehaviour {
 
         if (Physics.Raycast(transform.position, Vector3.down, out hit, 3f, layerMask))
         {
+            
         }
         else
         {
@@ -83,7 +86,16 @@ public class Walking : MonoBehaviour {
             transform.RotateAround(anchor, axis, _rollSpeed);
             yield return new WaitForSeconds(0.01f);
         }
-        _worldManager.PatternBuilder();
+
+        if (_isCreated)
+        {
+            _isCreated = false;
+            _worldManager.PatternBuilder();
+        }
+        else
+        {
+            _isCreated = true;
+        }
         _isMoving = false;
     }
 }
