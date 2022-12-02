@@ -12,6 +12,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI _points;
     [SerializeField] GameObject player;
     [SerializeField] GameObject _playButton;
+    [SerializeField] TextMeshProUGUI _coins;
     [SerializeField] GameObject _restartButton;
     [SerializeField] DeadManager _deadManager;
     [SerializeField] GameObject  _foto;
@@ -33,7 +34,9 @@ public class UIManager : MonoBehaviour
         {
             _restartButton.SetActive(true);
         }
-        _points.text =_walking._points.ToString();
+
+        _points.text = _walking._points.ToString();
+        _coins.text = _walking._coins.ToString();
     }
 
     public void OnPlayButtonDown()

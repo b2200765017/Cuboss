@@ -1,12 +1,18 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class World_Manager : MonoBehaviour
 {
     private ObjectPooler _objectPooler;
-    [SerializeField] private GameObject ground;
+    private string basic_ground = "ground";
+    private string gem_ground = "gemground";
+    private string enemy_ground = "enemyground";
     [SerializeField] private int number_of_platform = 5;
+    [SerializeField] private float Chance_of_gem = 0.04f;
     private WaitForSeconds delay;
     
     private float initial_x = 2f;
@@ -26,16 +32,28 @@ public class World_Manager : MonoBehaviour
 
     public void PatternBuilder()
     {
+         Stack<string> patternToBuild = new Stack<string>();
+        for (int i = 0; i < (number_of_platform * 2) + 1; i++)
+        {
+            if (0.7f > Random.value && Random.value  > Chance_of_gem) patternToBuild.Push(basic_ground);
+            else patternToBuild.Push(gem_ground);
+        }
         Vector3 transform_of_ground = new Vector3(initial_x + (offset * -2), height, initial_z + (offset * +2));
-        _objectPooler.SpawnFromPool("ground", transform_of_ground, Quaternion.identity);
+        _objectPooler.SpawnFromPool(patternToBuild.Pop(), transform_of_ground, Quaternion.identity);
         for (int i = 1; i < number_of_platform; i++)
         {
             Vector3 transform_of_ground_left = new Vector3(initial_x + (offset * -2) + (i * -2), height, initial_z + (offset * +2));
             Vector3 transform_of_ground_right = new Vector3(initial_x + (offset * -2), height, initial_z + (offset * +2)+ (i * 2));
-            _objectPooler.SpawnFromPool("ground", transform_of_ground_right, Quaternion.identity);
-            _objectPooler.SpawnFromPool("ground", transform_of_ground_left, Quaternion.identity);
+            _objectPooler.SpawnFromPool(patternToBuild.Pop() , transform_of_ground_right, Quaternion.identity);
+            _objectPooler.SpawnFromPool(patternToBuild.Pop(), transform_of_ground_left, Quaternion.identity);
         }
         offset++;
+    }
+
+    public void prefabPattern(int pattern)
+    {
+        offset += pattern;
+        return;
     }
 
     IEnumerator StartAnimation()
