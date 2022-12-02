@@ -9,6 +9,7 @@ TagManager:
   - box
   - enemybox
   - greenbox
+  - gembox
   layers:
   - Default
   - TransparentFX

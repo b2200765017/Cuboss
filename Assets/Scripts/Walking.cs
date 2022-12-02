@@ -6,6 +6,7 @@ using Vector3 = UnityEngine.Vector3;
 
 public class Walking : MonoBehaviour {
     [SerializeField] public float _rollSpeed = 5;
+    private Transform box;
     public int _points;
     public int _coins;
     public int _combo=1;
@@ -20,6 +21,7 @@ public class Walking : MonoBehaviour {
     private GameObject groundObj;
     private bool onbox = false;
     private World_Manager _worldManager;
+    private Animator animator;
 
     private void Start()
     {
@@ -34,29 +36,47 @@ public class Walking : MonoBehaviour {
 
         if (Physics.Raycast(transform.position,  Vector3.down, out hit, 2f, layerMask))
         {
-            if (hit.transform.tag == "box")
+            if (hit.transform.tag == "gembox")
             {
                 if (!onbox)
                 {
-                    Animator anim = hit.transform.GetComponent<Animator>();
-                    anim.SetBool("collected", true);
+                    animator = hit.transform.GetComponent<Animator>();
+                    animator.SetBool("collected", true);
                     _coins++;
                 }
             }
-            if (hit.transform.tag == "enemybox")
+            else if (hit.transform.tag == "box")
+            {
+                if (!onbox)
+                {
+                    box = hit.transform;
+                    animator = box.GetComponent<Animator>();
+                    animator.SetTrigger("stepped");
+                }
+            }
+            else if (hit.transform.tag == "enemybox")
             {
                 if (!onbox)
                 {
                     _dead.dead = true;
-                    Animator an = hit.transform.GetComponent<Animator>();
-                    an.SetTrigger("jump");
+                    animator = hit.transform.GetComponent<Animator>();
+                    animator.SetTrigger("jump");
                     //rb.AddForce(new Vector3(100, -200, 0), ForceMode.Force);
                 }
             }
+
             onbox = true;
 
         }
-        else onbox = false;
+        else
+        {
+            if (box)
+            {
+                box = null;
+                animator.SetTrigger("out");
+            }
+                onbox = false;
+        }
 
         if (_isplay)
         {
