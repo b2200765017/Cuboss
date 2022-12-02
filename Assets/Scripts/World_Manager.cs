@@ -17,7 +17,7 @@ public class World_Manager : MonoBehaviour
     
     private float initial_x = 2f;
     private float initial_z = -2f;
-    private float offset = 0;
+    private float offset = 7;
 
     private float height = 0.03f;
     // Start is called before the first frame update
