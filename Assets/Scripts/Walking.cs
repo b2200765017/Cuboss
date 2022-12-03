@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using Quaternion = UnityEngine.Quaternion;
@@ -10,6 +11,7 @@ public class Walking : MonoBehaviour {
     public int _points;
     public int _coins;
     public int _combo=1;
+    [SerializeField] public float pattern_build_ratio = 0.01f;
     public bool _isplay=false;
     public bool _isCreated=false;
     private bool _isMoving;
@@ -22,6 +24,7 @@ public class Walking : MonoBehaviour {
     private bool onbox = false;
     private World_Manager _worldManager;
     private Animator animator;
+    private float _playeroffset = 0;
 
     private void Start()
     {
@@ -102,9 +105,19 @@ public class Walking : MonoBehaviour {
                 Assemble(Vector3.forward);
             }
         }
-        
+        // here
+        //Debug.Log(_worldManager.offset - _playeroffset < 5);
+        if (_worldManager.offset - _playeroffset < 20 && !_worldManager._isstarting)
+        {
+            if (Random.value > pattern_build_ratio ) _worldManager.PatternBuilder();
+            else
+            {
+                int index = Random.Range(0, _worldManager._patternsList.Count);
+                Patterns pattern = _worldManager._patternsList[index];
+                _worldManager.prefabPattern(pattern);
+            }
+        }
 
- 
         void Assemble(Vector3 dir)
         {
             transform.position = new Vector3(Mathf.RoundToInt(transform.position.x),
@@ -124,15 +137,7 @@ public class Walking : MonoBehaviour {
             yield return new WaitForSeconds(0.01f);
         }
 
-        if (_isCreated)
-        {
-            _isCreated = false;
-            _worldManager.PatternBuilder();
-        }
-        else
-        {
-            _isCreated = true;
-        }
+        _playeroffset += 0.5f;
         _isMoving = false;
     }
 }
