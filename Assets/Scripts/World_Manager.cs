@@ -71,12 +71,19 @@ public class World_Manager : MonoBehaviour
     IEnumerator StartAnimation()
     {
         _isstarting = true;
-        for (int i = 0; i < 20; i++)
+        for (int i = 0; i < 5; i++)
         {
             PatternBuilder();
             yield return delay;
         }
-
+        int index = Random.Range(0, _patternsList.Count);
+        Patterns pattern = _patternsList[index];
+        prefabPattern(pattern);
+        for (int i = 0; i < 10; i++)
+        {
+            PatternBuilder();
+            yield return delay;
+        }
         _isstarting = false;
     }
 }
