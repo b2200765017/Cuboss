@@ -2,6 +2,7 @@ using System.Collections;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 using Quaternion = UnityEngine.Quaternion;
 using Vector3 = UnityEngine.Vector3;
 
@@ -29,6 +30,9 @@ public class Walking : MonoBehaviour {
     private Animator animator;
     private float _playeroffset = 0;
     private WaitForSeconds rollDelay;
+    [SerializeField]private Button right_button;
+    [SerializeField]private Button left_button;
+    
     private void Start()
     {
         _worldManager = GetComponent<World_Manager>();
@@ -87,7 +91,12 @@ public class Walking : MonoBehaviour {
 
         if (_isplay)
         {
-            if (Input.GetKey(KeyCode.A) & is_right == false)                is_left = true;
+            for (int i = 0; i < Input.touches.Length; i++)
+            {
+                if (Input.touches[i].position.x < Screen.width / 2 & is_right == false) is_left = true;
+                if (Input.touches[i].position.x > Screen.width / 2 & is_left == false) is_right = true;
+            }
+            if ((Input.GetKey(KeyCode.A)) & is_right == false )                is_left = true;
             if (Input.GetKey(KeyCode.D) & is_left == false)                is_right = true;
 
             if (Input.GetKeyUp(KeyCode.A)) is_left = false;
