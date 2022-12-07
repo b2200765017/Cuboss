@@ -18,6 +18,9 @@ public class Walking : MonoBehaviour {
     public bool from_left = false;
     public bool is_left = false;
     public DeadManager _dead;
+    public float roll_delay_time = 0.01f;
+    public float roll_wait_time = 0.01f;
+    
     private bool is_right = false;
     [SerializeField] LayerMask layerMask;
     private GameObject groundObj;
@@ -25,11 +28,12 @@ public class Walking : MonoBehaviour {
     private World_Manager _worldManager;
     private Animator animator;
     private float _playeroffset = 0;
-
+    private WaitForSeconds rollDelay;
     private void Start()
     {
         _worldManager = GetComponent<World_Manager>();
         _dead = GetComponent<DeadManager>();
+        rollDelay = new WaitForSeconds(roll_delay_time);
     }
 
     private void Update()
@@ -134,10 +138,14 @@ public class Walking : MonoBehaviour {
         _isMoving = true;
         for (var i = 0; i < 90 / _rollSpeed; i++) {
             transform.RotateAround(anchor, axis, _rollSpeed);
-            yield return new WaitForSeconds(0.01f);
+            yield return rollDelay;
+            //if (i == 15) _isMoving = true;
         }
-
         _playeroffset += 0.5f;
+        yield return new WaitForSeconds(roll_wait_time);
+
         _isMoving = false;
+
+        
     }
 }

@@ -667,7 +667,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6abf3475d03b94c13b0a71d7ae827eef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rollSpeed: 8
+  _rollSpeed: 7
   _points: 0
   _coins: 0
   _combo: 1
@@ -677,6 +677,8 @@ MonoBehaviour:
   from_left: 0
   is_left: 0
   _dead: {fileID: 0}
+  roll_delay_time: 0.01
+  roll_wait_time: 0.02
   layerMask:
     serializedVersion: 2
     m_Bits: 2147483647
