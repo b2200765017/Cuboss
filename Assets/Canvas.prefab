@@ -86,6 +86,7 @@ MonoBehaviour:
   _restartButton: {fileID: 7916640491367223210}
   _deadManager: {fileID: 0}
   _foto: {fileID: 7916640492655203091}
+  _fps: {fileID: 0}
 --- !u!114 &7916640490911645684
 MonoBehaviour:
   m_ObjectHideFlags: 0
