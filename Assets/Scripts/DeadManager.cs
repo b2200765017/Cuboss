@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Threading;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DeadManager : MonoBehaviour
 {
     public bool dead = false;
     private Transform _transform;
     private Walking _walking;
+    public GameObject _restart;
     [SerializeField] private CameraMovement _cameraMovement;
     void Start()
     {
@@ -27,7 +29,7 @@ public class DeadManager : MonoBehaviour
             //_dead.gameObject.SetActive(true);
             //_dead.position = _transform.position;
             //_dead.rotation = _transform.rotation;
-            float random = Random.Range(100, 120) * _walking._rollSpeed;
+            float random = Random.Range(200, 300) * _walking._rollSpeed;
             if (!_walking.from_left)
             {
                 gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(-random,400,0), ForceMode.Force);
@@ -36,7 +38,7 @@ public class DeadManager : MonoBehaviour
             {
                 gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0,400,random), ForceMode.Force);
             }
-            
+            _restart.SetActive(true);
             //gameObject.SetActive(false);
             this.enabled = false;
         }

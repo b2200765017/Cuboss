@@ -29,7 +29,7 @@ public class World_Manager : MonoBehaviour
     private float initial_z = -2f;
     public float offset = 0;
 
-    private float height = 0.03f;
+    private float height = 0.5f;
     // Start is called before the first frame update
     void Start()
     {

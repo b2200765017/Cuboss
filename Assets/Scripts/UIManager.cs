@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using UnityEditor.Build.Player;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -16,18 +12,22 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject _restartButton;
     [SerializeField] DeadManager _deadManager;
     [SerializeField] GameObject  _foto;
+    [SerializeField] TextMeshProUGUI _fps;
     
 
     private Walking _walking;
     // Start is called before the first frame update
     void Start()
     {
+        Application.targetFrameRate = 500;
+        QualitySettings.vSyncCount = 0;
         _walking = player.GetComponent<Walking>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        _fps.text = (1 / Time.deltaTime).ToString();
         if(_points.text == "31")_foto.SetActive(true);
         if(_points.text == "32")_foto.SetActive(false);
         if (_deadManager.dead)

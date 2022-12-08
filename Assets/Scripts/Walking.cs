@@ -12,29 +12,35 @@ public class Walking : MonoBehaviour {
     public int _points;
     public int _coins;
     public int _combo=1;
+    public float loop_i=-1;
+    public int delay = 0;
+    public bool _playable=true;
     [SerializeField] public float pattern_build_ratio = 0.01f;
     public bool _isplay=false;
     public bool _isCreated=false;
     private bool _isMoving;
     public bool from_left = false;
-    public bool is_left = false;
-    public DeadManager _dead;
+    public bool is_left = true;
+    public DeadManager _dead; 
+    Sounds sounds;
     public float roll_delay_time = 0.01f;
     public float roll_wait_time = 0.01f;
-    
+    public bool rotation_ch=false;
     private bool is_right = false;
     [SerializeField] LayerMask layerMask;
     private GameObject groundObj;
     private bool onbox = false;
+    private bool loop= false;
     private World_Manager _worldManager;
     private Animator animator;
     private float _playeroffset = 0;
     private WaitForSeconds rollDelay;
-    [SerializeField]private Button right_button;
-    [SerializeField]private Button left_button;
-    
+
     private void Start()
     {
+        GameObject[] gameObjects;
+        gameObjects = GameObject.FindGameObjectsWithTag("music");
+        sounds = gameObjects[0].gameObject.GetComponent<Sounds>();
         _worldManager = GetComponent<World_Manager>();
         _dead = GetComponent<DeadManager>();
         rollDelay = new WaitForSeconds(roll_delay_time);
@@ -54,6 +60,7 @@ public class Walking : MonoBehaviour {
                     animator = hit.transform.GetComponent<Animator>();
                     animator.SetBool("collected", true);
                     _coins++;
+                    sounds.gem_collected();
                 }
             }
             else if (hit.transform.tag == "box")
@@ -63,6 +70,7 @@ public class Walking : MonoBehaviour {
                     box = hit.transform;
                     animator = box.GetComponent<Animator>();
                     animator.SetTrigger("stepped");
+                    sounds.step_();
                 }
             }
             else if (hit.transform.tag == "enemybox")
@@ -72,6 +80,7 @@ public class Walking : MonoBehaviour {
                     _dead.dead = true;
                     animator = hit.transform.GetComponent<Animator>();
                     animator.SetTrigger("jump");
+                    Destroy(this);
                     //rb.AddForce(new Vector3(100, -200, 0), ForceMode.Force);
                 }
             }
@@ -91,27 +100,32 @@ public class Walking : MonoBehaviour {
 
         if (_isplay)
         {
-            for (int i = 0; i < Input.touches.Length; i++)
+            if (Input.GetMouseButtonDown(0)&& !rotation_ch)
             {
-                if (Input.touches[i].position.x < Screen.width / 2 & is_right == false) is_left = true;
-                if (Input.touches[i].position.x > Screen.width / 2 & is_left == false) is_right = true;
+                is_left = !is_left;
+                rotation_ch = true;
             }
+            if (Input.GetMouseButtonUp(0))
+            {
+                loop_i = -1;
+                loop = false;
+                rotation_ch = false;
+            }
+            /*
             if ((Input.GetKey(KeyCode.A)) & is_right == false )                is_left = true;
             if (Input.GetKey(KeyCode.D) & is_left == false)                is_right = true;
 
             if (Input.GetKeyUp(KeyCode.A)) is_left = false;
             if (Input.GetKeyUp(KeyCode.D)) is_right = false;
-        
+            */
             if (_isMoving) return;
-
             if (is_left)
             {
                 from_left = false;
                 _points+=_combo;
                 Assemble(Vector3.left);
             }
-
-            if (is_right)
+            else
             {
                 from_left = true;
                 _points+=_combo;
@@ -131,6 +145,7 @@ public class Walking : MonoBehaviour {
             }
         }
 
+       
         void Assemble(Vector3 dir)
         {
             transform.position = new Vector3(Mathf.RoundToInt(transform.position.x),
@@ -145,16 +160,22 @@ public class Walking : MonoBehaviour {
  
     private IEnumerator Roll(Vector3 anchor, Vector3 axis) {
         _isMoving = true;
-        for (var i = 0; i < 90 / _rollSpeed; i++) {
+        Debug.Log("sd");
+        for (var i = 0; i < 90 / _rollSpeed; i++)
+        {
+            if (loop_i == i)
+                loop = true;
+            if (rotation_ch&& loop_i==-1&& !loop)
+            {
+                loop_i = i;
+            }
             transform.RotateAround(anchor, axis, _rollSpeed);
             yield return rollDelay;
-            //if (i == 15) _isMoving = true;
         }
         _playeroffset += 0.5f;
-        yield return new WaitForSeconds(roll_wait_time);
-
         _isMoving = false;
-
-        
+        rotation_ch = false;
+        if (loop)
+            is_left = !is_left;
     }
 }
