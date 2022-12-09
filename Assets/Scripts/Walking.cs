@@ -1,6 +1,7 @@
 using System.Collections;
 using TMPro;
 using Unity.VisualScripting;
+using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.UI;
 using Quaternion = UnityEngine.Quaternion;
@@ -23,6 +24,7 @@ public class Walking : MonoBehaviour {
     public bool is_left = true;
     public DeadManager _dead; 
     Sounds sounds;
+    public TextMeshProUGUI highscore;
     public float roll_delay_time = 0.01f;
     public float roll_wait_time = 0.01f;
     public bool rotation_ch=false;
@@ -35,9 +37,13 @@ public class Walking : MonoBehaviour {
     private Animator animator;
     private float _playeroffset = 0;
     private WaitForSeconds rollDelay;
+    private int high_score;
 
     private void Start()
     {
+        high_score = PlayerPrefs.GetInt("hs");
+        Debug.Log(PlayerPrefs.GetInt("hs"));
+        highscore.text=high_score.ToString();
         GameObject[] gameObjects;
         gameObjects = GameObject.FindGameObjectsWithTag("music");
         sounds = gameObjects[0].gameObject.GetComponent<Sounds>();
@@ -50,7 +56,6 @@ public class Walking : MonoBehaviour {
     {
         //raycast system
         RaycastHit hit;
-
         if (Physics.Raycast(transform.position,  Vector3.down, out hit, 2f, layerMask))
         {
             if (hit.transform.tag == "gembox")
@@ -131,6 +136,12 @@ public class Walking : MonoBehaviour {
                 _points+=_combo;
                 Assemble(Vector3.forward);
             }
+
+            if (_points > high_score)
+            {
+                highscore.text = _points.ToString();
+                highscore.fontSize = 100;
+            }
         }
         // here
         //Debug.Log(_worldManager.offset - _playeroffset < 5);
@@ -177,5 +188,7 @@ public class Walking : MonoBehaviour {
         rotation_ch = false;
         if (loop)
             is_left = !is_left;
+        if(_rollSpeed<=12)
+        _rollSpeed += 0.01f;
     }
 }

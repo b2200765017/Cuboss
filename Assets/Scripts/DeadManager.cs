@@ -20,9 +20,14 @@ public class DeadManager : MonoBehaviour
     void Update()
     {
         float value = Mathf.Abs(_transform.position.x + _transform.position.z);
-
         if (value > 7.6f |dead)
         {
+            Handheld.Vibrate();
+            Debug.Log(_walking._points);
+            if (_walking._points > PlayerPrefs.GetInt("hs"))
+            {
+                PlayerPrefs.SetInt("hs",_walking._points);
+            }
             _cameraMovement.enabled = false;
             _walking._isplay = false;
             gameObject.AddComponent<Rigidbody>();

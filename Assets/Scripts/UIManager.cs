@@ -11,7 +11,6 @@ public class UIManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI _coins;
     [SerializeField] GameObject _restartButton;
     [SerializeField] DeadManager _deadManager;
-    [SerializeField] GameObject  _foto;
     [SerializeField] TextMeshProUGUI _fps;
     
 
@@ -28,8 +27,6 @@ public class UIManager : MonoBehaviour
     void Update()
     {
         _fps.text = (1 / Time.deltaTime).ToString();
-        if(_points.text == "31")_foto.SetActive(true);
-        if(_points.text == "32")_foto.SetActive(false);
         if (_deadManager.dead)
         {
             _restartButton.SetActive(true);
