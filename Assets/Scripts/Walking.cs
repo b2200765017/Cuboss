@@ -37,7 +37,7 @@ public class Walking : MonoBehaviour {
     private Animator animator;
     private float _playeroffset = 0;
     private WaitForSeconds rollDelay;
-    private int high_score;
+    public int high_score;
 
     private void Start()
     {
@@ -55,56 +55,56 @@ public class Walking : MonoBehaviour {
     private void Update()
     {
         //raycast system
-        RaycastHit hit;
-        if (Physics.Raycast(transform.position,  Vector3.down, out hit, 2f, layerMask))
-        {
-            if (hit.transform.tag == "gembox")
-            {
-                if (!onbox)
-                {
-                    animator = hit.transform.GetComponent<Animator>();
-                    animator.SetBool("collected", true);
-                    _coins++;
-                    sounds.gem_collected();
-                }
-            }
-            else if (hit.transform.tag == "box")
-            {
-                if (!onbox)
-                {
-                    box = hit.transform;
-                    animator = box.GetComponent<Animator>();
-                    animator.SetTrigger("stepped");
-                    sounds.step_();
-                }
-            }
-            else if (hit.transform.tag == "enemybox")
-            {
-                if (!onbox)
-                {
-                    _dead.dead = true;
-                    animator = hit.transform.GetComponent<Animator>();
-                    animator.SetTrigger("jump");
-                    Destroy(this);
-                    //rb.AddForce(new Vector3(100, -200, 0), ForceMode.Force);
-                }
-            }
-
-            onbox = true;
-
-        }
-        else
-        {
-            if (box)
-            {
-                box = null;
-                animator.SetTrigger("out");
-            }
-                onbox = false;
-        }
-
+       
         if (_isplay)
         {
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position,  Vector3.down, out hit, 2f, layerMask))
+            {
+                if (hit.transform.tag == "gembox")
+                {
+                    if (!onbox)
+                    {
+                        animator = hit.transform.GetComponent<Animator>();
+                        animator.SetTrigger("collect");
+                        _coins++;
+                        sounds.gem_collected();
+                    }
+                }
+                else if (hit.transform.tag == "box")
+                {
+                    if (!onbox)
+                    {
+                        box = hit.transform;
+                        animator = box.GetComponent<Animator>();
+                        animator.SetTrigger("stepped");
+                        sounds.step_();
+                    }
+                }
+                else if (hit.transform.tag == "enemybox")
+                {
+                    if (!onbox)
+                    {
+                        _dead.dead = true;
+                        animator = hit.transform.GetComponent<Animator>();
+                        animator.SetTrigger("jump");
+                        Destroy(this);
+                        //rb.AddForce(new Vector3(100, -200, 0), ForceMode.Force);
+                    }
+                }
+
+                onbox = true;
+
+            }
+            else
+            {
+                if (box)
+                {
+                    box = null;
+                }
+                onbox = false;
+            }
+
             if (Input.GetMouseButtonDown(0)&& !rotation_ch)
             {
                 is_left = !is_left;
@@ -147,20 +147,27 @@ public class Walking : MonoBehaviour {
         //Debug.Log(_worldManager.offset - _playeroffset < 5);
         if (_worldManager.offset - _playeroffset < 20 && !_worldManager._isstarting)
         {
-            if (Random.value > pattern_build_ratio ) _worldManager.PatternBuilder();
-            else
-            {
-                int index = Random.Range(0, _worldManager._patternsList.Count);
-                Patterns pattern = _worldManager._patternsList[index];
-                _worldManager.prefabPattern(pattern);
-            }
+          //  if (Random.value > pattern_build_ratio ) _worldManager.PatternBuilder();
+          //  else
+          //  {
+          //      int index = Random.Range(0, _worldManager._patternsList.Count);
+          //      Patterns pattern = _worldManager._patternsList[index];
+          //      _worldManager.prefabPattern(pattern);
+          //  }
+          int index = Random.Range(0, _worldManager._patternsList.Count);         
+          Patterns pattern = _worldManager._patternsList[index];                  
+          _worldManager.prefabPattern(pattern);
+          for (int i = 0; i < 3; i++)
+          {
+              _worldManager.PatternBuilder();
+          }          
         }
 
        
         void Assemble(Vector3 dir)
         {
             transform.position = new Vector3(Mathf.RoundToInt(transform.position.x),
-                Mathf.RoundToInt(transform.position.y), Mathf.RoundToInt(transform.position.z));
+            Mathf.RoundToInt(transform.position.y), Mathf.RoundToInt(transform.position.z));
             transform.rotation = new Quaternion( 0f,transform.rotation.x, 0f, transform.rotation.z);
             var anchor = transform.position + (Vector3.down + dir) * 1f;
             var axis = Vector3.Cross(Vector3.up, dir);
@@ -171,7 +178,6 @@ public class Walking : MonoBehaviour {
  
     private IEnumerator Roll(Vector3 anchor, Vector3 axis) {
         _isMoving = true;
-        Debug.Log("sd");
         for (var i = 0; i < 90 / _rollSpeed; i++)
         {
             if (loop_i == i)

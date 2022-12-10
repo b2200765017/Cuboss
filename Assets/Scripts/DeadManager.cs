@@ -11,6 +11,7 @@ public class DeadManager : MonoBehaviour
     private Transform _transform;
     private Walking _walking;
     public GameObject _restart;
+    [SerializeField] private bestScore _bestScore;
     [SerializeField] private CameraMovement _cameraMovement;
     void Start()
     {
@@ -43,6 +44,7 @@ public class DeadManager : MonoBehaviour
             {
                 gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0,400,random), ForceMode.Force);
             }
+            PlayerPrefs.SetInt("score",_walking.high_score - 3);
             _restart.SetActive(true);
             //gameObject.SetActive(false);
             this.enabled = false;

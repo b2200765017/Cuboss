@@ -79,7 +79,8 @@ public class World_Manager : MonoBehaviour
         int index = Random.Range(0, _patternsList.Count);
         Patterns pattern = _patternsList[index];
         prefabPattern(pattern);
-        for (int i = 0; i < 10; i++)
+        int indexs = Random.Range(3, 7);
+        for (int i = 0; i < indexs; i++)
         {
             PatternBuilder();
             yield return delay;
