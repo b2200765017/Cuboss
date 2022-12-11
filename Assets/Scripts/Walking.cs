@@ -39,12 +39,15 @@ public class Walking : MonoBehaviour {
     private WaitForSeconds rollDelay;
     public int high_score;
     [SerializeField] private GameObject highscore_obj;
+    [SerializeField] private GameObject sagyon;
+    [SerializeField] private GameObject solyon;
 
     private void Start()
     {
         high_score = PlayerPrefs.GetInt("hs");
         Debug.Log(PlayerPrefs.GetInt("hs"));
         highscore.text=high_score.ToString();
+        highscore_obj.GetComponentInChildren<TextMeshPro>().text += high_score;
         GameObject[] gameObjects;
         gameObjects = GameObject.FindGameObjectsWithTag("music");
         sounds = gameObjects[0].gameObject.GetComponent<Sounds>();
@@ -110,6 +113,20 @@ public class Walking : MonoBehaviour {
                 onbox = false;
             }
 
+            if (loop)
+            {
+                if (is_left)
+                {
+                    sagyon.SetActive(false);
+                    solyon.SetActive(true);  
+                }
+                else
+                {
+                    sagyon.SetActive(true); 
+                    solyon.SetActive(false);
+                }
+            }
+            
             if (Input.GetMouseButtonDown(0)&& !rotation_ch)
             {
                 is_left = !is_left;
@@ -118,6 +135,8 @@ public class Walking : MonoBehaviour {
             if (Input.GetMouseButtonUp(0))
             {
                 loop_i = -1;
+                sagyon.SetActive(false);
+                solyon.SetActive(false); 
                 loop = false;
                 rotation_ch = false;
             }
@@ -197,8 +216,11 @@ public class Walking : MonoBehaviour {
         _isMoving = false;
         rotation_ch = false;
         if (loop)
+        {
             is_left = !is_left;
-        if(_rollSpeed<=12)
-        _rollSpeed += 0.01f;
+        }
+            
+        if(_rollSpeed<=15)
+        _rollSpeed += 0.02f;
     }
 }

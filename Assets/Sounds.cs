@@ -6,7 +6,7 @@ public class Sounds : MonoBehaviour
 {
     public AudioClip gem;
     public AudioClip step;
-    AudioSource audioSource;
+    [SerializeField] AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +16,6 @@ public class Sounds : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
