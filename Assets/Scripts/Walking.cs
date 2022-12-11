@@ -38,6 +38,7 @@ public class Walking : MonoBehaviour {
     private float _playeroffset = 0;
     private WaitForSeconds rollDelay;
     public int high_score;
+    [SerializeField] private GameObject highscore_obj;
 
     private void Start()
     {
@@ -50,6 +51,10 @@ public class Walking : MonoBehaviour {
         _worldManager = GetComponent<World_Manager>();
         _dead = GetComponent<DeadManager>();
         rollDelay = new WaitForSeconds(roll_delay_time);
+        int scorePosition;
+        scorePosition = PlayerPrefs.GetInt("score");
+        if (scorePosition < 10) return;
+        highscore_obj.transform.position = new Vector3(-scorePosition, 0, scorePosition);
     }
 
     private void Update()
@@ -57,7 +62,7 @@ public class Walking : MonoBehaviour {
         //raycast system
        
         if (_isplay)
-        {
+        {   
             RaycastHit hit;
             if (Physics.Raycast(transform.position,  Vector3.down, out hit, 2f, layerMask))
             {
@@ -140,7 +145,6 @@ public class Walking : MonoBehaviour {
             if (_points > high_score)
             {
                 highscore.text = _points.ToString();
-                highscore.fontSize = 100;
             }
         }
         // here
