@@ -51,10 +51,8 @@ public class Walking : MonoBehaviour {
         _worldManager = GetComponent<World_Manager>();
         _dead = GetComponent<DeadManager>();
         rollDelay = new WaitForSeconds(roll_delay_time);
-        int scorePosition;
-        scorePosition = PlayerPrefs.GetInt("score");
-        if (scorePosition < 10) return;
-        highscore_obj.transform.position = new Vector3(-scorePosition, 0, scorePosition);
+        if (high_score < 10) return;
+        highscore_obj.transform.position = new Vector3(-high_score+3, 0, high_score-3);
     }
 
     private void Update()

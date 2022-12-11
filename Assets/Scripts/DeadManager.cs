@@ -44,7 +44,6 @@ public class DeadManager : MonoBehaviour
             {
                 gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0,400,random), ForceMode.Force);
             }
-            PlayerPrefs.SetInt("score",_walking.high_score - 3);
             _restart.SetActive(true);
             //gameObject.SetActive(false);
             this.enabled = false;
