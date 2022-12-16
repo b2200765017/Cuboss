@@ -108,6 +108,10 @@ public class Walking : MonoBehaviour {
                 onbox = false;
             }
 
+            
+            
+            
+            
             if (loop)
             {
                 if (is_left)
@@ -142,17 +146,17 @@ public class Walking : MonoBehaviour {
             if (Input.GetKeyUp(KeyCode.A)) is_left = false;
             if (Input.GetKeyUp(KeyCode.D)) is_right = false;
             */
-            if (_isMoving) return;
+            
+            
+            //if (_isMoving) return;
             if (is_left)
             {
                 from_left = false;
-                _points+=_combo;
                 Assemble(Vector3.left);
             }
             else
             {
                 from_left = true;
-                _points+=_combo;
                 Assemble(Vector3.forward);
             }
 
@@ -184,13 +188,18 @@ public class Walking : MonoBehaviour {
        
         void Assemble(Vector3 dir)
         {
-            transform.position = new Vector3(Mathf.RoundToInt(transform.position.x),
-            Mathf.RoundToInt(transform.position.y), Mathf.RoundToInt(transform.position.z));
-            transform.rotation = new Quaternion( 0f,transform.rotation.x, 0f, transform.rotation.z);
-            var anchor = transform.position + (Vector3.down + dir) * 1f;
-            var axis = Vector3.Cross(Vector3.up, dir);
-            anchor = new Vector3(Mathf.RoundToInt(anchor.x), Mathf.RoundToInt(anchor.y), Mathf.RoundToInt(anchor.z));
-            StartCoroutine(Roll(anchor, axis));
+            // transform.position = new Vector3(Mathf.RoundToInt(transform.position.x),
+            // Mathf.RoundToInt(transform.position.y), Mathf.RoundToInt(transform.position.z));
+            // transform.rotation = new Quaternion( 0f,transform.rotation.x, 0f, transform.rotation.z);
+            // var anchor = transform.position + (Vector3.down + dir) * 1f;
+            // var axis = Vector3.Cross(Vector3.up, dir);
+            // anchor = new Vector3(Mathf.RoundToInt(anchor.x), Mathf.RoundToInt(anchor.y), Mathf.RoundToInt(anchor.z));
+            // StartCoroutine(Roll(anchor, axis));
+
+            _playeroffset = (-transform.position.x + transform.position.z + 4) / 4;
+            _rollSpeed += Time.deltaTime / 30;
+            transform.Translate(dir * _rollSpeed * Time.deltaTime);  
+            
         }
     }
  

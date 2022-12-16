@@ -952,7 +952,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6abf3475d03b94c13b0a71d7ae827eef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rollSpeed: 5
+  _rollSpeed: 9
   _points: 0
   _coins: 0
   _combo: 1
