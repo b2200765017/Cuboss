@@ -197,6 +197,7 @@ public class Walking : MonoBehaviour {
             // StartCoroutine(Roll(anchor, axis));
 
             _playeroffset = (-transform.position.x + transform.position.z + 4) / 4;
+            _points = (int) _playeroffset;
             _rollSpeed += Time.deltaTime / 30;
             transform.Translate(dir * _rollSpeed * Time.deltaTime);  
             
