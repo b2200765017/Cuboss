@@ -28,11 +28,15 @@ public class World_Manager : MonoBehaviour
     private float initial_x = 2f;
     private float initial_z = -2f;
     public float offset = 0;
+    public Vector3 groundPosition;
+    
 
     private float height = 0.5f;
     // Start is called before the first frame update
     void Start()
     {
+        offset += 5;
+        groundPosition = new Vector3(8, 0, -8);
         _objectPooler = GameObject.FindObjectOfType<ObjectPooler>();
         delay = new WaitForSeconds(0.17f);
         StartCoroutine(StartAnimation());
@@ -42,30 +46,18 @@ public class World_Manager : MonoBehaviour
 
     public void PatternBuilder()
     {
-         Stack<string> patternToBuild = new Stack<string>();
-        for (int i = 0; i < (number_of_platform * 2) + 1; i++)
-        {
-            if (Random.value  > Chance_of_gem) patternToBuild.Push(basic_ground);
-            else patternToBuild.Push(gem_ground);
-        }
-        Vector3 transform_of_ground = new Vector3(initial_x + (offset * -2), height, initial_z + (offset * +2));
-        _objectPooler.SpawnFromPool(patternToBuild.Pop(), transform_of_ground, Quaternion.identity);
-        for (int i = 1; i < number_of_platform; i++)
-        {
-            Vector3 transform_of_ground_left = new Vector3(initial_x + (offset * -2) + (i * -2), height, initial_z + (offset * +2));
-            Vector3 transform_of_ground_right = new Vector3(initial_x + (offset * -2), height, initial_z + (offset * +2)+ (i * 2));
-            _objectPooler.SpawnFromPool(patternToBuild.Pop() , transform_of_ground_right, Quaternion.identity);
-            _objectPooler.SpawnFromPool(patternToBuild.Pop(), transform_of_ground_left, Quaternion.identity);
-        }
-        offset++;
+        _objectPooler.SpawnFromPool("ground",
+            groundPosition, Quaternion.identity);
+        
+        groundPosition -= new Vector3(8,0, -8);
     }
 
     public void prefabPattern(Patterns pattern)
     {
         _objectPooler.SpawnFromPool(pattern._patternname,
             new Vector3(initial_x + (offset * -2), height, initial_z + (offset * +2)), Quaternion.identity);
-        offset += pattern.offset;
-
+        offset += pattern.offset + 5;
+        
     }
 
     IEnumerator StartAnimation()
@@ -79,6 +71,7 @@ public class World_Manager : MonoBehaviour
         int index = Random.Range(0, _patternsList.Count);
         Patterns pattern = _patternsList[index];
         prefabPattern(pattern);
+        
         int indexs = Random.Range(3, 7);
         for (int i = 0; i < indexs; i++)
         {

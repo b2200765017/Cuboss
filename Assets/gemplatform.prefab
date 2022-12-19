@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 123923207998308419}
   - component: {fileID: 123923207998308418}
   - component: {fileID: 2636320149867157802}
+  - component: {fileID: 3772926585591019716}
   m_Layer: 0
   m_Name: gemplatform
   m_TagString: gembox
@@ -118,8 +119,20 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.5, y: 0.3, z: 1.5}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.67297524, y: 1.5713562, z: 0.53341913}
+  m_Center: {x: -0.019014984, y: 0.63567805, z: -0.060799673}
+--- !u!114 &3772926585591019716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1925499880336597398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d67d871ff8775004687f87eec063d57b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8251721331901042929
 PrefabInstance:
   m_ObjectHideFlags: 0

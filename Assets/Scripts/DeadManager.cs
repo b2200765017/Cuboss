@@ -31,7 +31,6 @@ public class DeadManager : MonoBehaviour
             }
             _cameraMovement.enabled = false;
             _walking._isplay = false;
-            gameObject.AddComponent<Rigidbody>();
             //_dead.gameObject.SetActive(true);
             //_dead.position = _transform.position;
             //_dead.rotation = _transform.rotation;
@@ -47,6 +46,7 @@ public class DeadManager : MonoBehaviour
             _restart.SetActive(true);
             //gameObject.SetActive(false);
             this.enabled = false;
+            dead = false;
         }
     }
 }

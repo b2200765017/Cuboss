@@ -20,7 +20,7 @@ public class Walking : MonoBehaviour {
     public bool from_left = false;
     public bool is_left = true;
     public DeadManager _dead; 
-    Sounds sounds;
+    public Sounds sounds;
     public TextMeshProUGUI highscore;
     public float roll_delay_time = 0.01f;
     public float roll_wait_time = 0.01f;
@@ -38,7 +38,6 @@ public class Walking : MonoBehaviour {
     [SerializeField] private GameObject highscore_obj;
     [SerializeField] private GameObject sagyon;
     [SerializeField] private GameObject solyon;
-
     private void Start()
     {
         high_score = PlayerPrefs.GetInt("hs");
@@ -60,58 +59,7 @@ public class Walking : MonoBehaviour {
         //raycast system
        
         if (_isplay)
-        {   
-            RaycastHit hit;
-            if (Physics.Raycast(transform.position,  Vector3.down, out hit, 2f, layerMask))
-            {
-                if (hit.transform.tag == "gembox")
-                {
-                    if (!onbox)
-                    {
-                        animator = hit.transform.GetComponent<Animator>();
-                        animator.SetTrigger("collect");
-                        _coins++;
-                        sounds.gem_collected();
-                    }
-                }
-                else if (hit.transform.tag == "box")
-                {
-                    if (!onbox)
-                    {
-                        box = hit.transform;
-                        animator = box.GetComponent<Animator>();
-                        animator.SetTrigger("stepped");
-                        sounds.step_();
-                    }
-                }
-                else if (hit.transform.tag == "enemybox")
-                {
-                    if (!onbox)
-                    {
-                        _dead.dead = true;
-                        animator = hit.transform.GetComponent<Animator>();
-                        animator.SetTrigger("jump");
-                        Destroy(this);
-                        //rb.AddForce(new Vector3(100, -200, 0), ForceMode.Force);
-                    }
-                }
-
-                onbox = true;
-
-            }
-            else
-            {
-                if (box)
-                {
-                    box = null;
-                }
-                onbox = false;
-            }
-
-            
-            
-            
-            
+        {
             if (loop)
             {
                 if (is_left)
@@ -167,6 +115,11 @@ public class Walking : MonoBehaviour {
         }
         // here
         //Debug.Log(_worldManager.offset - _playeroffset < 5);
+        if ((_worldManager.groundPosition - transform.position).magnitude < 60)
+        {
+            _worldManager.PatternBuilder();
+        }
+        
         if (_worldManager.offset - _playeroffset < 20 && !_worldManager._isstarting)
         {
           //  if (Random.value > pattern_build_ratio ) _worldManager.PatternBuilder();
@@ -179,10 +132,9 @@ public class Walking : MonoBehaviour {
           int index = Random.Range(0, _worldManager._patternsList.Count);         
           Patterns pattern = _worldManager._patternsList[index];                  
           _worldManager.prefabPattern(pattern);
-          for (int i = 0; i < 3; i++)
-          {
-              _worldManager.PatternBuilder();
-          }          
+
+
+
         }
 
        
