@@ -4912,7 +4912,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6abf3475d03b94c13b0a71d7ae827eef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rollSpeed: 12
+  _rollSpeed: 10
   _points: 0
   _coins: 0
   _isplay: 0
@@ -4926,6 +4926,8 @@ MonoBehaviour:
     m_Bits: 2147483647
   high_score: 0
   highscore_obj: {fileID: 623828721}
+  Lefttarget: {fileID: 0}
+  Righttarget: {fileID: 0}
   _animator: {fileID: 1448329099}
 --- !u!4 &1363021795 stripped
 Transform:

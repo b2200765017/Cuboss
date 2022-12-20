@@ -1,7 +1,9 @@
 using System.Collections;
 using TMPro;
+using Unity.Mathematics;
 using UnityEngine;
 using Quaternion = UnityEngine.Quaternion;
+using Random = UnityEngine.Random;
 using Vector3 = UnityEngine.Vector3;
 
 public class Walking : MonoBehaviour {
@@ -25,6 +27,8 @@ public class Walking : MonoBehaviour {
     private float _playeroffset = 0;
     public int high_score;
     [SerializeField] private GameObject highscore_obj;
+    [SerializeField] private Transform Lefttarget;
+    [SerializeField] private Transform Righttarget;
     [SerializeField] private Animator _animator;
     private void Start()
     {
@@ -56,7 +60,7 @@ public class Walking : MonoBehaviour {
         }
         if (_isplay)
         {
-            
+
             if (_points > high_score)
             {
                 highscore.text = _points.ToString();
@@ -64,14 +68,27 @@ public class Walking : MonoBehaviour {
             if (Input.GetMouseButtonDown(0))
             {
                 is_left = !is_left;
+                RotationAnimation();
                 Rotating();
                 return;
             }
             Rotating();
         }
 
-       
- 
+
+
+    }
+
+    public void RotationAnimation()
+    {
+        // if (is_left)
+        // {
+        //     _animator.SetTrigger("left");
+        // }
+        // else
+        // {
+        //     _animator.SetTrigger("right");
+        // }
     }
     public void Rotating()
     {
@@ -90,7 +107,7 @@ public class Walking : MonoBehaviour {
     {
         _playeroffset = (-transform.position.x + transform.position.z + 4) / 4;
         _points = (int) _playeroffset;
-        _rollSpeed += Time.deltaTime / 30;
+        _rollSpeed += Time.deltaTime / 10;
         transform.Translate(dir * _rollSpeed * Time.deltaTime);  
             
     }
