@@ -4986,6 +4986,9 @@ MonoBehaviour:
   - _patternname: pattern_17
     dificulty: 1
     offset: 6
+  - _patternname: pattern_5
+    dificulty: 1
+    offset: 5
   number_of_platform: 4
   Chance_of_gem: 0
   _isstarting: 0
@@ -5205,6 +5208,19 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 64
   m_CollisionDetection: 1
+--- !u!114 &1363021811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1363021790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4787dc6ff26967b4b873d3501190fb4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  is_activated: 1
 --- !u!4 &1371318124 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1439944050310933110, guid: eb240e7924b41f8458a9e6918d9aa609,
@@ -5473,6 +5489,10 @@ MonoBehaviour:
     size: 5
   - tag: pattern_17
     prefab: {fileID: 4505251519097655910, guid: 4bc9e8050acf40043a64ff644c348824,
+      type: 3}
+    size: 5
+  - tag: pattern_5
+    prefab: {fileID: 8643613550982132665, guid: 4f9575e71c57dbb47bcb310dd242a6d5,
       type: 3}
     size: 5
 --- !u!4 &1396406834

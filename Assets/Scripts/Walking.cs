@@ -56,65 +56,6 @@ public class Walking : MonoBehaviour {
 
     private void Update()
     {
-        //raycast system
-       
-        if (_isplay)
-        {
-            if (loop)
-            {
-                if (is_left)
-                {
-                    sagyon.SetActive(false);
-                    solyon.SetActive(true);  
-                }
-                else
-                {
-                    sagyon.SetActive(true); 
-                    solyon.SetActive(false);
-                }
-            }
-            
-            if (Input.GetMouseButtonDown(0)&& !rotation_ch)
-            {
-                is_left = !is_left;
-                rotation_ch = true;
-            }
-            if (Input.GetMouseButtonUp(0))
-            {
-                loop_i = -1;
-                sagyon.SetActive(false);
-                solyon.SetActive(false); 
-                loop = false;
-                rotation_ch = false;
-            }
-            /*
-            if ((Input.GetKey(KeyCode.A)) & is_right == false )                is_left = true;
-            if (Input.GetKey(KeyCode.D) & is_left == false)                is_right = true;
-
-            if (Input.GetKeyUp(KeyCode.A)) is_left = false;
-            if (Input.GetKeyUp(KeyCode.D)) is_right = false;
-            */
-            
-            
-            //if (_isMoving) return;
-            if (is_left)
-            {
-                from_left = false;
-                Assemble(Vector3.left);
-            }
-            else
-            {
-                from_left = true;
-                Assemble(Vector3.forward);
-            }
-
-            if (_points > high_score)
-            {
-                highscore.text = _points.ToString();
-            }
-        }
-        // here
-        //Debug.Log(_worldManager.offset - _playeroffset < 5);
         if ((_worldManager.groundPosition - transform.position).magnitude < 60)
         {
             _worldManager.PatternBuilder();
@@ -132,52 +73,53 @@ public class Walking : MonoBehaviour {
           int index = Random.Range(0, _worldManager._patternsList.Count);         
           Patterns pattern = _worldManager._patternsList[index];                  
           _worldManager.prefabPattern(pattern);
-
-
-
+        }
+        if (_isplay)
+        {
+            
+            if (_points > high_score)
+            {
+                highscore.text = _points.ToString();
+            }
+            if (Input.GetMouseButtonDown(0))
+            {
+                is_left = !is_left;
+                Rotating();
+                return;
+            }
+            Rotating();
         }
 
        
-        void Assemble(Vector3 dir)
+ 
+    }
+    public void Rotating()
+    {
+        if (is_left)
         {
-            // transform.position = new Vector3(Mathf.RoundToInt(transform.position.x),
-            // Mathf.RoundToInt(transform.position.y), Mathf.RoundToInt(transform.position.z));
-            // transform.rotation = new Quaternion( 0f,transform.rotation.x, 0f, transform.rotation.z);
-            // var anchor = transform.position + (Vector3.down + dir) * 1f;
-            // var axis = Vector3.Cross(Vector3.up, dir);
-            // anchor = new Vector3(Mathf.RoundToInt(anchor.x), Mathf.RoundToInt(anchor.y), Mathf.RoundToInt(anchor.z));
-            // StartCoroutine(Roll(anchor, axis));
-
-            _playeroffset = (-transform.position.x + transform.position.z + 4) / 4;
-            _points = (int) _playeroffset;
-            _rollSpeed += Time.deltaTime / 30;
-            transform.Translate(dir * _rollSpeed * Time.deltaTime);  
-            
+            from_left = false;
+            Assemble(Vector3.left);
+        }
+        else
+        {
+            from_left = true;
+            Assemble(Vector3.forward);
         }
     }
- 
-    private IEnumerator Roll(Vector3 anchor, Vector3 axis) {
-        _isMoving = true;
-        for (var i = 0; i < 90 / _rollSpeed; i++)
-        {
-            if (loop_i == i)
-                loop = true;
-            if (rotation_ch&& loop_i==-1&& !loop)
-            {
-                loop_i = i;
-            }
-            transform.RotateAround(anchor, axis, _rollSpeed);
-            yield return rollDelay;
-        }
-        _playeroffset += 0.5f;
-        _isMoving = false;
-        rotation_ch = false;
-        if (loop)
-        {
-            is_left = !is_left;
-        }
+        public void Assemble(Vector3 dir)
+    {
+        // transform.position = new Vector3(Mathf.RoundToInt(transform.position.x),
+        // Mathf.RoundToInt(transform.position.y), Mathf.RoundToInt(transform.position.z));
+        // transform.rotation = new Quaternion( 0f,transform.rotation.x, 0f, transform.rotation.z);
+        // var anchor = transform.position + (Vector3.down + dir) * 1f;
+        // var axis = Vector3.Cross(Vector3.up, dir);
+        // anchor = new Vector3(Mathf.RoundToInt(anchor.x), Mathf.RoundToInt(anchor.y), Mathf.RoundToInt(anchor.z));
+        // StartCoroutine(Roll(anchor, axis));
+
+        _playeroffset = (-transform.position.x + transform.position.z + 4) / 4;
+        _points = (int) _playeroffset;
+        _rollSpeed += Time.deltaTime / 30;
+        transform.Translate(dir * _rollSpeed * Time.deltaTime);  
             
-        if(_rollSpeed<=15)
-        _rollSpeed += 0.02f;
     }
 }
