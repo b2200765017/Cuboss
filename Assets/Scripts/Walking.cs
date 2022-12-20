@@ -25,11 +25,10 @@ public class Walking : MonoBehaviour {
     public float roll_delay_time = 0.01f;
     public float roll_wait_time = 0.01f;
     public bool rotation_ch=false;
-    private bool is_right = false;
     [SerializeField] LayerMask layerMask;
     private GameObject groundObj;
-    private bool onbox = false;
     private bool loop= false;
+    private bool game_started= false;
     private World_Manager _worldManager;
     private Animator animator;
     private float _playeroffset = 0;
@@ -38,6 +37,7 @@ public class Walking : MonoBehaviour {
     [SerializeField] private GameObject highscore_obj;
     [SerializeField] private GameObject sagyon;
     [SerializeField] private GameObject solyon;
+    [SerializeField] private Animator _animator;
     private void Start()
     {
         high_score = PlayerPrefs.GetInt("hs");
@@ -51,7 +51,7 @@ public class Walking : MonoBehaviour {
         _dead = GetComponent<DeadManager>();
         rollDelay = new WaitForSeconds(roll_delay_time);
         if (high_score < 10) return;
-        highscore_obj.transform.position = new Vector3(-high_score+3, 0, high_score-3);
+        highscore_obj.transform.position = new Vector3(-high_score*2+3, 0, high_score*2-3);
     }
 
     private void Update()
@@ -60,6 +60,12 @@ public class Walking : MonoBehaviour {
        
         if (_isplay)
         {
+            if (!game_started)
+            {
+                game_started = true;
+                _animator.SetTrigger("start");
+            }
+                
             if (loop)
             {
                 if (is_left)
@@ -77,6 +83,17 @@ public class Walking : MonoBehaviour {
             if (Input.GetMouseButtonDown(0)&& !rotation_ch)
             {
                 is_left = !is_left;
+                if (is_left)
+                {
+                    _animator.SetTrigger("left");
+                }
+                else
+                {
+                    _animator.SetTrigger("right");
+                }
+                {
+                    
+                }
                 rotation_ch = true;
             }
             if (Input.GetMouseButtonUp(0))
@@ -148,6 +165,8 @@ public class Walking : MonoBehaviour {
             // anchor = new Vector3(Mathf.RoundToInt(anchor.x), Mathf.RoundToInt(anchor.y), Mathf.RoundToInt(anchor.z));
             // StartCoroutine(Roll(anchor, axis));
 
+            if(_rollSpeed<=20)
+                _rollSpeed += 0.0001f;
             _playeroffset = (-transform.position.x + transform.position.z + 4) / 4;
             _points = (int) _playeroffset;
             _rollSpeed += Time.deltaTime / 30;
