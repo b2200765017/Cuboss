@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Ability : MonoBehaviour
 {
-    public bool is_activated = false;
+    public int is_activated = 0;
     private bool isButtonHeld = false;
     private float timeHeld;
     private bool onSlowMo = false;
@@ -18,7 +18,7 @@ public class Ability : MonoBehaviour
 
     void Update()
     {
-        if (is_activated)
+        if (is_activated != 0)
         {
             if (Input.GetButtonDown("Fire1")) {
                     isButtonHeld = true;
@@ -30,9 +30,9 @@ public class Ability : MonoBehaviour
                 {
                     onSlowMo = false;
                     Time.timeScale = 1;
-                    is_activated = false;
                     _walking.is_left = !_walking.is_left;
                     _walking.Rotating();
+                    is_activated--;
                 }
                 
                 
@@ -41,7 +41,7 @@ public class Ability : MonoBehaviour
                 timeHeld += Time.deltaTime;
             }
 
-            if (timeHeld >= 0.15f)
+            if (timeHeld >= 0.22f)
             {
                 Time.timeScale = 0.3f;
                 onSlowMo = true;
