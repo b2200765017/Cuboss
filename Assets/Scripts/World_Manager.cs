@@ -17,9 +17,6 @@ public class World_Manager : MonoBehaviour
 {
     [SerializeField] public List<Patterns> _patternsList;
     private ObjectPooler _objectPooler;
-    private string basic_ground = "ground";
-    private string gem_ground = "gemground";
-    private string enemy_ground = "enemyground";
     [SerializeField] private int number_of_platform = 5;
     [SerializeField] private float Chance_of_gem = 0.04f;
     private WaitForSeconds delay;
@@ -49,7 +46,7 @@ public class World_Manager : MonoBehaviour
         _objectPooler.SpawnFromPool("ground",
             groundPosition, Quaternion.identity);
         
-        groundPosition -= new Vector3(8,0, -8);
+        groundPosition -= new Vector3(8.485282f,0, -8.485282f);
     }
 
     public void prefabPattern(Patterns pattern)

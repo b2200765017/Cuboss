@@ -10,6 +10,7 @@ public class enemy : MonoBehaviour
     {
         if (other.transform.tag == "Player")
         {
+            GetComponent<Animator>().SetTrigger("jump");
             other.transform.GetComponent<DeadManager>().dead = true;
         }
     }
