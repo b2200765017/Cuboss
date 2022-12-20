@@ -4892,6 +4892,9 @@ MonoBehaviour:
   - _patternname: pattern_5
     dificulty: 1
     offset: 5
+  - _patternname: pattern_18
+    dificulty: 1
+    offset: 5
   number_of_platform: 4
   Chance_of_gem: 0
   _isstarting: 0
@@ -4912,28 +4915,17 @@ MonoBehaviour:
   _rollSpeed: 12
   _points: 0
   _coins: 0
-  _combo: 1
-  loop_i: -1
-  delay: 0
-  _playable: 0
-  pattern_build_ratio: 0.2
   _isplay: 0
-  _isCreated: 0
   from_left: 0
   is_left: 1
   _dead: {fileID: 0}
   sounds: {fileID: 0}
   highscore: {fileID: 615217257}
-  roll_delay_time: 0.01
-  roll_wait_time: 0.02
-  rotation_ch: 0
   layerMask:
     serializedVersion: 2
     m_Bits: 2147483647
   high_score: 0
   highscore_obj: {fileID: 623828721}
-  sagyon: {fileID: 1359830382}
-  solyon: {fileID: 1332106481}
   _animator: {fileID: 1448329099}
 --- !u!4 &1363021795 stripped
 Transform:
@@ -5397,6 +5389,10 @@ MonoBehaviour:
     size: 5
   - tag: pattern_5
     prefab: {fileID: 8643613550982132665, guid: 4f9575e71c57dbb47bcb310dd242a6d5,
+      type: 3}
+    size: 5
+  - tag: pattern_18
+    prefab: {fileID: 8643613550982132665, guid: 2305c68c962702b4b94a6f9ea2b1e4c0,
       type: 3}
     size: 5
 --- !u!4 &1396406834

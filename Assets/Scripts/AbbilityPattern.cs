@@ -20,7 +20,7 @@ public class AbbilityPattern : MonoBehaviour
             if(!_orbScripts[i].istouched)return;
         }
 
-        _ability.is_activated = 2;
+        _ability.is_activated = 3;
         for(int i = 0; i < _orbScripts.Count; i++)
         {
             _orbScripts[i].istouched = false;

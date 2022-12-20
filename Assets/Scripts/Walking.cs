@@ -25,6 +25,7 @@ public class Walking : MonoBehaviour {
     private float _playeroffset = 0;
     public int high_score;
     [SerializeField] private GameObject highscore_obj;
+    [SerializeField] private Animator _animator;
     private void Start()
     {
         high_score = PlayerPrefs.GetInt("hs");

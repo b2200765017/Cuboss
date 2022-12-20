@@ -29,7 +29,7 @@ public class Ability : MonoBehaviour
                 if (onSlowMo)
                 {
                     onSlowMo = false;
-                    Time.timeScale = 1;
+                    StartCoroutine(timeback());
                     _walking.is_left = !_walking.is_left;
                     _walking.Rotating();
                     is_activated--;
@@ -43,10 +43,19 @@ public class Ability : MonoBehaviour
 
             if (timeHeld >= 0.22f)
             {
-                Time.timeScale = 0.3f;
+                Time.timeScale = 0.4f;
                 onSlowMo = true;
             }
         }
     }
+    IEnumerator timeback()
+    {
+        while (Time.timeScale <= 1)
+        {
+            Time.timeScale += 0.01f;
+            yield return new WaitForSeconds(0.001f);
+        }
+    }
     
 }
+
