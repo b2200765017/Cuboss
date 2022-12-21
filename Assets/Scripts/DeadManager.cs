@@ -23,7 +23,6 @@ public class DeadManager : MonoBehaviour
         float value = Mathf.Abs(_transform.position.x + _transform.position.z);
         if (value > 7.6f |dead)
         {
-            Handheld.Vibrate();
             Debug.Log(_walking._points);
             if (_walking._points > PlayerPrefs.GetInt("hs"))
             {
@@ -37,11 +36,11 @@ public class DeadManager : MonoBehaviour
             float random = Random.Range(200, 300) * _walking._rollSpeed;
             if (!_walking.from_left)
             {
-                gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(-random,400,0), ForceMode.Force);
+                gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(-random,1000,0), ForceMode.Force);
             }
             else
             {
-                gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0,400,random), ForceMode.Force);
+                gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0,1000,random), ForceMode.Force);
             }
             _restart.SetActive(true);
             //gameObject.SetActive(false);

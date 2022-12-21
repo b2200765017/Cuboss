@@ -36,7 +36,7 @@ public class World_Manager : MonoBehaviour
         groundPosition = new Vector3(8, 0, -8);
         _objectPooler = GameObject.FindObjectOfType<ObjectPooler>();
         delay = new WaitForSeconds(0.17f);
-        StartCoroutine(StartAnimation());
+        //StartCoroutine(StartAnimation());
     }
 
     // Update is called once per frame

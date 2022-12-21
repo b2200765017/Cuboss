@@ -52,7 +52,7 @@ public class Walking : MonoBehaviour {
             _worldManager.PatternBuilder();
         }
         
-        if (_worldManager.offset - _playeroffset < 20 && !_worldManager._isstarting)
+        if (_worldManager.offset - _playeroffset < 20 )
         {
           int index = Random.Range(0, _worldManager._patternsList.Count);         
           Patterns pattern = _worldManager._patternsList[index];                  
