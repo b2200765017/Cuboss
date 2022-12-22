@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
@@ -10,7 +11,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject _playButton;
     [SerializeField] TextMeshProUGUI _coins;
     [SerializeField] TextMeshProUGUI _time;
-    [SerializeField] GameObject _restartButton;
+    [SerializeField] GameObject restartButton;
     [SerializeField] DeadManager _deadManager;
     [SerializeField] TextMeshProUGUI _fps;
     public float timeLeft=3;
@@ -32,7 +33,7 @@ public class UIManager : MonoBehaviour
         _fps.text = (1 / Time.deltaTime).ToString();
         if (_deadManager.dead)
         {
-            _restartButton.SetActive(true);
+            restartButton.SetActive(true);
         }
 
         _points.text = _walking._points.ToString();
@@ -60,5 +61,9 @@ public class UIManager : MonoBehaviour
     public void RestartButton()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+    public void MainButton()
+    {
+        SceneManager.LoadScene(0);
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,6 +12,10 @@ public class DeadManager : MonoBehaviour
     private Transform _transform;
     private Walking _walking;
     public GameObject _restart;
+    public TextMeshProUGUI score;
+    public TextMeshProUGUI score1;
+    public TextMeshProUGUI coins;
+    public TextMeshProUGUI coins1;
     [SerializeField] private bestScore _bestScore;
     [SerializeField] private CameraMovement _cameraMovement;
     void Start()
@@ -43,6 +48,10 @@ public class DeadManager : MonoBehaviour
                 gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0,1000,random), ForceMode.Force);
             }
             _restart.SetActive(true);
+            score1.text = score.text;
+            score.gameObject.SetActive(false);
+            coins1.text = coins.text;
+            coins.gameObject.SetActive(false);
             //gameObject.SetActive(false);
             this.enabled = false;
             dead = false;

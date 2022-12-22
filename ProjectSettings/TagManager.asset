@@ -11,6 +11,7 @@ TagManager:
   - greenbox
   - gembox
   - music
+  - mainmusic
   layers:
   - Default
   - TransparentFX
