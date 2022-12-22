@@ -119,8 +119,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.67297524, y: 1.5713562, z: 0.53341913}
-  m_Center: {x: -0.019014984, y: 0.63567805, z: -0.060799673}
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &3772926585591019716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,6 +204,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: gem (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6489539184037797428, guid: 1714363d334cb8a4d8c625d8f4798b68,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1714363d334cb8a4d8c625d8f4798b68, type: 3}
