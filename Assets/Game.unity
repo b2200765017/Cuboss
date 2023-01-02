@@ -1647,6 +1647,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rollSpeed: 10
+  highscoreObject: {fileID: 623828721}
   _points: 0
   _coins: 0
   _isplay: 0
@@ -1655,14 +1656,6 @@ MonoBehaviour:
   _dead: {fileID: 0}
   sounds: {fileID: 0}
   highscore: {fileID: 615217257}
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 2147483647
-  high_score: 0
-  highscore_obj: {fileID: 623828721}
-  Lefttarget: {fileID: 0}
-  Righttarget: {fileID: 0}
-  _animator: {fileID: 0}
 --- !u!4 &1363021795
 Transform:
   m_ObjectHideFlags: 0
@@ -2484,8 +2477,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 25
+  m_fontSizeBase: 25
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2520,7 +2513,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 13.100349, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -4007,6 +4000,7 @@ GameObject:
   - component: {fileID: 7916640491951086093}
   - component: {fileID: 7916640491951086088}
   - component: {fileID: 7916640491951086089}
+  - component: {fileID: 7916640491951086094}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -4127,8 +4121,20 @@ MonoBehaviour:
   _time: {fileID: 1554145812}
   restartButton: {fileID: 1971075302}
   _deadManager: {fileID: 1363021798}
-  _fps: {fileID: 1554165272}
   timeLeft: 3
+--- !u!114 &7916640491951086094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7916640491951086086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cd720d8eda685e4aa4d85d45c5ef851, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fps_counter: {fileID: 1554165272}
 --- !u!1 &7916640492064475636
 GameObject:
   m_ObjectHideFlags: 0

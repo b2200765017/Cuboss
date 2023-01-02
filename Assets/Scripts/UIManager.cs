@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEditor.UIElements;
 using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 
@@ -13,7 +14,6 @@ public class UIManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI _time;
     [SerializeField] GameObject restartButton;
     [SerializeField] DeadManager _deadManager;
-    [SerializeField] TextMeshProUGUI _fps;
     public float timeLeft=3;
     private bool gameStarted=false;
 
@@ -30,7 +30,6 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _fps.text = (1 / Time.deltaTime).ToString();
         if (_deadManager.dead)
         {
             restartButton.SetActive(true);
