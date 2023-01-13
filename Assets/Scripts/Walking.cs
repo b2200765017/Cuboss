@@ -1,12 +1,9 @@
-using System.Collections;
 using TMPro;
-using Unity.Mathematics;
 using UnityEngine;
-using Quaternion = UnityEngine.Quaternion;
 using Random = UnityEngine.Random;
 using Vector3 = UnityEngine.Vector3;
 
-public class Walking : MonoBehaviour {
+/*public class Walking : MonoBehaviour {
     [SerializeField] public float _rollSpeed = 5;
     private Transform box;
     public int _points;
@@ -111,4 +108,109 @@ public class Walking : MonoBehaviour {
         transform.Translate(dir * _rollSpeed * Time.deltaTime);  
             
     }
+}*/
+public class Walking : MonoBehaviour
+{
+    [SerializeField] public float _rollSpeed = 5;
+    [SerializeField] private GameObject highscoreObject;
+
+
+    public int _points;
+    public int _coins;
+    public bool _isplay = false;
+    private bool _isMoving;
+    public bool from_left = false;
+    public bool is_left = true;
+    public DeadManager _dead;
+    public Sounds sounds;
+    [SerializeField]private TextMeshProUGUI highscore;
+    private TextMeshPro high_score;
+    private bool isRight = false;
+    private GameObject box;
+    private bool loop = false;
+    private World_Manager worldManager;
+    private Animator characterAnimator;
+    private float playerOffset = 0;
+    private int highScore;
+
+    private void Start()
+    {
+        high_score = highscoreObject.GetComponentInChildren<TextMeshPro>();
+        highScore = PlayerPrefs.GetInt("hs");
+        highscore.text = highScore.ToString();
+        high_score.text += highScore.ToString();
+
+        // Find the "Sounds" object in the scene and cache the reference
+        sounds = FindObjectOfType<Sounds>();
+
+        // Cache the reference to the "WorldManager" component
+        worldManager = GetComponent<World_Manager>();
+
+        // Cache the reference to the "DeadManager" component
+        _dead = GetComponent<DeadManager>();
+
+        if (highScore >= 10)
+        {
+            highscoreObject.transform.position = new Vector3(-(highScore * 2) + 3, 0, (highScore * 2) - 3);
+        }
+
+        Time.timeScale = 1;
+    }
+
+    private void Update()
+    {
+        if (Vector3.Distance(worldManager.groundPosition, transform.position) < 60)
+        {
+            worldManager.PatternBuilder();
+        }
+
+
+        if (worldManager.offset - playerOffset < 20)
+        {
+            int index = Random.Range(0, worldManager._patternsList.Count);
+            Patterns pattern = worldManager._patternsList[index];
+            worldManager.prefabPattern(pattern);
+        }
+
+        if (_isplay)
+        {
+            if (_points > highScore)
+            {
+                highscore.text = _points.ToString();
+            }
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                is_left = !is_left;
+                Rotating();
+                return;
+            }
+
+            Rotating();
+        }
+    }
+
+    public void Rotating()
+    {
+        if (is_left)
+        {
+            from_left = false;
+            Assemble(Vector3.left);
+        }
+        else
+        {
+            from_left = true;
+            Assemble(Vector3.forward);
+        }
+    }
+
+    public void Assemble(Vector3 dir)
+    {
+        var position = transform.position;
+        playerOffset = (-position.x + position.z + 4) / 4;
+        _points = (int)playerOffset;
+        _rollSpeed += Time.deltaTime / 10;
+        transform.Translate(dir * (Time.deltaTime * _rollSpeed));
+    }
 }
+
