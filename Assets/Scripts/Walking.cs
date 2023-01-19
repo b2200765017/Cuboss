@@ -123,7 +123,7 @@ public class Walking : MonoBehaviour
     public bool is_left = true;
     public DeadManager _dead;
     public Sounds sounds;
-    [SerializeField]private TextMeshProUGUI highscore;
+    [SerializeField] private TextMeshProUGUI highscore;
     private TextMeshPro high_score;
     private bool isRight = false;
     private GameObject box;
@@ -132,6 +132,9 @@ public class Walking : MonoBehaviour
     private Animator characterAnimator;
     private float playerOffset = 0;
     private int highScore;
+    [SerializeField] private Transform penguen;
+    public float speed = 2f;
+
 
     private void Start()
     {
@@ -159,12 +162,22 @@ public class Walking : MonoBehaviour
 
     private void Update()
     {
+        float t = Time.deltaTime;
+        if (is_left)
+        {
+            penguen.rotation = Quaternion.Slerp(penguen.rotation, Quaternion.Euler(0, -90, 0), t * speed);
+        }
+        else
+        {
+            penguen.rotation = Quaternion.Slerp(penguen.rotation, Quaternion.Euler(0, 0, 0), t * speed);
+        }
+        
         if (Vector3.Distance(worldManager.groundPosition, transform.position) < 60)
         {
             worldManager.PatternBuilder();
         }
 
-
+        
         if (worldManager.offset - playerOffset < 20)
         {
             int index = Random.Range(0, worldManager._patternsList.Count);
@@ -212,5 +225,6 @@ public class Walking : MonoBehaviour
         _rollSpeed += Time.deltaTime / 10;
         transform.Translate(dir * (Time.deltaTime * _rollSpeed));
     }
+    
 }
 
