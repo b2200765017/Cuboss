@@ -1,4 +1,5 @@
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using Random = UnityEngine.Random;
 using Vector3 = UnityEngine.Vector3;
@@ -129,7 +130,7 @@ public class Walking : MonoBehaviour
     private GameObject box;
     private bool loop = false;
     private World_Manager worldManager;
-    private Animator characterAnimator;
+    [SerializeField] private Animator characterAnimator;
     private float playerOffset = 0;
     private int highScore;
     [SerializeField] private Transform penguen;
@@ -162,6 +163,7 @@ public class Walking : MonoBehaviour
 
     private void Update()
     {
+        characterAnimator.SetFloat("Blend",(penguen.rotation.eulerAngles.y-270)/90);
         float t = Time.deltaTime;
         if (is_left)
         {
@@ -176,7 +178,6 @@ public class Walking : MonoBehaviour
         {
             worldManager.PatternBuilder();
         }
-
         
         if (worldManager.offset - playerOffset < 20)
         {
@@ -195,6 +196,7 @@ public class Walking : MonoBehaviour
             if (Input.GetMouseButtonDown(0))
             {
                 is_left = !is_left;
+
                 Rotating();
                 return;
             }
