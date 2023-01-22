@@ -26,7 +26,7 @@ public class DeadManager : MonoBehaviour
     void Update()
     {
         float value = Mathf.Abs(_transform.position.x + _transform.position.z);
-        if (value > 7.6f |dead)
+        if (value > 8.5f |dead)
         {
             Debug.Log(_walking._points);
             if (_walking._points > PlayerPrefs.GetInt("hs"))
