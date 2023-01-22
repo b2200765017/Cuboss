@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class planeMover : MonoBehaviour
-{    
+{
     Vector3 LocalSpace;
     public bool isRight;
     private Walking _walking;
-    public float speed;
+    public UIManager _UIManager;
+    
+    public Vector3 targetPosition;
+    public float speed = 0.1f;
 
     void Start()
     {
@@ -26,6 +29,7 @@ public class planeMover : MonoBehaviour
 
     void Update()
     {
+        if (_UIManager.timeLeft <= 0) Destroy(this);
         transform.position +=  (Time.deltaTime * LocalSpace* speed * _walking.speed);
     }
 }
