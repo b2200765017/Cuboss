@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1293499962741848876}
   - component: {fileID: 2764283049401808009}
   - component: {fileID: 123923207998308419}
-  - component: {fileID: 123923207998308418}
   - component: {fileID: 2636320149867157802}
   - component: {fileID: 3772926585591019716}
   m_Layer: 0
@@ -88,26 +87,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &123923207998308418
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1925499880336597398}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: cef809588679885428a871c4a6a32246, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 1
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!65 &2636320149867157802
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -119,8 +98,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Size: {x: 1, y: 1.868856, z: 1}
+  m_Center: {x: 0, y: 0.56557214, z: 0}
 --- !u!114 &3772926585591019716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,7 +152,7 @@ PrefabInstance:
     - target: {fileID: 5855991429016142990, guid: 1714363d334cb8a4d8c625d8f4798b68,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.85
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 5855991429016142990, guid: 1714363d334cb8a4d8c625d8f4798b68,
         type: 3}
@@ -225,7 +204,8 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 714753880836553418, guid: 1714363d334cb8a4d8c625d8f4798b68, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1714363d334cb8a4d8c625d8f4798b68, type: 3}
 --- !u!4 &2576245875164894335 stripped
 Transform:

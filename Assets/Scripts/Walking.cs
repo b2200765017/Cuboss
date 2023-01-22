@@ -173,12 +173,7 @@ public class Walking : MonoBehaviour
         {
             penguen.rotation = Quaternion.Slerp(penguen.rotation, Quaternion.Euler(0, 0, 0), t * speed);
         }
-        
-        if (Vector3.Distance(worldManager.groundPosition, transform.position) < 60)
-        {
-            worldManager.PatternBuilder();
-        }
-        
+
         if (worldManager.offset - playerOffset < 20)
         {
             int index = Random.Range(0, worldManager._patternsList.Count);
