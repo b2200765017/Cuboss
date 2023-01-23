@@ -163,7 +163,6 @@ public class Walking : MonoBehaviour
 
     private void Update()
     {
-        characterAnimator.SetFloat("Blend",(penguen.rotation.eulerAngles.y-270)/90);
         float t = Time.deltaTime;
         if (is_left)
         {
