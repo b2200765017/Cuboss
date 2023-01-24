@@ -5,7 +5,7 @@ using UnityEngine;
 [Serializable]
 public struct Patterns
 {
-    public GameObject _patternname;
+    public string _patternname;
 }
 
 public class World_Manager : MonoBehaviour
@@ -14,14 +14,14 @@ public class World_Manager : MonoBehaviour
     public float offset = 0f;
 
     
+    [SerializeField] private ObjectPooler _objectPooler;
     private float initial_x = -6f;
     private float initial_z = 6f;
 
     public void prefabPattern(Patterns pattern)
     {
-        GameObject gameObject = Instantiate(pattern._patternname);
-        gameObject.transform.position = new Vector3(initial_x + (offset * -2), 0f, initial_z + (offset * +2));
-        transform.rotation = Quaternion.identity;
+        _objectPooler.SpawnFromPool(pattern._patternname,
+            new Vector3(initial_x + (offset * -2), 0f, initial_z + (offset * +2)), Quaternion.identity);
         offset += 19.75f / 2;
         
     }

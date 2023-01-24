@@ -126,7 +126,9 @@ public class Walking : MonoBehaviour
     public Sounds sounds;
     [SerializeField] private TextMeshProUGUI highscore;
     private TextMeshPro high_score;
+    private bool isRight = false;
     private GameObject box;
+    private bool loop = false;
     private World_Manager worldManager;
     [SerializeField] private Animator characterAnimator;
     private float playerOffset = 0;
@@ -162,7 +164,6 @@ public class Walking : MonoBehaviour
     private void Update()
     {
         float t = Time.deltaTime;
-       
         if (is_left)
         {
             penguen.rotation = Quaternion.Slerp(penguen.rotation, Quaternion.Euler(0, -90, 0), t * speed);
@@ -172,55 +173,54 @@ public class Walking : MonoBehaviour
             penguen.rotation = Quaternion.Slerp(penguen.rotation, Quaternion.Euler(0, 0, 0), t * speed);
         }
 
-       if (worldManager.offset - playerOffset < 20)
-       {
-           int index = Random.Range(0, worldManager._patternsList.Count);
-           Patterns pattern = worldManager._patternsList[index];
-           worldManager.prefabPattern(pattern);
-       }
-       
+        if (worldManager.offset - playerOffset < 20)
+        {
+            int index = Random.Range(0, worldManager._patternsList.Count);
+            Patterns pattern = worldManager._patternsList[index];
+            worldManager.prefabPattern(pattern);
+        }
 
-       if (_isplay)
-       {
-           if (_points > highScore)
-           {
-               highscore.text = _points.ToString();
-           }
+        if (_isplay)
+        {
+            if (_points > highScore)
+            {
+                highscore.text = _points.ToString();
+            }
 
-           if (Input.GetMouseButtonDown(0))
-           {
-               is_left = !is_left;
+            if (Input.GetMouseButtonDown(0))
+            {
+                is_left = !is_left;
 
-               Rotating();
-               return;
-           }
+                Rotating();
+                return;
+            }
 
-           Rotating();
-       }
-   }
+            Rotating();
+        }
+    }
 
-   public void Rotating()
-   {
-       if (is_left)
-       {
-           from_left = false;
-           Assemble(Vector3.left);
-       }
-       else
-       {
-           from_left = true;
-           Assemble(Vector3.forward);
-       }
-   }
+    public void Rotating()
+    {
+        if (is_left)
+        {
+            from_left = false;
+            Assemble(Vector3.left);
+        }
+        else
+        {
+            from_left = true;
+            Assemble(Vector3.forward);
+        }
+    }
 
-   public void Assemble(Vector3 dir)
-   {
-       var position = transform.position;
-       playerOffset = (-position.x + position.z + 4) / 4;
-       _points = (int)playerOffset;
-       _rollSpeed += Time.deltaTime / 10;
-       transform.Translate(dir * (Time.deltaTime * _rollSpeed));
-   }
-   
+    public void Assemble(Vector3 dir)
+    {
+        var position = transform.position;
+        playerOffset = (-position.x + position.z + 4) / 4;
+        _points = (int)playerOffset;
+        _rollSpeed += Time.deltaTime / 10;
+        transform.Translate(dir * (Time.deltaTime * _rollSpeed));
+    }
+    
 }
 

@@ -16,6 +16,7 @@ public class DeadManager : MonoBehaviour
     public TextMeshProUGUI score1;
     public TextMeshProUGUI coins;
     public TextMeshProUGUI coins1;
+    [SerializeField] private bestScore _bestScore;
     [SerializeField] private CameraMovement _cameraMovement;
     void Start()
     {
