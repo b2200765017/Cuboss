@@ -7,7 +7,6 @@ public class UIManager : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI _points;
     [SerializeField] GameObject player;
-    [SerializeField] GameObject _playButton;
     [SerializeField] TextMeshProUGUI _coins;
     [SerializeField] TextMeshProUGUI _time;
     [SerializeField] GameObject restartButton;
@@ -45,15 +44,10 @@ public class UIManager : MonoBehaviour
         {
             gameStarted = true;
             _time.text = "";
-            OnPlayButtonDown();
+            player.GetComponent<Walking>()._isplay = true;
         }
     }
 
-    public void OnPlayButtonDown()
-    {
-        player.GetComponent<Walking>()._isplay = true;
-        _playButton.SetActive(false);
-    }
 
     public void RestartButton()
     {

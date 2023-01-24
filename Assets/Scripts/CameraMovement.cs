@@ -8,23 +8,21 @@ using Debug = UnityEngine.Debug;
 public class CameraMovement : MonoBehaviour
 {
 
-    public float movingSpeed;
     [CanBeNull] public Transform m_playerTransform;
     private Vector3 cameraOffset;
+    private bool _ismPlayerTransformNotNull;
+
     void Start()
     {
+        _ismPlayerTransformNotNull = m_playerTransform != null;
         cameraOffset = transform.position - m_playerTransform.position;
     }
     void Update()
     {
-        if (m_playerTransform != null)
+        if (_ismPlayerTransformNotNull)
         {
             float player_position = (m_playerTransform.position.x - m_playerTransform.position.z) / 2;
-            //float offset = vector_offset / Mathf.Pow(2, -2);    
-            //float dot = Vector2.Dot(new Vector2(normalized.x, normalized.z), new Vector2(transform.forward.x, transform.forward.z));
-            //Debug.Log(dot);
-            transform.position = new Vector3(player_position + cameraOffset.x ,
-                transform.position.y, -player_position + cameraOffset.z );  
+            transform.position = new Vector3(player_position + cameraOffset.x , transform.position.y, -player_position + cameraOffset.z );  
         }
 
     }
