@@ -2,19 +2,22 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System.Text;
 
 public class UIManager : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI _points;
     [SerializeField] GameObject player;
-    [SerializeField] GameObject _playButton;
-    [SerializeField] TextMeshProUGUI _coins;
     [SerializeField] TextMeshProUGUI _time;
     [SerializeField] GameObject restartButton;
     [SerializeField] DeadManager _deadManager;
     public float timeLeft=3;
     private bool gameStarted=false;
-
+    
+    [SerializeField] TextMeshProUGUI pointsText;
+    [SerializeField] TextMeshProUGUI coinsText;
+    private int _points;
+    private int _coins;
+    
     private Walking _walking;
     // Start is called before the first frame update
     void Start()
@@ -32,28 +35,35 @@ public class UIManager : MonoBehaviour
         {
             restartButton.SetActive(true);
         }
+        
 
-        _points.text = _walking._points.ToString();
-        _coins.text = _walking._coins.ToString();
+        if (_points != _walking._points)
+        {
+            pointsText.text = _walking._points.ToString();
+            _points = _walking._points;
+        }
+
+        if (_coins != _walking._coins)
+        {
+            coinsText.text = _walking._coins.ToString();
+            _coins = _walking._coins;
+        }
+
         if (!gameStarted)
         {
             _time.text = ((int) timeLeft+1).ToString();
             timeLeft -= Time.deltaTime;
+            if ( timeLeft < 0 && !gameStarted )
+            {
+                gameStarted = true;
+                _time.text = "";
+                _walking._isplay = true;
+            }
         }
         
-        if ( timeLeft < 0 && !gameStarted )
-        {
-            gameStarted = true;
-            _time.text = "";
-            OnPlayButtonDown();
-        }
-    }
 
-    public void OnPlayButtonDown()
-    {
-        player.GetComponent<Walking>()._isplay = true;
-        _playButton.SetActive(false);
     }
+    
 
     public void RestartButton()
     {

@@ -15,10 +15,4 @@ public class DeleteDublicates : MonoBehaviour
         }
         DontDestroyOnLoad(this);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

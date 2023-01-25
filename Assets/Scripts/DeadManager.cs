@@ -10,7 +10,7 @@ public class DeadManager : MonoBehaviour
 {
     public bool dead = false;
     private Transform _transform;
-    private Walking _walking;
+    [SerializeField] private Walking _walking;
     public GameObject _restart;
     public TextMeshProUGUI score;
     public TextMeshProUGUI score1;
@@ -21,23 +21,18 @@ public class DeadManager : MonoBehaviour
     void Start()
     {
         _transform = gameObject.transform;
-        _walking = GetComponent<Walking>();
     }
     void Update()
     {
         float value = Mathf.Abs(_transform.position.x + _transform.position.z);
-        if (value > 8.5f |dead)
+        if (value > 8.5f | dead)
         {
-            Debug.Log(_walking._points);
             if (_walking._points > PlayerPrefs.GetInt("hs"))
             {
                 PlayerPrefs.SetInt("hs",_walking._points);
             }
             _cameraMovement.enabled = false;
             _walking._isplay = false;
-            //_dead.gameObject.SetActive(true);
-            //_dead.position = _transform.position;
-            //_dead.rotation = _transform.rotation;
             float random = Random.Range(200, 300) * _walking._rollSpeed;
             if (!_walking.from_left)
             {
@@ -53,8 +48,8 @@ public class DeadManager : MonoBehaviour
             coins1.text = coins.text;
             coins.gameObject.SetActive(false);
             //gameObject.SetActive(false);
-            this.enabled = false;
             dead = false;
+            this.enabled = false;
         }
     }
 }

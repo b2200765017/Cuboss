@@ -9,13 +9,8 @@ public class Ability : MonoBehaviour
     private bool isButtonHeld = false;
     private float timeHeld;
     private bool onSlowMo = false;
-    private Walking _walking;
-
-    private void Start()
-    {
-        _walking = GetComponent<Walking>();
-    }
-
+    [SerializeField] private Walking _walking;
+    
     void Update()
     {
         if (is_activated != 0)
@@ -31,12 +26,9 @@ public class Ability : MonoBehaviour
                     onSlowMo = false;
                     StartCoroutine(timeback());
                     _walking.is_left = !_walking.is_left;
-                    //_walking.RotationAnimation();
                     _walking.Rotating();
                     is_activated--;
                 }
-                
-                
             }
             if (isButtonHeld) {
                 timeHeld += Time.deltaTime;
