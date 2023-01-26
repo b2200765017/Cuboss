@@ -22,7 +22,7 @@ public class World_Manager : MonoBehaviour
     {
         _objectPooler.SpawnFromPool(pattern._patternname,
             new Vector3(initial_x + (offset * -2), 0f, initial_z + (offset * +2)), Quaternion.identity);
-        offset += 19.75f / 2;
+        offset += 19.79899f / 2;
         
     }
 }
