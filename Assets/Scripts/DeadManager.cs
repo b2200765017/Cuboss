@@ -15,6 +15,7 @@ public class DeadManager : MonoBehaviour
     public TextMeshProUGUI score;
     public TextMeshProUGUI score1;
     public TextMeshProUGUI coins;
+    public TrailRenderer trail;
     public TextMeshProUGUI coins1;
     [SerializeField] private bestScore _bestScore;
     [SerializeField] private CameraMovement _cameraMovement;
@@ -33,14 +34,17 @@ public class DeadManager : MonoBehaviour
             }
             _cameraMovement.enabled = false;
             _walking._isplay = false;
-            float random = Random.Range(200, 300) * _walking._rollSpeed;
+            float random = Random.Range(25, 25) * _walking._rollSpeed;
+            trail.emitting = false;
+            gameObject.GetComponent<Rigidbody>().useGravity = true;
             if (!_walking.from_left)
             {
-                gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(-random,1000,0), ForceMode.Force);
+                gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(-random,20,0), ForceMode.Force);
+                
             }
             else
             {
-                gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0,1000,random), ForceMode.Force);
+                gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0,20,random), ForceMode.Force);
             }
             _restart.SetActive(true);
             score1.text = score.text;
