@@ -4,8 +4,7 @@ public class enemy : MonoBehaviour
 {
     private DeadManager _deadManager;
     public Vector3 penguin;
-    public GameObject tree;
-    public GameObject treean;
+    public Animator animator;
     public bool isTree;
     private void Awake()
     {
@@ -18,18 +17,29 @@ public class enemy : MonoBehaviour
         {
             if (isTree)
             {
-                penguin = other.transform.position;
-                other.gameObject.transform.position = new Vector3(penguin.x, penguin.y - 2, penguin.z);
-                treean.SetActive(true);
-                Destroy(tree);
+                animator.enabled = true;
                 if (!other.gameObject.GetComponent<Walking>().from_left )
                 {
                     transform.Rotate(0, -90, 0);
                     
                 } 
-                
+                if (other.GetComponent<Walking>().heart==0)
+                {
+                    penguin = other.transform.position;
+                    other.gameObject.transform.position = new Vector3(penguin.x, penguin.y - 2, penguin.z);
+                    _deadManager.dead = true;
+                    
+                }
+                else
+                {
+                    other.GetComponent<Walking>().heart -= 1;
+                }
             }
-            _deadManager.dead = true;
+            else
+            {
+                _deadManager.dead = true;
+            }
+            
         }
     }
 }

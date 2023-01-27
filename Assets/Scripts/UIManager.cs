@@ -15,8 +15,10 @@ public class UIManager : MonoBehaviour
     
     [SerializeField] TextMeshProUGUI pointsText;
     [SerializeField] TextMeshProUGUI coinsText;
+    [SerializeField] TextMeshProUGUI heartText;
     private int _points;
     private int _coins;
+    private int _hearts;
     
     private Walking _walking;
     // Start is called before the first frame update
@@ -47,6 +49,10 @@ public class UIManager : MonoBehaviour
         {
             coinsText.text = _walking._coins.ToString();
             _coins = _walking._coins;
+        }if (_hearts != _walking.heart)
+        {
+            heartText.text = _walking.heart.ToString();
+            _hearts = _walking.heart;
         }
 
         if (!gameStarted)

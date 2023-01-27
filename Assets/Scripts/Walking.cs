@@ -7,12 +7,12 @@ public class Walking : MonoBehaviour
 {
     [SerializeField] public float _rollSpeed = 5;
     [SerializeField] private GameObject highscoreObject;
-
-
+    public int heart=0;
     public int _points;
     public int _coins;
     public bool _isplay = false;
     private bool _isMoving;
+    public bool isulti=false;
     public bool from_left = false;
     public bool is_left = true;
     public DeadManager _dead;
@@ -69,7 +69,7 @@ public class Walking : MonoBehaviour
                 highscore.text = _points.ToString();
             }
 
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0)|| Input.GetKeyDown(KeyCode.Space))
             {
                 is_left = !is_left;
 

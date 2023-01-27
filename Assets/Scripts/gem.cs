@@ -5,6 +5,7 @@ public class gem : MonoBehaviour
 {
     //private Animator animator;
     private Walking _walking;
+    public int worth;
     private void Start()
     {
         _walking = FindObjectOfType<Walking>();
@@ -16,7 +17,7 @@ public class gem : MonoBehaviour
         {
             //animator = transform.GetComponent<Animator>();
             //animator.SetTrigger("collect");
-            _walking._coins++;
+            _walking._coins+=worth;
             _walking.sounds.gem_collected();
             gameObject.SetActive(false);
         }
