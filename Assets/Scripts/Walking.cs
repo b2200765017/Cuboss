@@ -46,6 +46,7 @@ public class Walking : MonoBehaviour
     private void Update()
     {
         float t = Time.deltaTime;
+        Vector3 a = new Vector3(0, 0, 0);
         if (is_left)
         {
             penguen.rotation = Quaternion.Slerp(penguen.rotation, Quaternion.Euler(0, -90, 0), t * speed);
@@ -54,6 +55,7 @@ public class Walking : MonoBehaviour
         {
             penguen.rotation = Quaternion.Slerp(penguen.rotation, Quaternion.Euler(0, 0, 0), t * speed);
         }
+        //characterAnimator.SetFloat("Blend",(penguen.eulerAngles.y-270)/90);
 
         if (worldManager.offset - playerOffset < 20)
         {
