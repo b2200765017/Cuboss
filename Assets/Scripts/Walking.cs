@@ -8,6 +8,7 @@ public class Walking : MonoBehaviour
     [SerializeField] public float _rollSpeed = 5;
     [SerializeField] private GameObject highscoreObject;
     public int heart=0;
+    public int heartp=0;
     public int _points;
     public int _coins = 0;
     public bool _isplay = false;
@@ -108,7 +109,7 @@ public class Walking : MonoBehaviour
         }
         else if (_rollSpeed < 8)
         {
-            _rollSpeed += 3.5f*Time.deltaTime / 10;
+            _rollSpeed += 4f*Time.deltaTime / 10;
         }
         else if(_rollSpeed>10 && _rollSpeed<15)
         {
