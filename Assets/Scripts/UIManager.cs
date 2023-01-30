@@ -17,9 +17,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI coinsText;
     [SerializeField] TextMeshProUGUI heartText;
     private int _points;
-    private int _coins;
+    private int _coins = 0;
     private int _hearts;
-    
+    private Animator _animator;
     private Walking _walking;
     // Start is called before the first frame update
     void Start()
