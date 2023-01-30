@@ -103,13 +103,13 @@ public class Walking : MonoBehaviour
         var position = transform.position;
         playerOffset = (-position.x + position.z + 4) / 4;
         _points = (int)playerOffset;
-        if (_rollSpeed < 10&&_rollSpeed >= 8)
+        if (_rollSpeed < 10&&_rollSpeed >= 7)
         {
             _rollSpeed += 2*Time.deltaTime / 10; 
         }
-        else if (_rollSpeed < 8)
+        else if (_rollSpeed < 7)
         {
-            _rollSpeed += 4f*Time.deltaTime / 10;
+            _rollSpeed += 5f*Time.deltaTime / 10;
         }
         else if(_rollSpeed>10 && _rollSpeed<15)
         {
