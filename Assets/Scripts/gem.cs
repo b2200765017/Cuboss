@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class gem : MonoBehaviour
@@ -6,6 +8,7 @@ public class gem : MonoBehaviour
     //private Animator animator;
     private Walking _walking;
     public int worth;
+    private bool taken = false;
     private void Start()
     {
         _walking = FindObjectOfType<Walking>();
@@ -18,8 +21,17 @@ public class gem : MonoBehaviour
             //animator = transform.GetComponent<Animator>();
             //animator.SetTrigger("collect");
             _walking._coins+=worth;
-            _walking.sounds.gem_collected();
+            _walking.sounds.PlayXpCollection();
+            taken = true;
             gameObject.SetActive(false);
         }
     }
+
+    private void OnDisable()
+    {
+        if(taken)gameObject.SetActive(true);
+        taken = false;
+        
+    }
+    
 }

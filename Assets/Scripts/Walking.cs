@@ -9,14 +9,14 @@ public class Walking : MonoBehaviour
     [SerializeField] private GameObject highscoreObject;
     public int heart=0;
     public int _points;
-    public int _coins;
+    public int _coins = 0;
     public bool _isplay = false;
     private bool _isMoving;
     public bool isulti=false;
     public bool from_left = false;
     public bool is_left = true;
     public DeadManager _dead;
-    public Sounds sounds;
+    public SoundManager sounds;
     [SerializeField] private TextMeshProUGUI highscore;
     private TextMeshPro high_score;
     private GameObject box;
@@ -30,7 +30,7 @@ public class Walking : MonoBehaviour
 
     private void Start()
     {
-        sounds = FindObjectOfType<Sounds>();
+        sounds = FindObjectOfType<SoundManager>();
         high_score = highscoreObject.GetComponentInChildren<TextMeshPro>();
         highScore = PlayerPrefs.GetInt("hs");
         highscore.text = highScore.ToString();
