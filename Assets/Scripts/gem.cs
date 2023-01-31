@@ -22,14 +22,18 @@ public class gem : MonoBehaviour
             //animator.SetTrigger("collect");
             _walking._coins+=worth;
             _walking.sounds.PlayXpCollection();
-            taken = true;
             gameObject.SetActive(false);
+            taken = true;
         }
     }
 
     private void OnDisable()
     {
-        if(taken)gameObject.SetActive(true);
+        if (taken)
+        {
+            gameObject.SetActive(true);
+            Debug.Log("tick");
+        }
         taken = false;
         
     }

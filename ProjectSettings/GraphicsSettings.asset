@@ -101,7 +101,7 @@ GraphicsSettings:
     m_BuildTarget: 7
     m_Tier: 0
     m_Settings:
-      standardShaderQuality: 1
+      standardShaderQuality: 0
       renderingPath: 1
       hdrMode: 2
       realtimeGICPUUsage: 25
@@ -165,6 +165,4 @@ GraphicsSettings:
   m_LightsUseColorTemperature: 1
   m_DefaultRenderingLayerMask: 1
   m_LogWhenShaderIsCompiled: 0
-  m_SRPDefaultSettings:
-    UnityEngine.Rendering.Universal.UniversalRenderPipeline: {fileID: 11400000, guid: c1eeb1e915268854490803c1c8340cf1,
-      type: 2}
+  m_SRPDefaultSettings: {}
