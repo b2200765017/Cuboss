@@ -26,7 +26,7 @@ Material:
   m_InvalidKeywords:
   - _ENVIRONMENTREFLECTIONS_OFF
   m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
+  m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -104,7 +104,7 @@ Material:
     - _DstBlend: 0
     - _EnvironmentReflections: 0
     - _GlossMapScale: 1
-    - _Glossiness: 0.74545455
+    - _Glossiness: 0.98
     - _GlossyReflections: 1
     - _Metallic: 0
     - _Mode: 0
