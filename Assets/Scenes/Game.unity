@@ -2165,12 +2165,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6143256982755011905}
   m_PrefabAsset: {fileID: 0}
---- !u!198 &1188545790 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 6143256981661231546, guid: 113b16d76c024d642a2ec159a4d5213d,
-    type: 3}
-  m_PrefabInstance: {fileID: 6143256982755011905}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1363021790
 GameObject:
   m_ObjectHideFlags: 0
@@ -2255,7 +2249,7 @@ MonoBehaviour:
   characterAnimator: {fileID: 0}
   penguen: {fileID: 543450652344530130}
   rotation_speed: 10
-  particleSystem: {fileID: 1188545790}
+  particleSystem: {fileID: 0}
   snowSpeedIncreaseRate: 0.2
   delayTime: 5
 --- !u!4 &1363021795
@@ -6182,7 +6176,7 @@ PrefabInstance:
     - target: {fileID: 6143256981661231546, guid: 113b16d76c024d642a2ec159a4d5213d,
         type: 3}
       propertyPath: InitialModule.startSize.scalar
-      value: 0.06
+      value: 0.045
       objectReference: {fileID: 0}
     - target: {fileID: 6143256981661231546, guid: 113b16d76c024d642a2ec159a4d5213d,
         type: 3}
@@ -6192,7 +6186,7 @@ PrefabInstance:
     - target: {fileID: 6143256981661231546, guid: 113b16d76c024d642a2ec159a4d5213d,
         type: 3}
       propertyPath: InitialModule.startSize.minScalar
-      value: 0.025
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 6143256981661231546, guid: 113b16d76c024d642a2ec159a4d5213d,
         type: 3}
@@ -6961,7 +6955,7 @@ MonoBehaviour:
   _time: {fileID: 1554145812}
   restartButton: {fileID: 1971075302}
   _deadManager: {fileID: 1363021798}
-  timeLeft: 2.13
+  timeLeft: 2.1
   pointsText: {fileID: 7916640492064475638}
   coinsText: {fileID: 7916640490792858795}
   heartText: {fileID: 171622459}
