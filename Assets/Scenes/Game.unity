@@ -187,7 +187,7 @@ MonoBehaviour:
 '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e43c120e8d5fdec47950d6e91d1848c7, type: 2}
-  m_sharedMaterial: {fileID: 1926901285617879872, guid: cf6079b0b8b4dcf4abcddcfc49fbc3e5,
+  m_sharedMaterial: {fileID: 4739159110683287884, guid: e43c120e8d5fdec47950d6e91d1848c7,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -609,7 +609,7 @@ MonoBehaviour:
 '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e43c120e8d5fdec47950d6e91d1848c7, type: 2}
-  m_sharedMaterial: {fileID: 1926901285617879872, guid: cf6079b0b8b4dcf4abcddcfc49fbc3e5,
+  m_sharedMaterial: {fileID: 4739159110683287884, guid: e43c120e8d5fdec47950d6e91d1848c7,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -980,7 +980,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 33.1, y: -125}
+  m_AnchoredPosition: {x: 33.100098, y: -125}
   m_SizeDelta: {x: 300, y: 50}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &615217257
@@ -1375,14 +1375,14 @@ MonoBehaviour:
 '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e43c120e8d5fdec47950d6e91d1848c7, type: 2}
-  m_sharedMaterial: {fileID: 1926901285617879872, guid: cf6079b0b8b4dcf4abcddcfc49fbc3e5,
+  m_sharedMaterial: {fileID: 4739159110683287884, guid: e43c120e8d5fdec47950d6e91d1848c7,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278210047
+    rgba: 4283980031
   m_fontColor: {r: 1, g: 0.34509805, b: 0.34509805, a: 1}
   m_enableVertexGradient: 1
   m_colorMode: 2
@@ -2165,6 +2165,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6143256982755011905}
   m_PrefabAsset: {fileID: 0}
+--- !u!198 &1188545790 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 6143256981661231546, guid: 113b16d76c024d642a2ec159a4d5213d,
+    type: 3}
+  m_PrefabInstance: {fileID: 6143256982755011905}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1363021790
 GameObject:
   m_ObjectHideFlags: 0
@@ -2248,7 +2254,10 @@ MonoBehaviour:
   worldManager: {fileID: 1363021791}
   characterAnimator: {fileID: 0}
   penguen: {fileID: 543450652344530130}
-  speed: 10
+  rotation_speed: 10
+  particleSystem: {fileID: 1188545790}
+  snowSpeedIncreaseRate: 0.2
+  delayTime: 5
 --- !u!4 &1363021795
 Transform:
   m_ObjectHideFlags: 0
@@ -5475,7 +5484,7 @@ MonoBehaviour:
 '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e43c120e8d5fdec47950d6e91d1848c7, type: 2}
-  m_sharedMaterial: {fileID: 1926901285617879872, guid: cf6079b0b8b4dcf4abcddcfc49fbc3e5,
+  m_sharedMaterial: {fileID: 4739159110683287884, guid: e43c120e8d5fdec47950d6e91d1848c7,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -6189,6 +6198,21 @@ PrefabInstance:
         type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
       value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 6143256981661231546, guid: 113b16d76c024d642a2ec159a4d5213d,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6143256981661231546, guid: 113b16d76c024d642a2ec159a4d5213d,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6143256981661231546, guid: 113b16d76c024d642a2ec159a4d5213d,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6143256981661231547, guid: 113b16d76c024d642a2ec159a4d5213d,
         type: 3}
