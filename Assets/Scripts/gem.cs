@@ -21,6 +21,7 @@ public class gem : MonoBehaviour
             //animator = transform.GetComponent<Animator>();
             //animator.SetTrigger("collect");
             _walking._coins+=worth;
+            if (_walking.sounds == null) _walking.sounds = FindObjectOfType<SoundManager>();
             _walking.sounds.PlayXpCollection();
             gameObject.SetActive(false);
             taken = true;
@@ -32,10 +33,8 @@ public class gem : MonoBehaviour
         if (taken)
         {
             gameObject.SetActive(true);
-            Debug.Log("tick");
         }
         taken = false;
-        
     }
     
 }

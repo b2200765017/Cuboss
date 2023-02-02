@@ -6,19 +6,41 @@ using UnityEngine.UI;
 
 public class mainmenugm : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-   
-    }
+    private bool isHowToMenuOpened = false;
+    public Animator HowToMenuAnimator;
+    public AudioSource MenuMusicSource;
+    public Image musicOff;
+    public Image musicOn;
+    
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     public void OnPlayButtonDown()
     {
         SceneManager.LoadScene(1);
     }
+
+    public void EnterExitHowToMenu()
+    {
+
+        if (!isHowToMenuOpened) HowToMenuAnimator.SetTrigger("open");
+        else HowToMenuAnimator.SetTrigger("close");
+        isHowToMenuOpened = !isHowToMenuOpened;
+    }
+
+    public void MusicButton()
+    {
+        if (musicOn.enabled)
+        {
+            musicOn.enabled = false;
+            musicOff.enabled = true;
+            MenuMusicSource.Stop();
+        }
+        else
+        {
+            musicOn.enabled = true;
+            musicOff.enabled = false;
+            MenuMusicSource.Play();
+        }
+    }
+
+
 }
