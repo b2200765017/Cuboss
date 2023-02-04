@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Textures 3
   m_EditorClassIdentifier: 
   isBought: 0
-  item: {fileID: 2800000, guid: 48e437302e8cc4e47a17797a21c02f69, type: 3}
+  item: {fileID: 2800000, guid: 65baf155a7ada9d40a80353bcc83ffa2, type: 3}
   itemPrice: 100
