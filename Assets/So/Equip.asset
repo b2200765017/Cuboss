@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 161fdbf90571080488aaf9ad841fe38a, type: 3}
   m_Name: Equip
   m_EditorClassIdentifier: 
-  head: {fileID: 0}
+  head: {fileID: 11400000, guid: 87c3c5b0e6a93044d947639b1da7d8f1, type: 2}
+  Texture: {fileID: 2800000, guid: ec7d8e8c1a28d384b9f5a0dc3851d74f, type: 3}

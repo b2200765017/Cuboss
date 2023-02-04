@@ -8,6 +8,8 @@ using UnityEngine.UI;
 
 public class DeadManager : MonoBehaviour
 {
+    private const string GEM_COUNT = "GemCount";
+    
     public bool dead = false;
     private Transform _transform;
     [SerializeField] private Walking _walking;
@@ -46,6 +48,8 @@ public class DeadManager : MonoBehaviour
             {
                 gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0,20,random), ForceMode.Force);
             }
+            
+            PlayerPrefs.SetInt(GEM_COUNT, PlayerPrefs.GetInt(GEM_COUNT, 0) + _walking._coins);
             _restart.SetActive(true);
             score1.text = score.text;
             score.gameObject.SetActive(false);
