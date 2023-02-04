@@ -2250,7 +2250,7 @@ MonoBehaviour:
   penguen: {fileID: 543450652344530130}
   rotation_speed: 10
   particleSystem: {fileID: 1996333671}
-  snowSpeedIncreaseRate: 0.2
+  snowSpeedIncreaseRate: 0.05
   delayTime: 5
 --- !u!4 &1363021795
 Transform:
