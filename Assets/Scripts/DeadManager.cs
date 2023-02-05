@@ -21,6 +21,7 @@ public class DeadManager : MonoBehaviour
     public TextMeshProUGUI coins1;
     [SerializeField] private bestScore _bestScore;
     [SerializeField] private CameraMovement _cameraMovement;
+    [SerializeField] private Button rewardAds;
     void Start()
     {
         _transform = gameObject.transform;
@@ -30,6 +31,7 @@ public class DeadManager : MonoBehaviour
         float value = Mathf.Abs(_transform.position.x + _transform.position.z);
         if (value > 8.5f | dead)
         {
+            rewardAds.interactable = true;
             if (_walking._points > PlayerPrefs.GetInt("hs"))
             {
                 PlayerPrefs.SetInt("hs",_walking._points);
