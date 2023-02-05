@@ -2448,6 +2448,8 @@ MonoBehaviour:
   EquipButtonGO: {fileID: 311629245}
   GemText: {fileID: 2112878229}
   PrizeText: {fileID: 1465430737}
+  headLock: {fileID: 380146459}
+  textureLock: {fileID: 158867465}
 --- !u!1 &997154058
 GameObject:
   m_ObjectHideFlags: 0
