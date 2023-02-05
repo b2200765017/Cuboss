@@ -1,13 +1,10 @@
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
-using System.Text;
 
 public class UIManager : MonoBehaviour
 {
     [SerializeField] GameObject player;
-    [SerializeField] TextMeshProUGUI _time;
     [SerializeField] GameObject restartButton;
     [SerializeField] DeadManager _deadManager;
     public float timeLeft=3;
@@ -24,7 +21,6 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _time.text = "3";
         Application.targetFrameRate = 500;
         QualitySettings.vSyncCount = 0;
         _walking = player.GetComponent<Walking>();
@@ -33,38 +29,37 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_deadManager.dead)
-        {
-            restartButton.SetActive(true);
-        }
-        
-
-        if (_points != _walking._points)
-        {
-            pointsText.text = _walking._points.ToString();
-            _points = _walking._points;
-        }
-
-        if (_coins != _walking._coins)
-        {
-            coinsText.text = _walking._coins.ToString();
-            _coins = _walking._coins;
-        }if (_hearts != _walking.heart)
-        {
-            heartText.text = _walking.heart.ToString();
-            _hearts = _walking.heart;
-        }
-
         if (!gameStarted)
         {
-            _time.text = ((int) timeLeft+1).ToString();
             timeLeft -= Time.deltaTime;
             if ( timeLeft < 0 && !gameStarted )
             {
                 gameStarted = true;
-                _time.text = "";
-                _walking._isplay = true;
+                _walking.isplay = true;
             }
+        }
+        else
+        {
+            if (_deadManager.dead)
+            {
+                restartButton.SetActive(true);
+            }
+        
+            if (_points != _walking.points)
+            {
+                pointsText.text = _walking.points.ToString();
+                _points = _walking.points;
+            }
+
+            if (_coins != _walking.coins)
+            {
+                coinsText.text = _walking.coins.ToString();
+                _coins = _walking.coins;
+            }if (_hearts != _walking.heart)
+            {
+                heartText.text = _walking.heart.ToString();
+                _hearts = _walking.heart;
+            }       
         }
         
 
@@ -73,7 +68,7 @@ public class UIManager : MonoBehaviour
 
     public void RestartButton()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(1);
     }
     public void MainButton()
     {

@@ -18,7 +18,7 @@ public class enemy : MonoBehaviour
             if (isTree)
             {
                 animator.enabled = true;
-                if (!other.gameObject.GetComponent<Walking>().from_left )
+                if (!other.gameObject.GetComponent<Walking>().fromLeft )
                 {
                     transform.Rotate(0, -90, 0);
                     

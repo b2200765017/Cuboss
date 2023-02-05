@@ -1,60 +1,50 @@
-using System.Collections;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using Random = UnityEngine.Random;
-using Vector3 = UnityEngine.Vector3;
 public class Walking : MonoBehaviour
 {
-    public float _rollSpeed = 5;
+    public float rollSpeed = 5;
     [SerializeField] private GameObject highscoreObject;
-    public int heart=0;
-    public int heartp=0;
-    public int _points;
-    public int _coins = 0;
-    public bool _isplay = false;
+    public int heart;
+    public int heartp;
+    public int points;
+    public int coins;
+    public bool isplay;
     private bool _isMoving;
-    public bool isulti=false;
-    public bool from_left = false;
-    public bool is_left = true;
-    public DeadManager _dead;
+    public bool fromLeft;
+    public bool isLeft = true;
     public SoundManager sounds;
     [SerializeField] private TextMeshProUGUI highscore;
-    private TextMeshPro high_score;
-    private GameObject box;
+    private TextMeshPro _highScore;
+    private GameObject _box;
     public World_Manager worldManager;
-    [SerializeField] private Animator characterAnimator;
-    private float playerOffset = 0;
+    private float _playerOffset;
     private int highScore;
     [SerializeField] private Transform penguen;
     public float rotation_speed = 2f;
-    public ParticleSystem particleSystem;
-    public float snowSpeedIncreaseRate= 0.3f;
-    private WaitForSeconds delay;
-    public float delayTime;
+
+    private float delayMaxTime = 5f;
+    private float rollspeedTime;
+    
 
     private void Start()
     {
-        delay = new WaitForSeconds(delayTime);
         sounds = FindObjectOfType<SoundManager>();
-        high_score = highscoreObject.GetComponentInChildren<TextMeshPro>();
+        _highScore = highscoreObject.GetComponentInChildren<TextMeshPro>();
         highScore = PlayerPrefs.GetInt("hs");
         highscore.text = highScore.ToString();
-        high_score.text += highScore.ToString();
+        _highScore.text += highScore.ToString();
         if (highScore >= 10)
         {
             highscoreObject.transform.position = new Vector3(-(highScore * 2) + 3, 0, (highScore * 2) - 3);
         }
         Time.timeScale = 1;
-        StartCoroutine(particlesystem());
     }
 
     private void Update()
     {
-
         float t = Time.deltaTime;
-        Vector3 a = new Vector3(0, 0, 0);
-        if (is_left)
+        if (isLeft)
         {
             penguen.rotation = Quaternion.Slerp(penguen.rotation, Quaternion.Euler(0, -90, 0), t * rotation_speed);
         }
@@ -62,26 +52,18 @@ public class Walking : MonoBehaviour
         {
             penguen.rotation = Quaternion.Slerp(penguen.rotation, Quaternion.Euler(0, 0, 0), t * rotation_speed);
         }
-        //characterAnimator.SetFloat("Blend",(penguen.eulerAngles.y-270)/90);
 
-        if (worldManager.offset - playerOffset < 20)
+        if (worldManager.offset - _playerOffset < 20)
         {
             int index = Random.Range(0, worldManager._patternsList.Count);
-            Patterns pattern = worldManager._patternsList[index];
-            worldManager.prefabPattern(pattern);
+            worldManager.prefabPattern(worldManager._patternsList[index]);
         }
 
-        if (_isplay)
+        if (isplay)
         {
-            if (_points > highScore)
-            {
-                highscore.text = _points.ToString();
-            }
-
             if (Input.GetMouseButtonDown(0)|| Input.GetKeyDown(KeyCode.Space))
             {
-                is_left = !is_left;
-
+                isLeft = !isLeft;
                 Rotating();
                 return;
             }
@@ -92,49 +74,40 @@ public class Walking : MonoBehaviour
 
     public void Rotating()
     {
-        if (is_left)
+        var position = transform.position;
+        _playerOffset = (-position.x + position.z + 4) / 4;
+        points = (int)_playerOffset;
+
+        // hızı 5 saniyede bir arttırıyoruz
+        rollspeedTime -= Time.deltaTime;
+        if (rollspeedTime >= delayMaxTime)
         {
-            from_left = false;
-            Assemble(Vector3.left);
+            Assemble();
+            rollspeedTime = 0f;
+        }
+        
+        if (isLeft)
+        {
+            fromLeft = false;
+            transform.Translate(Vector3.left * (Time.deltaTime * rollSpeed));
         }
         else
         {
-            from_left = true;
-            Assemble(Vector3.forward);
+            fromLeft = true;
+            transform.Translate(Vector3.forward * (Time.deltaTime * rollSpeed));
         }
+
     }
 
-    public void Assemble(Vector3 dir)
+    public void Assemble()
     {
-        var position = transform.position;
-        playerOffset = (-position.x + position.z + 4) / 4;
-        _points = (int)playerOffset;
-        if (_rollSpeed < 10&&_rollSpeed >= 7)
-        {
-            _rollSpeed += 2*Time.deltaTime / 10; 
-        }
-        else if (_rollSpeed < 7)
-        {
-            _rollSpeed += 5f*Time.deltaTime / 10;
-        }
-        else if(_rollSpeed>10 && _rollSpeed<15)
-        {
-            _rollSpeed += Time.deltaTime / 10;
-        }
-
-
+        if (rollSpeed < 10&&rollSpeed >= 7)   rollSpeed += 2*Time.deltaTime / 10;
         
+        else if (rollSpeed < 7)    rollSpeed += 5f*Time.deltaTime / 10;
         
-        transform.Translate(dir * (Time.deltaTime * _rollSpeed));
+        else if(rollSpeed > 10 && rollSpeed<15)   rollSpeed += Time.deltaTime / 10;
+        
+        else rollSpeed +=   Time.deltaTime / 25;
     }
-
-    IEnumerator particlesystem()
-    {
-        while (true)
-        {
-            yield return delay;
-            var main = particleSystem.main;
-            main.simulationSpeed += snowSpeedIncreaseRate;
-        }
-    }
+    
 }

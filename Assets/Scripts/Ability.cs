@@ -25,7 +25,7 @@ public class Ability : MonoBehaviour
                 {
                     onSlowMo = false;
                     StartCoroutine(timeback());
-                    _walking.is_left = !_walking.is_left;
+                    _walking.isLeft = !_walking.isLeft;
                     _walking.Rotating();
                     is_activated--;
                 }

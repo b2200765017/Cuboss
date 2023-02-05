@@ -20,7 +20,7 @@ public class gem : MonoBehaviour
         {
             //animator = transform.GetComponent<Animator>();
             //animator.SetTrigger("collect");
-            _walking._coins+=worth;
+            _walking.coins+=worth;
             if (_walking.sounds == null) _walking.sounds = FindObjectOfType<SoundManager>();
             _walking.sounds.PlayXpCollection();
             gameObject.SetActive(false);
