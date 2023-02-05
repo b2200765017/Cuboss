@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 129ea14c691fd064ea2d66ccff9e9110, type: 3}
   m_Name: Textures 2
   m_EditorClassIdentifier: 
-  isBought: 0
+  isBought: 1
   item: {fileID: 2800000, guid: 22c5ffe521f3d7c4c858543bbac4a3df, type: 3}
   itemPrice: 100
