@@ -716,6 +716,10 @@ MonoBehaviour:
       item: {fileID: 5482863274174233233, guid: 808f8ffacc35b0b4098ba6da54d3571b,
         type: 3}
       itemPrice: 200
+    - isBought: 0
+      item: {fileID: 7595459185336742974, guid: 880f9b6ba3a34a946a5e9728cd7e49b5,
+        type: 3}
+      itemPrice: 300
     EquipedPrefab: {fileID: 4485707420167102074, guid: e3d2e623eee01d642ab6943930c8ca56,
       type: 3}
     EquipedTexture: {fileID: 0}
@@ -1192,7 +1196,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &398737798
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2480,7 +2484,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7239be6fb1ddf4bee895c2fa6c967646, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movingSpeed: 4
   m_playerTransform: {fileID: 0}
 --- !u!81 &946216556
 AudioListener:

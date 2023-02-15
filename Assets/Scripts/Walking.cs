@@ -21,9 +21,9 @@ public class Walking : MonoBehaviour
     private float _playerOffset;
     private int highScore;
     [SerializeField] private Transform penguen;
-    public float rotation_speed = 2f;
+    [SerializeField] public float rotation_speed = 2f;
 
-    private float delayMaxTime = 5f;
+    [SerializeField] private float delayMaxTime = 5f;
     private float rollspeedTime;
     
 
