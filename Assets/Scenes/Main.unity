@@ -1230,9 +1230,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45aa98222c36845428802809c7536979, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _androidGameId: 5150297
-  _iOSGameId: 5150296
-  _testMode: 1
 --- !u!114 &398737800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1351,8 +1348,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0014ef1c337532b4db86dc70c9d484f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _androidAdUnitId: Interstitial_Android
-  _iOsAdUnitId: Interstitial_iOS
 --- !u!1001 &428213130
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2451,27 +2446,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_RenderShadows: 1
-  m_RequiresDepthTextureOption: 1
-  m_RequiresOpaqueTextureOption: 2
-  m_CameraType: 0
-  m_Cameras: []
-  m_RendererIndex: 0
-  m_VolumeLayerMask:
-    serializedVersion: 2
-    m_Bits: 1
-  m_VolumeTrigger: {fileID: 0}
-  m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 1
-  m_Antialiasing: 0
-  m_AntialiasingQuality: 2
-  m_StopNaN: 0
-  m_Dithering: 0
-  m_ClearDepth: 1
-  m_AllowXRRendering: 1
-  m_RequiresDepthTexture: 0
-  m_RequiresColorTexture: 0
-  m_Version: 2
 --- !u!114 &946216555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5044,14 +5018,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Version: 1
-  m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
-  m_LightLayerMask: 1
-  m_CustomShadowLayers: 0
-  m_ShadowLayerMask: 1
-  m_LightCookieSize: {x: 1, y: 1}
-  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1 &2010282507
 GameObject:
   m_ObjectHideFlags: 0
