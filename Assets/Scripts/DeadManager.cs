@@ -45,7 +45,7 @@ public class DeadManager : MonoBehaviour
             {
                 gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0,20,random), ForceMode.Force);
             }
-            
+            SoundManager.instance.Play("GameOver");
             PlayerPrefs.SetInt(GEM_COUNT, PlayerPrefs.GetInt(GEM_COUNT, 0) + _walking.coins);
             _restart.SetActive(true);
             score1.text = score.text;

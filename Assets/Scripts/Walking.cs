@@ -67,7 +67,9 @@ public class Walking : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0)|| Input.GetKeyDown(KeyCode.Space))
             {
+                SoundManager.instance.PlaySlide();
                 _particleSystem.Play();
+                
                 yValue = (particleTransform.localEulerAngles.y + 180f) % 360;
                 particleTransform.eulerAngles = new Vector3(0,  yValue, 0);
                 isLeft = !isLeft;
