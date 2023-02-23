@@ -22,14 +22,18 @@ public class Walking : MonoBehaviour
     private int highScore;
     [SerializeField] private Transform penguen;
     [SerializeField] public float rotation_speed = 2f;
+    private float yValue;
 
     [SerializeField] private float delayMaxTime = 5f;
     private float rollspeedTime;
-    
+
+    private Transform particleTransform;
+    [SerializeField] private ParticleSystem _particleSystem;
 
     private void Start()
     {
         sounds = FindObjectOfType<SoundManager>();
+        particleTransform = _particleSystem.gameObject.transform;
         _highScore = highscoreObject.GetComponentInChildren<TextMeshPro>();
         highScore = PlayerPrefs.GetInt("hs");
         highscore.text = highScore.ToString();
@@ -63,6 +67,9 @@ public class Walking : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0)|| Input.GetKeyDown(KeyCode.Space))
             {
+                _particleSystem.Play();
+                yValue = (particleTransform.localEulerAngles.y + 180f) % 360;
+                particleTransform.eulerAngles = new Vector3(0,  yValue, 0);
                 isLeft = !isLeft;
                 Rotating();
                 return;
@@ -108,6 +115,7 @@ public class Walking : MonoBehaviour
         else if(rollSpeed > 10 && rollSpeed<15)   rollSpeed += Time.deltaTime / 10;
         
         else rollSpeed +=   Time.deltaTime / 25;
+        
     }
     
 }
