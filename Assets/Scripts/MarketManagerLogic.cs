@@ -1,29 +1,27 @@
 using System;
-using System.Net.Mime;
-using UnityEditor;
 using UnityEngine;
-using UnityEngine.SubsystemsImplementation;
-
+[Serializable]
+public class Head
+{
+    public bool isBought = false;
+    public GameObject item;
+    public int itemPrice;
+}
+    
+[Serializable]
+public class TextureItem
+{   
+    public bool isBought = false;
+    public Texture item;
+    public int itemPrice; 
+}
 public class MarketManagerLogic : MonoBehaviour
 {
     private const string saveKey = "MarketSave";
     private const string saveKey2 = "MarketSave2";
     
-    [Serializable]
-    public class Head
-    {
-        public bool isBought = false;
-        public GameObject item;
-        public int itemPrice;
-    }
-    
-    [Serializable]
-    public class TextureItem
-    {   
-        public bool isBought = false;
-        public Texture item;
-        public int itemPrice; 
-    }
+
+
     
     [SerializeField] public ItemList<Head> HeadList;
     [SerializeField] public ItemList<TextureItem> TextureList;
@@ -75,7 +73,10 @@ public class MarketManagerLogic : MonoBehaviour
     }
     public int GetSumOfPrizes()
     {
-        return TextureList.GetCurrentItem().itemPrice + HeadList.GetCurrentItem().itemPrice;
+        int sum = 0;
+        if (!IsHeadEquipable()) sum += HeadList.GetCurrentItem().itemPrice;
+        if (!IsTextureEquipable()) sum += TextureList.GetCurrentItem().itemPrice;
+        return sum;
     }
 
     public void DestroyItems()
@@ -143,6 +144,14 @@ public class MarketManagerLogic : MonoBehaviour
         TextureList.SetCurrentItem(textureItem);
         HeadList.SetCurrentItem(head);
     }
+
+    public bool EquipedCheck()
+    {
+        if (HeadList.GetEquipedPrefab() == HeadList.GetCurrentItem().item &&
+            TextureList.GetEquipedTexture() == TextureList.GetCurrentItem().item) return true;
+        return false;
+    }
+    
 }
 
     

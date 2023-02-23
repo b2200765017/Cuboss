@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,11 +12,19 @@ public class mainmenugm : MonoBehaviour
     public AudioSource MenuMusicSource;
     public Image musicOff;
     public Image musicOn;
-    
+    private const string MenuMusicEnabled = "MenuMusic";
 
     public void OnPlayButtonDown()
     {
         SceneManager.LoadScene(1);
+    }
+
+    private void Start()
+    {
+        if (PlayerPrefs.GetInt(MenuMusicEnabled, 1) == 0)
+        {
+            MusicButton();
+        }
     }
 
     public void EnterExitHowToMenu()
@@ -32,14 +41,17 @@ public class mainmenugm : MonoBehaviour
         {
             musicOn.enabled = false;
             musicOff.enabled = true;
-            MenuMusicSource.Stop();
+            MenuMusicSource.Pause();
+            PlayerPrefs.SetInt(MenuMusicEnabled, 0);
         }
         else
         {
             musicOn.enabled = true;
             musicOff.enabled = false;
-            MenuMusicSource.Play();
+            MenuMusicSource.UnPause();
+            PlayerPrefs.SetInt(MenuMusicEnabled, 1);
         }
+        PlayerPrefs.Save();
     }
 
 

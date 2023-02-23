@@ -97,6 +97,8 @@ public class MarketManagerUI : MonoBehaviour
         {
             // When it clicks to equip the items
             MarketManagerLogic.Instance.SetEquipedClothes();
+            // Disable the equip button
+            equipButton.gameObject.SetActive(false);
         });
         
         GemManager.Instance.OnGemChanged += GemManager_OnGemChanged;
@@ -131,7 +133,8 @@ public class MarketManagerUI : MonoBehaviour
         {
             PrizeText.enabled = false;
             BuyButtonGO.SetActive(false);
-            EquipButtonGO.SetActive(true);
+            if (!MarketManagerLogic.Instance.EquipedCheck()) EquipButtonGO.SetActive(true);
+            else  EquipButtonGO.SetActive(false);
             headLock.enabled = false;
             textureLock.enabled = false;
             return;
