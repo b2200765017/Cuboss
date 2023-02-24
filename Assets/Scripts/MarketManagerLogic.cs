@@ -102,6 +102,7 @@ public class MarketManagerLogic : MonoBehaviour
             GemManager.Instance.DecreaseGem(prize);
             HeadList.GetCurrentItem().isBought = true;
             TextureList.GetCurrentItem().isBought = true;
+            SoundManager.instance.Play("BuySFX");
         }
     }
     public bool IsHeadEquipable()

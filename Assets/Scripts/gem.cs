@@ -28,13 +28,5 @@ public class gem : MonoBehaviour
         }
     }
 
-    private void OnDisable()
-    {
-        if (taken)
-        {
-            gameObject.SetActive(true);
-        }
-        taken = false;
-    }
     
 }

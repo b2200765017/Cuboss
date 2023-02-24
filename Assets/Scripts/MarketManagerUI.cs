@@ -43,6 +43,7 @@ public class MarketManagerUI : MonoBehaviour
             int sumOfPrizes = MarketManagerLogic.Instance.GetSumOfPrizes();
             SetPrize(sumOfPrizes);
             ChangeBuyEquipButton();
+            SoundManager.instance.Play("Click");
         });
         headLeftButton.onClick.AddListener(() =>
         {
@@ -51,6 +52,7 @@ public class MarketManagerUI : MonoBehaviour
             int sumOfPrizes = MarketManagerLogic.Instance.GetSumOfPrizes();
             SetPrize(sumOfPrizes);
             ChangeBuyEquipButton();
+            SoundManager.instance.Play("Click");
         });        
         textureRightButton.onClick.AddListener(() =>
         {
@@ -59,6 +61,7 @@ public class MarketManagerUI : MonoBehaviour
             int sumOfPrizes = MarketManagerLogic.Instance.GetSumOfPrizes();
             SetPrize(sumOfPrizes);
             ChangeBuyEquipButton();
+            SoundManager.instance.Play("Click");
         });
         textureLeftButton.onClick.AddListener(() =>
         {
@@ -67,6 +70,7 @@ public class MarketManagerUI : MonoBehaviour
             int sumOfPrizes = MarketManagerLogic.Instance.GetSumOfPrizes();
             SetPrize(sumOfPrizes);
             ChangeBuyEquipButton();
+            SoundManager.instance.Play("Click");
         });
         marketButton.onClick.AddListener(() =>
         {
@@ -78,6 +82,7 @@ public class MarketManagerUI : MonoBehaviour
             int sumOfPrizes = MarketManagerLogic.Instance.GetSumOfPrizes();
             MarketManagerLogic.Instance.DefaultMarket();
             SetPrize(sumOfPrizes);
+            SoundManager.instance.Play("Click");
             ChangeBuyEquipButton();
         });
         marketBackButton.onClick.AddListener(() =>
@@ -85,6 +90,7 @@ public class MarketManagerUI : MonoBehaviour
             HidePanel();
             PlayButton.SetActive(true);
             MarketManagerLogic.Instance.TakeOnEquipedClothes();
+            SoundManager.instance.Play("Click");
             ChangeMarketButton();
         });
         buyButton.onClick.AddListener(() =>
@@ -98,6 +104,7 @@ public class MarketManagerUI : MonoBehaviour
             // When it clicks to equip the items
             MarketManagerLogic.Instance.SetEquipedClothes();
             // Disable the equip button
+            SoundManager.instance.Play("Click");
             equipButton.gameObject.SetActive(false);
         });
         

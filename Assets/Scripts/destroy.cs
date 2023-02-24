@@ -5,13 +5,7 @@ using UnityEngine;
 public class destroy : MonoBehaviour
 {
     [SerializeField] private int time;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
     void Update()
     {
         Destroy(this.gameObject,time);

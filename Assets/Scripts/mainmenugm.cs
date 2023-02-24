@@ -9,18 +9,21 @@ public class mainmenugm : MonoBehaviour
 {
     private bool isHowToMenuOpened = false;
     public Animator HowToMenuAnimator;
-    public AudioSource MenuMusicSource;
+    private AudioSource MenuMusicSource;
     public Image musicOff;
     public Image musicOn;
     private const string MenuMusicEnabled = "MenuMusic";
 
     public void OnPlayButtonDown()
     {
-        SceneManager.LoadScene(1);
+       Loader.Load(Loader.Scene.Game);
     }
 
     private void Start()
     {
+        Application.targetFrameRate = 60;
+        QualitySettings.vSyncCount = 1;
+        MenuMusicSource = SoundManager.instance._sounds[0].source;
         if (PlayerPrefs.GetInt(MenuMusicEnabled, 1) == 0)
         {
             MusicButton();
