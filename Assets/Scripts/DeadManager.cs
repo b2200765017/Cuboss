@@ -14,6 +14,7 @@ public class DeadManager : MonoBehaviour
     public TextMeshProUGUI score1;
     public TextMeshProUGUI coins;
     public TrailRenderer trail;
+    public ParticleSystem watersplash;
     public TextMeshProUGUI coins1;
     [SerializeField] private CameraMovement _cameraMovement;
     void Start()
@@ -50,6 +51,7 @@ public class DeadManager : MonoBehaviour
             score.gameObject.SetActive(false);
             coins1.text = coins.text;
             coins.gameObject.SetActive(false);
+            watersplash.Play();
             //gameObject.SetActive(false);
             dead = false;
             this.enabled = false;
