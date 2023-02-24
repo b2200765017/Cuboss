@@ -16,7 +16,6 @@ public class DeadManager : MonoBehaviour
     public TrailRenderer trail;
     public TextMeshProUGUI coins1;
     [SerializeField] private CameraMovement _cameraMovement;
-    [SerializeField] private Button rewardAds;
     void Start()
     {
         _transform = gameObject.transform;
@@ -26,7 +25,6 @@ public class DeadManager : MonoBehaviour
         float value = Mathf.Abs(_transform.position.x + _transform.position.z);
         if (value > 8.5f | dead)
         {
-            rewardAds.interactable = true;
             if (_walking.points > PlayerPrefs.GetInt("hs"))
             {
                 PlayerPrefs.SetInt("hs",_walking.points);

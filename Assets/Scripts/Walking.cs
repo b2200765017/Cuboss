@@ -23,9 +23,7 @@ public class Walking : MonoBehaviour
     [SerializeField] private Transform penguen;
     [SerializeField] public float rotation_speed = 2f;
     private float yValue;
-
-    [SerializeField] private float delayMaxTime = 5f;
-    private float rollspeedTime;
+    
 
     private Transform particleTransform;
     [SerializeField] private ParticleSystem _particleSystem;
@@ -87,14 +85,9 @@ public class Walking : MonoBehaviour
         _playerOffset = (-position.x + position.z + 4) / 4;
         points = (int)_playerOffset;
 
-        // hızı 5 saniyede bir arttırıyoruz
-        rollspeedTime -= Time.deltaTime;
-        if (rollspeedTime >= delayMaxTime)
-        {
-            Assemble();
-            rollspeedTime = 0f;
-        }
-        
+
+        Assemble();
+
         if (isLeft)
         {
             fromLeft = false;
@@ -110,13 +103,13 @@ public class Walking : MonoBehaviour
 
     public void Assemble()
     {
-        if (rollSpeed < 10&&rollSpeed >= 7)   rollSpeed += 2*Time.deltaTime / 10;
+        if (rollSpeed < 10 &&rollSpeed >= 7)   rollSpeed += 5*Time.deltaTime / 10;
         
         else if (rollSpeed < 7)    rollSpeed += 5f*Time.deltaTime / 10;
         
-        else if(rollSpeed > 10 && rollSpeed<15)   rollSpeed += Time.deltaTime / 10;
+        else if(rollSpeed > 10 && rollSpeed<15)   rollSpeed += Time.deltaTime / 20;
         
-        else rollSpeed +=   Time.deltaTime / 25;
+        else rollSpeed +=   Time.deltaTime / 30;
         
     }
     
