@@ -21,8 +21,8 @@ public class mainmenugm : MonoBehaviour
 
     private void Start()
     {
-        Application.targetFrameRate = 60;
-        QualitySettings.vSyncCount = 1;
+        Application.targetFrameRate = 500;
+        QualitySettings.vSyncCount = 0;
         MenuMusicSource = SoundManager.instance._sounds[0].source;
         if (PlayerPrefs.GetInt(MenuMusicEnabled, 1) == 0)
         {
