@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI pointsText;
     [SerializeField] TextMeshProUGUI coinsText;
     [SerializeField] TextMeshProUGUI heartText;
+    
     private int _points;
     private int _coins = 0;
     private int _hearts;
@@ -21,10 +23,14 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Application.targetFrameRate = 500;
-        QualitySettings.vSyncCount = 0;
         _walking = player.GetComponent<Walking>();
+
     }
+
+    private void PlayClickSound()
+    {
+    }
+
 
     // Update is called once per frame
     void Update()
@@ -69,9 +75,11 @@ public class UIManager : MonoBehaviour
     public void RestartButton()
     {
         SceneManager.LoadScene(1);
+        SoundManager.instance.Play("Click");
     }
     public void MainButton()
     {
         SceneManager.LoadScene(0);
+        SoundManager.instance.Play("Click");
     }
 }

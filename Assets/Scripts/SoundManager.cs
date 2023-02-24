@@ -84,4 +84,5 @@ public class SoundManager : MonoBehaviour
         Sound music = _Slides[UnityEngine.Random.Range(0,_Slides.Length)];
         music.source.Play();
     }
+    
 }

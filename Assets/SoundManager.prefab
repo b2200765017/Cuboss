@@ -47,37 +47,94 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sounds:
   - name: Music
-    clip: {fileID: 8300000, guid: 5b3860f7654ff70459fad0b274f696a4, type: 3}
-    volume: 0.02
+    clip: {fileID: 8300000, guid: 90c8cadd762d05e4db011c76ef549114, type: 3}
+    volume: 0.2
     pitch: 1
     source: {fileID: 0}
-    loop: 1
+    loop: 0
+    length: 0
+  - name: Click
+    clip: {fileID: 8300000, guid: 2f1810395f9aa664cad8cbd25f47e5e0, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+    length: 0
+  - name: BuySFX
+    clip: {fileID: 8300000, guid: 699ab845091ea2846a5ad423780962ec, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+    length: 0
+  - name: GameOver
+    clip: {fileID: 8300000, guid: 4b15c43dd92e5014b9d6936c0e2d472d, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
     length: 0
   _xpCollection:
   - name: 1
-    clip: {fileID: 8300000, guid: a85dc30fb1e87d3459717d19b289a898, type: 3}
-    volume: 0.03
+    clip: {fileID: 8300000, guid: b6bb5263c3909884aad552e919f9116f, type: 3}
+    volume: 0.25
     pitch: 1
     source: {fileID: 0}
     loop: 0
     length: 0
   - name: 2
-    clip: {fileID: 8300000, guid: b6bb5263c3909884aad552e919f9116f, type: 3}
-    volume: 0.03
+    clip: {fileID: 8300000, guid: 0e1ea6dbb5063fa4085b6bf17850bfbb, type: 3}
+    volume: 0.25
     pitch: 1
     source: {fileID: 0}
     loop: 0
     length: 0
   - name: 3
-    clip: {fileID: 8300000, guid: 0e1ea6dbb5063fa4085b6bf17850bfbb, type: 3}
-    volume: 0.03
+    clip: {fileID: 8300000, guid: 5756325896269b643b2c8567080a8527, type: 3}
+    volume: 0.25
     pitch: 1
     source: {fileID: 0}
     loop: 0
     length: 0
   - name: 4
-    clip: {fileID: 8300000, guid: 5756325896269b643b2c8567080a8527, type: 3}
-    volume: 0.03
+    clip: {fileID: 8300000, guid: a85dc30fb1e87d3459717d19b289a898, type: 3}
+    volume: 0.25
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+    length: 0
+  _Slides:
+  - name: 1
+    clip: {fileID: 8300000, guid: 63e9fc30783848b46abd35e8b3dde1d3, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+    length: 0
+  - name: 2
+    clip: {fileID: 8300000, guid: 11a37fb3977db714eb9e42405a2ae4e4, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+    length: 0
+  - name: 3
+    clip: {fileID: 8300000, guid: 93768359d7ad4f64582631e26a3c1211, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+    length: 0
+  - name: 4
+    clip: {fileID: 8300000, guid: 89f9d9f0dd184f442bfb4cc668affeb8, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+    length: 0
+  - name: 5
+    clip: {fileID: 8300000, guid: 44df8feff4a55a2459dc462cd5051c0a, type: 3}
+    volume: 1
     pitch: 1
     source: {fileID: 0}
     loop: 0
