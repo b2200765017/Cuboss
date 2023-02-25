@@ -2966,8 +2966,48 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2566279433187599682, guid: 47f50388a27535f47ae6b9b7e698dde7,
         type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.atime1
+      value: 2891
+      objectReference: {fileID: 0}
+    - target: {fileID: 2566279433187599682, guid: 47f50388a27535f47ae6b9b7e698dde7,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.atime3
+      value: 49922
+      objectReference: {fileID: 0}
+    - target: {fileID: 2566279433187599682, guid: 47f50388a27535f47ae6b9b7e698dde7,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.atime4
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 2566279433187599682, guid: 47f50388a27535f47ae6b9b7e698dde7,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.ctime1
+      value: 56283
+      objectReference: {fileID: 0}
+    - target: {fileID: 2566279433187599682, guid: 47f50388a27535f47ae6b9b7e698dde7,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key0.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2566279433187599682, guid: 47f50388a27535f47ae6b9b7e698dde7,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2566279433187599682, guid: 47f50388a27535f47ae6b9b7e698dde7,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key3.a
+      value: 0.95651406
+      objectReference: {fileID: 0}
+    - target: {fileID: 2566279433187599682, guid: 47f50388a27535f47ae6b9b7e698dde7,
+        type: 3}
       propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.size
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2566279433187599682, guid: 47f50388a27535f47ae6b9b7e698dde7,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.m_NumAlphaKeys
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2566279433187599682, guid: 47f50388a27535f47ae6b9b7e698dde7,
         type: 3}
@@ -4726,7 +4766,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.084905684, g: 0.084905684, b: 0.084905684, a: 0.8745098}
+  m_Color: {r: 0.084905684, g: 0.084905684, b: 0.084905684, a: 0.98039216}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
