@@ -5944,12 +5944,12 @@ PrefabInstance:
     - target: {fileID: 3065978986597363347, guid: 3d995367128a9814fa4f77bd306a6195,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.22
+      value: 8.51
       objectReference: {fileID: 0}
     - target: {fileID: 3065978986597363347, guid: 3d995367128a9814fa4f77bd306a6195,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.41
+      value: 0.62
       objectReference: {fileID: 0}
     - target: {fileID: 3065978986597363347, guid: 3d995367128a9814fa4f77bd306a6195,
         type: 3}
@@ -6068,13 +6068,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3065978986597363348, guid: 3d995367128a9814fa4f77bd306a6195,
         type: 3}
+      propertyPath: InitialModule.startColor.minMaxState
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3065978986597363348, guid: 3d995367128a9814fa4f77bd306a6195,
+        type: 3}
       propertyPath: CollisionModule.m_Planes.Array.data[0]
       value: 
       objectReference: {fileID: 1814469148}
     - target: {fileID: 3065978986597363348, guid: 3d995367128a9814fa4f77bd306a6195,
         type: 3}
       propertyPath: ColorModule.gradient.maxGradient.atime1
-      value: 35466
+      value: 51850
       objectReference: {fileID: 0}
     - target: {fileID: 3065978986597363348, guid: 3d995367128a9814fa4f77bd306a6195,
         type: 3}
