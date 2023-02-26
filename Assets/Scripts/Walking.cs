@@ -119,7 +119,7 @@ public class Walking : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter(Collision collision)
+    /* private void OnCollisionEnter(Collision collision)
     {
         WallCooldown wall;
         if (collision.transform.TryGetComponent(out wall))
@@ -127,6 +127,27 @@ public class Walking : MonoBehaviour
             if (wall.isHit)return;
             wall.isHit = true;
             Turn();
+        }
+    }
+*/
+    private void OnTriggerEnter(Collider other)
+    {
+        WallCooldown wall;
+        if (other.transform.TryGetComponent(out wall))
+        {
+            if (wall.isHit)return;
+            wall.isHit = true;
+            Turn();
+        }
+    }
+    
+    private void OnTriggerExit(Collider other)
+    {
+        WallCooldown wall;
+        if (other.transform.TryGetComponent(out wall))
+        {
+            if (!wall.isHit)return;
+            wall.isHit = false;
         }
     }
 }

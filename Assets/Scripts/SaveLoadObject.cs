@@ -13,6 +13,7 @@ public class SaveLoadObject : MonoBehaviour
     public void Save(string key, object obj)
     {
         string json = JsonUtility.ToJson(obj);
+        Debug.Log(json);
         PlayerPrefs.SetString(key, json);
         PlayerPrefs.Save();
     }
@@ -22,7 +23,9 @@ public class SaveLoadObject : MonoBehaviour
         if (PlayerPrefs.HasKey(key))
         {
             string json = PlayerPrefs.GetString(key);
+            Debug.Log(json);
             return JsonUtility.FromJson<T>(json);
+            
         }
         return default(T);
     }
