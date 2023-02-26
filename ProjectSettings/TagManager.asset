@@ -12,6 +12,7 @@ TagManager:
   - gembox
   - music
   - mainmusic
+  - Wall
   layers:
   - Default
   - TransparentFX

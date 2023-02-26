@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -11,7 +12,7 @@ public class Walking : MonoBehaviour
     public int coins;
     public bool isplay;
     private bool _isMoving;
-    public bool fromLeft;
+    public bool fromLeft; 
     public bool isLeft = true;
     public SoundManager sounds;
     [SerializeField] private TextMeshProUGUI highscore;
@@ -65,18 +66,23 @@ public class Walking : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0)|| Input.GetKeyDown(KeyCode.Space))
             {
-                SoundManager.instance.PlaySlide();
-                _particleSystem.Play();
-                
-                yValue = (particleTransform.localEulerAngles.y + 180f) % 360;
-                particleTransform.eulerAngles = new Vector3(0,  yValue, 0);
-                isLeft = !isLeft;
-                Rotating();
+                Turn();
                 return;
             }
 
             Rotating();
         }
+    }
+
+    void Turn()
+    {
+        SoundManager.instance.PlaySlide();
+        _particleSystem.Play();
+                
+        yValue = (particleTransform.localEulerAngles.y + 180f) % 360;
+        particleTransform.eulerAngles = new Vector3(0,  yValue, 0);
+        isLeft = !isLeft;
+        Rotating();
     }
 
     public void Rotating()
@@ -112,5 +118,15 @@ public class Walking : MonoBehaviour
         else rollSpeed +=   Time.deltaTime / 30;
         
     }
-    
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        WallCooldown wall;
+        if (collision.transform.TryGetComponent(out wall))
+        {
+            if (wall.isHit)return;
+            wall.isHit = true;
+            Turn();
+        }
+    }
 }
