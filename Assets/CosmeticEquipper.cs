@@ -2,9 +2,12 @@ using UnityEngine;
 
 public class CosmeticEquipper : MonoBehaviour
 {
-    private const string SAVEKEY = "MarketSave";
-    private const string SAVEKEY2 = "MarketSave2";
+    //private const string SAVEKEY = "MarketSave";
+    //private const string SAVEKEY2 = "MarketSave2";
     
+    private const string HeadEquiped = "HeadEquiped";
+    private const string TextureEquiped = "TextureEquiped";
+
     [SerializeField] public ItemList<Head> HeadList;
     [SerializeField] public ItemList<TextureItem> TextureList;
     [SerializeField] public Renderer _Renderer;
@@ -13,10 +16,10 @@ public class CosmeticEquipper : MonoBehaviour
     void Start()
     {
         
-        if (PlayerPrefs.HasKey(SAVEKEY))
+        if (PlayerPrefs.HasKey(HeadEquiped) | PlayerPrefs.HasKey(TextureEquiped))
         {
-            HeadList = SaveLoadObject.Instance.Load<ItemList<Head>>(SAVEKEY);
-            TextureList = SaveLoadObject.Instance.Load<ItemList<TextureItem>>(SAVEKEY2); 
+            HeadList.SetEquipedPrefab(HeadList.GetIndex(PlayerPrefs.GetInt(HeadEquiped, 0)).item);
+            TextureList.SetEquipedTexture(TextureList.GetIndex(PlayerPrefs.GetInt(TextureEquiped, 0)).item);
             TakeOnEquipedClothes();
         }            
     }

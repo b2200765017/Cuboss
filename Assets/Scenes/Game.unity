@@ -3611,11 +3611,59 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HeadList:
-    Items: []
+    Items:
+    - isBought: 0
+      item: {fileID: 4485707420167102074, guid: e3d2e623eee01d642ab6943930c8ca56,
+        type: 3}
+      itemPrice: 0
+    - isBought: 0
+      item: {fileID: 1173946594081887180, guid: 3e7c958a575c3a8488424bba51141a4e,
+        type: 3}
+      itemPrice: 0
+    - isBought: 0
+      item: {fileID: 725974827759856114, guid: 1cf4e5c00ae88fa47b35b54123965d7c, type: 3}
+      itemPrice: 0
+    - isBought: 0
+      item: {fileID: 5615972004902595929, guid: bccbba0ddea24924eb07233e5ae46d93,
+        type: 3}
+      itemPrice: 0
+    - isBought: 0
+      item: {fileID: 4616179031105353837, guid: 881977d9c81507a458c906ad3af93adc,
+        type: 3}
+      itemPrice: 0
+    - isBought: 0
+      item: {fileID: 6828685168850775454, guid: c312a69fb86c0844ab387134601fdfe9,
+        type: 3}
+      itemPrice: 0
+    - isBought: 0
+      item: {fileID: 7595459185336742974, guid: 880f9b6ba3a34a946a5e9728cd7e49b5,
+        type: 3}
+      itemPrice: 0
     EquipedPrefab: {fileID: 0}
     EquipedTexture: {fileID: 0}
   TextureList:
-    Items: []
+    Items:
+    - isBought: 0
+      item: {fileID: 2800000, guid: ec7d8e8c1a28d384b9f5a0dc3851d74f, type: 3}
+      itemPrice: 0
+    - isBought: 0
+      item: {fileID: 2800000, guid: 22c5ffe521f3d7c4c858543bbac4a3df, type: 3}
+      itemPrice: 0
+    - isBought: 0
+      item: {fileID: 2800000, guid: 48e437302e8cc4e47a17797a21c02f69, type: 3}
+      itemPrice: 0
+    - isBought: 0
+      item: {fileID: 2800000, guid: 0f0d832c061447840a038fcec4c42a1d, type: 3}
+      itemPrice: 0
+    - isBought: 0
+      item: {fileID: 2800000, guid: 65baf155a7ada9d40a80353bcc83ffa2, type: 3}
+      itemPrice: 0
+    - isBought: 0
+      item: {fileID: 2800000, guid: 91e7dac871c910444b7e8b63546c9854, type: 3}
+      itemPrice: 0
+    - isBought: 0
+      item: {fileID: 2800000, guid: 92b968183c9d70049a67878d3458d53d, type: 3}
+      itemPrice: 0
     EquipedPrefab: {fileID: 0}
     EquipedTexture: {fileID: 0}
   _Renderer: {fileID: 8417361359970673737}
@@ -4202,7 +4250,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: SaveManager
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7095192093224727302, guid: 3783454a7cb3ef549af1da99d67818ef, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3783454a7cb3ef549af1da99d67818ef, type: 3}
 --- !u!65 &1691574396
 BoxCollider:

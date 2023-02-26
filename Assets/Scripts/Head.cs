@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
@@ -12,18 +13,33 @@ public class ItemList<T>
     [SerializeField] private GameObject EquipedPrefab;
     [SerializeField] private Texture EquipedTexture;
     private int index;
-    
-    
+
+
     public T GetCurrentItem()
     {
         if (CurrentItem != null)  return CurrentItem;
         return Items[0];
     }
 
+    public T[] GetItems() { return Items;}
+
     public void resetIndex()
     {
         index = 0;
     }
+
+    public int GetCurrentItemIndex()
+    {
+        for (int i = 0; i < Items.Length; i++)
+        {
+            if (Items[i].Equals(CurrentItem))
+            {
+                return i;
+            }
+        }
+        return 0;
+    }
+    
     public T GetNext()
     {
         index++;
@@ -78,6 +94,11 @@ public class ItemList<T>
     public T GetDefault()
     {
         return Items[0];
+    }
+
+    public T GetIndex(int getInt)
+    {
+        return Items[getInt];
     }
     
 }

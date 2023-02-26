@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+
 [Serializable]
 public class Head
 {
@@ -17,11 +18,15 @@ public class TextureItem
 }
 public class MarketManagerLogic : MonoBehaviour
 {
-    private const string saveKey = "MarketSave";
-    private const string saveKey2 = "MarketSave2";
+    //private const string saveKey = "MarketSave";
+    //private const string saveKey2 = "MarketSave2";
     
-
-
+    private const string HeadEquiped = "HeadEquiped";
+    private const string TextureEquiped = "TextureEquiped";
+    
+    private const string HeadBought = "HeadBought";
+    private const string TextureBought = "TextureBought";
+    
     
     [SerializeField] public ItemList<Head> HeadList;
     [SerializeField] public ItemList<TextureItem> TextureList;
@@ -36,10 +41,11 @@ public class MarketManagerLogic : MonoBehaviour
 
     private void Start()
     {
-        if (PlayerPrefs.HasKey(saveKey))
+        if (PlayerPrefs.HasKey(HeadEquiped) | PlayerPrefs.HasKey(TextureEquiped) | PlayerPrefs.HasKey(HeadBought) | PlayerPrefs.HasKey(TextureBought))
         {
-            HeadList = SaveLoadObject.Instance.Load<ItemList<Head>>(saveKey);
-            TextureList = SaveLoadObject.Instance.Load<ItemList<TextureItem>>(saveKey2); 
+            HeadList.SetEquipedPrefab(HeadList.GetIndex(PlayerPrefs.GetInt(HeadEquiped, 0)).item);
+            TextureList.SetEquipedTexture(TextureList.GetIndex(PlayerPrefs.GetInt(TextureEquiped, 0)).item);
+            LoadBoughtData();
             TakeOnEquipedClothes();
         }
     }
@@ -86,9 +92,7 @@ public class MarketManagerLogic : MonoBehaviour
             GameObject item = HeadList.GetCurrentPrefab();
             Destroy(item);
         }
-
     }
-
     public void ResetIndexes()
     {
         HeadList.resetIndex();
@@ -102,6 +106,7 @@ public class MarketManagerLogic : MonoBehaviour
             GemManager.Instance.DecreaseGem(prize);
             HeadList.GetCurrentItem().isBought = true;
             TextureList.GetCurrentItem().isBought = true;
+            SaveBoughtData();
             SoundManager.instance.Play("BuySFX");
         }
     }
@@ -131,8 +136,12 @@ public class MarketManagerLogic : MonoBehaviour
     {
         HeadList.SetEquipedPrefab(HeadList.GetCurrentItem().item);
         TextureList.SetEquipedTexture(TextureList.GetCurrentItem().item);
-        SaveLoadObject.Instance.Save(saveKey, HeadList);
-        SaveLoadObject.Instance.Save(saveKey2, TextureList);
+        
+        PlayerPrefs.SetInt(HeadEquiped, HeadList.GetCurrentItemIndex());
+        PlayerPrefs.SetInt(TextureEquiped, TextureList.GetCurrentItemIndex());
+        
+        //SaveLoadObject.Instance.Save(saveKey, HeadList);
+        //SaveLoadObject.Instance.Save(saveKey2, TextureList);
     }
 
     public void DefaultMarket()
@@ -152,7 +161,53 @@ public class MarketManagerLogic : MonoBehaviour
             TextureList.GetEquipedTexture() == TextureList.GetCurrentItem().item) return true;
         return false;
     }
-    
+
+    public void SaveBoughtData()
+    {
+        Head[] heads = HeadList.GetItems();
+        TextureItem[] textures = TextureList.GetItems();
+
+        string headBoughtList = "";
+        string TextureBoughtList = "";
+        
+        for (int i = 0; i < heads.Length; i++)
+        {
+            if (heads[i].isBought) headBoughtList += "Yes ";
+            else headBoughtList += "No ";
+        }       
+        for (int i = 0; i < textures.Length; i++)
+        {
+            if (textures[i].isBought) TextureBoughtList += "Yes ";
+            else TextureBoughtList += "No ";
+        }
+        
+        
+        PlayerPrefs.SetString(HeadBought, headBoughtList);
+        PlayerPrefs.SetString(TextureBought, TextureBoughtList);
+    }
+
+    public void LoadBoughtData()
+    {
+        if (PlayerPrefs.HasKey(HeadBought))
+        {
+            var HeadString = PlayerPrefs.GetString(HeadBought);
+            var TextureString = PlayerPrefs.GetString(TextureBought);
+            
+            string[] Headlist = HeadString.Trim().Split(" ");
+            string[] Texturelist = TextureString.Trim().Split(" ");
+
+            for (int i = 0; i < Headlist.Length; i++)
+            {
+                if (Headlist[i] == "Yes") HeadList.GetItems()[i].isBought = true;
+                else HeadList.GetItems()[i].isBought = false;
+            }      
+            for (int i = 0; i < Texturelist.Length; i++)
+            {
+                if (Texturelist[i] == "Yes") TextureList.GetItems()[i].isBought = true;
+                else TextureList.GetItems()[i].isBought = false;
+            }  
+        }
+    }
 }
 
     
