@@ -5,6 +5,7 @@ using Random = UnityEngine.Random;
 public class Walking : MonoBehaviour
 {
     public float rollSpeed = 5;
+    public float boostspeed = 5;
     [SerializeField] private GameObject highscoreObject;
     public int heart;
     public int heartp;
@@ -23,6 +24,7 @@ public class Walking : MonoBehaviour
     private int highScore;
     [SerializeField] private Transform penguen;
     [SerializeField] public float rotation_speed = 2f;
+    [SerializeField] public float rollspeedslowmul = 2f;
     private float yValue;
     
 
@@ -46,6 +48,8 @@ public class Walking : MonoBehaviour
 
     private void Update()
     {
+        if (boostspeed > 0)
+            boostspeed -= Time.deltaTime*rollspeedslowmul;
         float t = Time.deltaTime;
         if (isLeft)
         {
@@ -97,12 +101,12 @@ public class Walking : MonoBehaviour
         if (isLeft)
         {
             fromLeft = false;
-            transform.Translate(Vector3.left * (Time.deltaTime * rollSpeed));
+            transform.Translate(Vector3.left * (Time.deltaTime * (rollSpeed+boostspeed)));
         }
         else
         {
             fromLeft = true;
-            transform.Translate(Vector3.forward * (Time.deltaTime * rollSpeed));
+            transform.Translate(Vector3.forward * (Time.deltaTime * (rollSpeed+boostspeed)));
         }
 
     }
@@ -137,6 +141,7 @@ public class Walking : MonoBehaviour
         {
             if (wall.isHit)return;
             wall.isHit = true;
+            boostspeed = 5;
             Turn();
         }
     }
