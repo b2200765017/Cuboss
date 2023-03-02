@@ -23,7 +23,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 200}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 93338
+  controlID: 94678
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -83,8 +83,8 @@ MonoBehaviour:
     - '{"m_SerializationStates":{"thermalFoldout":false,"performanceFoldout":false,"developerFoldout":false,"indexerFoldout":false,"scalersFoldout":false,"deviceSettingsFoldout":false}}'
     - '{"m_SerializationStates":{"settingsFoldout":false,"vrrFoldout":false,"androidSystemFoldout":false}}'
     - '{}'
-    scale: 37
-    fitToScreenEnabled: 0
+    scale: 14
+    fitToScreenEnabled: 1
     rotationDegree: 0
     highlightSafeAreaEnabled: 0
     friendlyName: Apple iPhone XS Max
@@ -114,7 +114,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 200}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 1
-  controlID: 93339
+  controlID: 94679
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 100}
   m_MaxSize: {x: 32384, y: 8096}
   vertical: 0
-  controlID: 93340
+  controlID: 94673
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -200,9 +200,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 0a720000
-      m_LastClickedID: 0
-      m_ExpandedIDs: 0834bbff0038bbfff26abdff046bbdffaecebffff4a2c0ff8af1c0fff05fc2ffb2bac2ff48abc3ff54abc3ff5cabc3ffc830c6fff230c6ff2a65cbff82b2cbfff4b4cbff62b5cbffbab7cbff64bbcbffaebdcbffe60bccff7e68ccff780ed4ffa20ed4ff00e6d5ff44ebd5ff1c38d6ffd820d8ff8860e0ff1c98e1ff86e3e1ffe628e5ff16c4ebfffcedecffd240efff2e45efffa045efff904fefff4051efffbe52efffd2ddf0fffee2f0fff096f1fffc96f1ff7c97f1ff00f8f1ffb8f9f1ff0012f2ffe69df2ff8c9ff2ff54d3f2ffe8d4f2ff8840f4ff32d5f4ffe8d8f4ffc843f6fffc45f6ffc050f6ff3c4bf8ff0e4cf8ffe04cf8ffb24df8ff844ef8ff564ff8ff2850f8fffa50f8ffcc51f8ff9e52f8ffa43af9ffd03cf9ff1adcf9ff6063faffaa03fcffd0ddfcffe6ddfcff08e0fcff0ee0fcffd0e2fcff6aeafcff460efeff6e10feffa615feff2019feff0820feff6a24feff5229feff543afeff123dfeffec4cfeffee4cfeffa852feffca5dfeffcc5dfeff42fbffffbeab0100bcb501002ad20100642102006e2102001023020092b3020062b40200f8b40200982103005e3e03002eb703003efa030084fb030012fc030074fc030076fc030002fd0300a643040096440400984404007c450400024704000a46050006b105000ac205003cc20500a8c20500b2c205002cc305002ec30500fec5050014c60500a4ee05000af4060066f406008ef4060094f40600a4f40600baf40600daf4060082f5060016810700ae8d0700f68d0700328e0700488e07007e8e070074060800e6060800fe06080062070800320a0800a00209005061090086610900e261090018620900b462090000100a00bc100a00f0130a004a8b0a007e8b0a0076e20a006c6c0b00ac6c0b002c6d0b00d46d0b003a170c00
+      m_SelectedIDs: f8600c00
+      m_LastClickedID: 811256
+      m_ExpandedIDs: 4e2eb9ff0834bbff0038bbfff26abdff046bbdffaecebffff4a2c0ff8af1c0fff05fc2ffb2bac2ff48abc3ff54abc3ff5cabc3ffc830c6fff230c6ff2a65cbff82b2cbfff4b4cbff62b5cbffbab7cbff64bbcbffaebdcbffe60bccff7e68ccff780ed4ffa20ed4ff00e6d5ff44ebd5ff1c38d6ffd820d8ff8860e0ff1c98e1ff86e3e1ffe628e5ff16c4ebfffcedecffd240efff2e45efffa045efff904fefff4051efffbe52efffd2ddf0fffee2f0fff096f1fffc96f1ff7c97f1ff00f8f1ffb8f9f1ff0012f2ffe69df2ff8c9ff2ff54d3f2ffe8d4f2ff8840f4ff32d5f4ffe8d8f4ffc843f6fffc45f6ffc050f6ff3c4bf8ff0e4cf8ffe04cf8ffb24df8ff844ef8ff564ff8ff2850f8fffa50f8ffcc51f8ff9e52f8ffa43af9ffd03cf9ff1adcf9ff6063faffaa03fcffd0ddfcffe6ddfcff08e0fcff0ee0fcffd0e2fcff6aeafcff460efeff6e10feffa615feff2019feff0820feff6a24feff5229feff543afeff123dfeffec4cfeffee4cfeffa852feffca5dfeffcc5dfeff42fbffffbeab0100bcb501002ad20100642102006e2102001023020092b3020062b40200f8b40200982103005e3e03002eb703003efa030084fb030012fc030074fc030076fc030002fd0300a643040096440400984404007c450400024704000a46050006b105000ac205003cc20500a8c20500b2c205002cc305002ec30500fec5050014c60500a4ee05000af4060066f406008ef4060094f40600a4f40600baf40600daf4060082f5060016810700ae8d0700f68d0700328e0700488e07007e8e070074060800e6060800fe06080062070800320a0800a00209005061090086610900e261090018620900b462090000100a00bc100a00f0130a004a8b0a007e8b0a0076e20a006c6c0b00ac6c0b002c6d0b00d46d0b003a170c0028180c00ec600c00
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -545,9 +545,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 2.0391552, y: 3.631669, z: -2.410024}
+    m_Target: {x: 621, y: 1545.48, z: 0}
     speed: 2
-    m_Value: {x: 2.0391552, y: 3.631669, z: -2.410024}
+    m_Value: {x: 620.99994, y: 1545.4799, z: 0.000000044453294}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -594,13 +594,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.06775175, y: -0.16877823, z: 0.014894481, w: 0.98379403}
+    m_Target: {x: 0.0015203059, y: -0.451908, z: 0.0043327464, w: 0.8926963}
     speed: 2
-    m_Value: {x: -0.06775175, y: 0.16877823, z: -0.014894481, w: -0.98379403}
+    m_Value: {x: 0.001525927, y: -0.45030984, z: 0.0043279757, w: 0.8928605}
   m_Size:
-    m_Target: 2.4983134
+    m_Target: 241.81602
     speed: 2
-    m_Value: 2.4983134
+    m_Value: 241.81601
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -891,7 +891,7 @@ MonoBehaviour:
     m_LastAppliedPresetName: Default
     m_SaveData: []
   m_SearchFilter:
-    m_NameFilter: 
+    m_NameFilter: main
     m_ClassNames: []
     m_AssetLabels: []
     m_AssetBundleNames: []
@@ -905,7 +905,7 @@ MonoBehaviour:
     m_Folders:
     - Assets/Materials
     m_Globs: []
-    m_OriginalText: 
+    m_OriginalText: main
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
@@ -971,9 +971,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 0a720000
-    m_LastClickedInstanceID: 29194
-    m_HadKeyboardFocusLastEvent: 0
+    m_SelectedInstanceIDs: f8600c00
+    m_LastClickedInstanceID: 811256
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000f4ae0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -998,7 +998,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 60}
+    m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 64
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 207
@@ -1062,4 +1062,4 @@ MonoBehaviour:
     m_SaveData: []
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 748728
+  m_LastSelectedObjectID: -4509578
