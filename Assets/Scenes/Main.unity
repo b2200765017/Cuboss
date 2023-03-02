@@ -768,7 +768,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 9ad74220f53751e4ab692bfefb95fce4,
         type: 3}
       propertyPath: m_Name
-      value: untitled
+      value: buz
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ad74220f53751e4ab692bfefb95fce4, type: 3}
@@ -3069,7 +3069,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -50}
+  m_AnchoredPosition: {x: 0, y: -9.8}
   m_SizeDelta: {x: 75, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1465430737
@@ -3980,7 +3980,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: cad2558516b09c34eacc83ad26fba203, type: 2}
+  - {fileID: 2100000, guid: 6914cff17b75a5f4c86d4e740ef4db44, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
