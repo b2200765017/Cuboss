@@ -5,8 +5,6 @@ public class SoundManager : MonoBehaviour
 {
     #region singleton
     public static SoundManager instance;
-    public bool IsSoundOn = true;
-
     private void Start()
     {
         if (instance == null) instance = this;
@@ -58,13 +56,11 @@ public class SoundManager : MonoBehaviour
     }
     private void PlayMusic()
     {
-        if (!IsSoundOn) return;
         Sound music = Array.Find(_sounds, sound => sound.name == "Music");
         music.source.Play();
     }
     public void Play(string name)
     {
-        if (!IsSoundOn) return;
         Sound music = Array.Find(_sounds, sound => sound.name == name);
         music.source.Play();
     }
@@ -72,7 +68,6 @@ public class SoundManager : MonoBehaviour
 
     public void PlayWithPitch(string name, float pitchStart, float pitchEnd)
     {
-        if (!IsSoundOn) return;
         Sound music = Array.Find(_sounds, sound => sound.name == name);
         music.source.pitch = UnityEngine.Random.Range(pitchStart, pitchEnd);
         music.source.Play();
@@ -80,14 +75,12 @@ public class SoundManager : MonoBehaviour
     
     public void PlayXpCollection()
     {
-        if (!IsSoundOn) return;
         Sound music = _xpCollection[UnityEngine.Random.Range(0,_xpCollection.Length)];
         music.source.Play();
     }
     
     public void PlaySlide()
     {
-        if (!IsSoundOn) return;
         Sound music = _Slides[UnityEngine.Random.Range(0,_Slides.Length)];
         music.source.Play();
     }

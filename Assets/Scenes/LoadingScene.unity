@@ -202,7 +202,6 @@ GameObject:
   - component: {fileID: 139236696}
   - component: {fileID: 139236698}
   - component: {fileID: 139236697}
-  - component: {fileID: 139236699}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -294,7 +293,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 0
+  m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
@@ -328,20 +327,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 139236695}
   m_CullTransparentMesh: 1
---- !u!114 &139236699
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 139236695}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92b4e844e3d841849956ae141b9ed6e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TrText: YUKLENIYOR...
-  EnText: LOADING...
 --- !u!1 &419029056
 GameObject:
   m_ObjectHideFlags: 0
@@ -437,7 +422,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.495283, b: 0.495283, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
