@@ -45,6 +45,7 @@ public class mainmenugm : MonoBehaviour
             musicOn.enabled = false;
             musicOff.enabled = true;
             MenuMusicSource.Pause();
+            SoundManager.instance.IsSoundOn = false;
             PlayerPrefs.SetInt(MenuMusicEnabled, 0);
         }
         else
@@ -52,9 +53,23 @@ public class mainmenugm : MonoBehaviour
             musicOn.enabled = true;
             musicOff.enabled = false;
             MenuMusicSource.UnPause();
+            SoundManager.instance.IsSoundOn = true;
             PlayerPrefs.SetInt(MenuMusicEnabled, 1);
         }
         PlayerPrefs.Save();
+    }
+
+    public void LanguageButtonClicked()
+    {
+        if (LanguageManager.Instance.CurrentLanguage == Language.Turkish)
+        {
+            LanguageManager.Instance.ConvertLanguage(Language.English);
+        }
+        else
+        {
+            LanguageManager.Instance.ConvertLanguage(Language.Turkish);
+            
+        }
     }
 
 
