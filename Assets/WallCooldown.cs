@@ -6,6 +6,7 @@ using UnityEngine;
 public class WallCooldown : MonoBehaviour
 {
     public bool isHit = false;
+    public bool isLeft; 
 
     private void OnDisable()
     {

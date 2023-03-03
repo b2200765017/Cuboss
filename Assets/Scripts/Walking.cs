@@ -142,7 +142,15 @@ public class Walking : MonoBehaviour
             if (wall.isHit)return;
             wall.isHit = true;
             boostspeed = 5;
-            Turn();
+            if (wall.isLeft && fromLeft)
+            {
+                Turn();
+            }
+            else if(!wall.isLeft && !fromLeft)
+            {
+                Turn();
+            }
+            
         }
     }
     
