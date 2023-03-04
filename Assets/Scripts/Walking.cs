@@ -21,8 +21,11 @@ public class Walking : MonoBehaviour
     private GameObject _box;
     public World_Manager worldManager;
     private float _playerOffset;
+    private bool boosting = false;
+    
     private int highScore;
     [SerializeField] private Transform penguen;
+    [SerializeField] private Transform SnowPivot;
     [SerializeField] public float rotation_speed = 2f;
     [SerializeField] public float rollspeedslowmul = 2f;
     private float yValue;
@@ -30,6 +33,7 @@ public class Walking : MonoBehaviour
 
     private Transform particleTransform;
     [SerializeField] private ParticleSystem _particleSystem;
+    
 
     private void Start()
     {
@@ -48,8 +52,22 @@ public class Walking : MonoBehaviour
 
     private void Update()
     {
-        if (boostspeed > 0)
-            boostspeed -= Time.deltaTime*rollspeedslowmul;
+        Debug.Log(boostspeed);
+        if (boosting)
+        {
+            if (boostspeed <5)
+                boostspeed += 4*Time.deltaTime*rollspeedslowmul;
+            else
+            {
+                boosting = false;
+            }
+        }
+        else
+        {
+            if (boostspeed >0)
+                boostspeed -= Time.deltaTime*rollspeedslowmul; 
+        }
+        
         float t = Time.deltaTime;
         if (isLeft)
         {
@@ -82,8 +100,7 @@ public class Walking : MonoBehaviour
     {
         SoundManager.instance.PlaySlide();
         _particleSystem.Play();
-                
-        yValue = (particleTransform.localEulerAngles.y + 180f) % 360;
+        yValue = (90f-particleTransform.localEulerAngles.y + 180f);
         particleTransform.eulerAngles = new Vector3(0,  yValue, 0);
         isLeft = !isLeft;
         Rotating();
@@ -115,11 +132,11 @@ public class Walking : MonoBehaviour
     {
         if (rollSpeed < 10 &&rollSpeed >= 7)   rollSpeed += 5*Time.deltaTime / 10;
         
-        else if (rollSpeed < 7)    rollSpeed += 5f*Time.deltaTime / 10;
+        else if (rollSpeed < 7)    rollSpeed += 7f*Time.deltaTime / 10;
         
-        else if(rollSpeed > 10 && rollSpeed<15)   rollSpeed += Time.deltaTime / 20;
+        else if(rollSpeed > 10 && rollSpeed<15)   rollSpeed += Time.deltaTime / 8;
         
-        else rollSpeed +=   Time.deltaTime / 30;
+        else rollSpeed +=   Time.deltaTime / 10;
         
     }
 
@@ -141,7 +158,7 @@ public class Walking : MonoBehaviour
         {
             if (wall.isHit)return;
             wall.isHit = true;
-            boostspeed = 5;
+            boosting = true;
             if (wall.isLeft && fromLeft)
             {
                 Turn();
