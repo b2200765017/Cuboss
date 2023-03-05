@@ -29,6 +29,7 @@ public class Walking : MonoBehaviour
     [SerializeField] public float rotation_speed = 2f;
     [SerializeField] public float rollspeedslowmul = 2f;
     private float yValue;
+    private float cow = 5f;
     
 
     private Transform particleTransform;
@@ -47,11 +48,12 @@ public class Walking : MonoBehaviour
         {
             highscoreObject.transform.position = new Vector3(-(highScore * 2) + 3, 0, (highScore * 2) - 3);
         }
-        Time.timeScale = 1;
     }
 
     private void Update()
     {
+        
+       
         if (boosting)
         {
             if (boostspeed <5)
