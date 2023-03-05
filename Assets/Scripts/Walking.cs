@@ -52,7 +52,6 @@ public class Walking : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(boostspeed);
         if (boosting)
         {
             if (boostspeed <5)
