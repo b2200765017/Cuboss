@@ -1,60 +1,67 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class DeadManager : MonoBehaviour
 {
-    private const string GEM_COUNT = "GemCount";
-    
-    public bool dead;
-    private Transform _transform;
     [SerializeField] private Walking _walking;
+    [SerializeField] private CameraMovement _cameraMovement;
+    [SerializeField] private Rigidbody _rb;
+    private Transform _transform;
+
+    public bool dead;
+    public TrailRenderer trail;
     public GameObject _restart;
+    public ParticleSystem watersplash;
+    private int _highestScore;
+    private float PlayerOffset;
+    private float RandomValue;
+
+
+    [Header("UI Elements")]
     public TextMeshProUGUI score;
     public TextMeshProUGUI score1;
     public TextMeshProUGUI coins;
-    public TrailRenderer trail;
-    public ParticleSystem watersplash;
     public TextMeshProUGUI coins1;
-    [SerializeField] private CameraMovement _cameraMovement;
+
     void Start()
     {
-        _transform = gameObject.transform;
+        _transform = transform;
+        _highestScore = PlayerPrefs.GetInt("hs");
     }
     void Update()
     {
-        float value = Mathf.Abs(_transform.position.x + _transform.position.z);
-        if (value > 8.5f | dead)
+        PlayerOffset = Mathf.Abs(_transform.position.x + _transform.position.z);
+        if (PlayerOffset > 8.5f | dead)
         {
-            if (_walking.points > PlayerPrefs.GetInt("hs"))
-            {
-                PlayerPrefs.SetInt("hs",_walking.points);
-            }
+            // Setting the Highest Score 
+            if (_walking.points > _highestScore)  PlayerPrefs.SetInt("hs",_walking.points);
+
+            // Disabling Scripts
             _cameraMovement.enabled = false;
             _walking.isplay = false;
-            float random = Random.Range(25, 25) * _walking.rollSpeed;
             trail.emitting = false;
-            gameObject.GetComponent<Rigidbody>().useGravity = true;
-            if (!_walking.fromLeft)
-            {
-                gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(-random,20,0), ForceMode.Force);
-                
-            }
-            else
-            {
-                gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0,20,random), ForceMode.Force);
-            }
+            
+            RandomValue = Random.Range(25, 25) * _walking.rollSpeed;
+
+            // Physical Interaction with Player
+            _rb.useGravity = true;
+            if (!_walking.fromLeft)  _rb.AddForce(new Vector3(-RandomValue,20,0), ForceMode.Force);
+            else _rb.AddForce(new Vector3(0,20,RandomValue), ForceMode.Force);
+            
+            
             SoundManager.instance.Play("GameOver");
-            PlayerPrefs.SetInt(GEM_COUNT, PlayerPrefs.GetInt(GEM_COUNT, 0) + _walking.coins);
+            watersplash.Play();
+
+            // Setting UI Elements
             _restart.SetActive(true);
             score1.text = score.text;
-            score.gameObject.SetActive(false);
             coins1.text = coins.text;
-            coins.gameObject.SetActive(false);
-            watersplash.Play();
-            //gameObject.SetActive(false);
-            dead = false;
-            this.enabled = false;
+            
+            score.enabled = false;
+            coins.enabled = false;
+
+            PlayerPrefs.SetInt(GemManager.Instance.GetGemString(), PlayerPrefs.GetInt(GemManager.Instance.GetGemString(), 0) + _walking.coins);
+            enabled = false;
         }
     }
 }

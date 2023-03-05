@@ -3,15 +3,23 @@ using UnityEngine;
 public class CameraMovement : MonoBehaviour
 {
     public Transform target;
+    private Transform Camera;
+    private float player_position;
     private Vector3 offset;
+    private Vector3 newPosition;
+    private Vector3 targetPosition;
     void Start()
     {
-        offset = transform.position - target.position;
+        Camera = transform;
+        offset = Camera.position - target.position;
     }
-     void Update()
-    {
-        float player_position = (target.position.x - target.position.z) / 2;
-        transform.position = new Vector3(player_position + offset.x ,
-            transform.position.y, -player_position + offset.z );
+     void LateUpdate()
+     { 
+        targetPosition = target.position;
+        player_position = (targetPosition.x - targetPosition.z) / 2;
+        newPosition.x = player_position + offset.x;
+        newPosition.y = Camera.position.y;
+        newPosition.z = -player_position + offset.z;
+        Camera.position = newPosition;
     }
 }

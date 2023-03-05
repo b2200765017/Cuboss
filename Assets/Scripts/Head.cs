@@ -1,10 +1,8 @@
 using System;
-using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
-public class ItemList<T>
-{
+public class ItemList<T> {
 
     [SerializeField] private T[] Items;
     private T CurrentItem;

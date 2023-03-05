@@ -1,17 +1,12 @@
 using UnityEngine;
 
-public class GemFixer : MonoBehaviour
-{
+public class GemFixer : MonoBehaviour {
 
-    public void Fixer()
-    {
-        foreach (Transform transform in transform)
-        {
-            if (transform.CompareTag("gembox"))
-            {
+    public void Fixer() {
+        foreach (Transform transform in transform) {
+            if (transform.CompareTag("gembox")) {
                 transform.gameObject.SetActive(true);
             }
-            
         }
     }
 }

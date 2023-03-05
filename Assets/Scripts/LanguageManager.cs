@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using UnityEngine.LowLevel;
 
 public enum  Language
 {
@@ -14,8 +13,7 @@ public class LanguageManager : MonoBehaviour
     public Language CurrentLanguage;
     
     public static LanguageManager Instance { get; private set; }
-    private void Awake() 
-    {
+    private void Awake() {
         if (Instance != null && Instance != this) 
         { 
             Destroy(this); 
