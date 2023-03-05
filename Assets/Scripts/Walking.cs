@@ -30,6 +30,10 @@ public class Walking : MonoBehaviour {
 
     private int highScore;
     private float yValue;
+    private float t;
+    private Vector3 newVector;
+    private WallCooldown wall;
+    
     
 
     private Transform particleTransform;
@@ -45,7 +49,10 @@ public class Walking : MonoBehaviour {
         } 
     }
 
-    private void Start() {
+    private void Start()
+    {
+        newVector.x = 0;
+        newVector.z = 0;
         particleTransform = _particleSystem.gameObject.transform;
         _highScore = highscoreObject.GetComponentInChildren<TextMeshPro>();
         highScore = PlayerPrefs.GetInt("hs");
@@ -58,22 +65,9 @@ public class Walking : MonoBehaviour {
 
     private void Update() {
 
-        if (boosting)
-        {
-            if (boostspeed <5)
-                boostspeed += 4*Time.deltaTime*rollspeedslowmul;
-            else
-            {
-                boosting = false;
-            }
-        }
-        else
-        {
-            if (boostspeed >0)
-                boostspeed -= Time.deltaTime*rollspeedslowmul; 
-        }
-        
-        float t = Time.deltaTime;
+        Boost();
+        // Rotating the Player With a slerp function
+        t = Time.deltaTime;
         if (isLeft)
         {
             penguen.rotation = Quaternion.Slerp(penguen.rotation, Quaternion.Euler(0, -90, 0), t * rotation_speed);
@@ -82,33 +76,41 @@ public class Walking : MonoBehaviour {
         {
             penguen.rotation = Quaternion.Slerp(penguen.rotation, Quaternion.Euler(0, 0, 0), t * rotation_speed);
         }
-
-        if (worldManager.offset - _playerOffset < 20)
-        {
-            int index = Random.Range(0, worldManager._patternsList.Count);
-            worldManager.prefabPattern(worldManager._patternsList[index]);
+        
+        // Pattern Creation script
+        if (worldManager.offset - _playerOffset < 20) {
+            worldManager.prefabPattern(worldManager._patternsList[Random.Range(0, worldManager._patternsList.Count)]);
         }
 
-        if (isplay)
-        {
-            if (Input.GetMouseButtonDown(0)|| Input.GetKeyDown(KeyCode.Space))
-            {
+        if (isplay) {
+            if (Input.GetMouseButtonDown(0)|| Input.GetKeyDown(KeyCode.Space)) {
                 Turn();
-                return;
             }
-
             Rotating();
         }
     }
 
-    void Turn()
-    {
+    private void Boost() {
+        if (boosting) {
+            
+            if (boostspeed < 5) boostspeed += 4 * Time.deltaTime * rollspeedslowmul;
+            else {
+                boosting = false;
+            }
+        }
+        else {
+            if (boostspeed > 0) boostspeed -= Time.deltaTime * rollspeedslowmul;
+        }
+    }
+
+    void Turn() {
         SoundManager.instance.PlaySlide();
         _particleSystem.Play();
+        
         yValue = (90f-particleTransform.localEulerAngles.y + 180f);
-        particleTransform.eulerAngles = new Vector3(0,  yValue, 0);
+        newVector.y = yValue;
+        particleTransform.eulerAngles = newVector;
         isLeft = !isLeft;
-        Rotating();
     }
 
     public void Rotating()
@@ -116,25 +118,23 @@ public class Walking : MonoBehaviour {
         var position = transform.position;
         _playerOffset = (-position.x + position.z + 4) / 4;
         points = (int)_playerOffset;
+        
+        AssigningRollSpeed();
 
-
-        Assemble();
-
-        if (isLeft)
-        {
+        if (isLeft) {
+            
             fromLeft = false;
             transform.Translate(Vector3.left * (Time.deltaTime * (rollSpeed+boostspeed)));
         }
-        else
-        {
+        else {
+            
             fromLeft = true;
             transform.Translate(Vector3.forward * (Time.deltaTime * (rollSpeed+boostspeed)));
         }
-
     }
-
-    public void Assemble()
-    {
+    
+    public void AssigningRollSpeed() {
+        
         if (rollSpeed < 10 &&rollSpeed >= 7)   rollSpeed += 5*Time.deltaTime / 10;
         
         else if (rollSpeed < 7)    rollSpeed += 7f*Time.deltaTime / 10;
@@ -142,34 +142,24 @@ public class Walking : MonoBehaviour {
         else if(rollSpeed > 10 && rollSpeed<15)   rollSpeed += Time.deltaTime / 8;
         
         else rollSpeed +=   Time.deltaTime / 10;
-        
     }
     
-    private void OnTriggerEnter(Collider other)
-    {
-        WallCooldown wall;
-        if (other.transform.TryGetComponent(out wall))
-        {
+    private void OnTriggerEnter(Collider other) {
+        if (other.transform.TryGetComponent(out wall)) {
             if (wall.isHit)return;
             wall.isHit = true;
             boosting = true;
-            if (wall.isLeft && fromLeft)
-            {
+            if (wall.isLeft && fromLeft) {
                 Turn();
             }
-            else if(!wall.isLeft && !fromLeft)
-            {
+            else if(!wall.isLeft && !fromLeft) {
                 Turn();
             }
-            
         }
     }
     
-    private void OnTriggerExit(Collider other)
-    {
-        WallCooldown wall;
-        if (other.transform.TryGetComponent(out wall))
-        {
+    private void OnTriggerExit(Collider other) {
+        if (other.transform.TryGetComponent(out wall)) {
             if (!wall.isHit)return;
             wall.isHit = false;
         }

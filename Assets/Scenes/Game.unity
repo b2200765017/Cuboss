@@ -2357,7 +2357,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7239be6fb1ddf4bee895c2fa6c967646, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 6208930370025410466}
+  target: {fileID: 1363021795}
 --- !u!95 &942904724
 Animator:
   serializedVersion: 4
@@ -2916,9 +2916,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6abf3475d03b94c13b0a71d7ae827eef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  penguen: {fileID: 543450652344530130}
+  SnowPivot: {fileID: 0}
+  rotation_speed: 10
+  rollspeedslowmul: 3
+  highscoreObject: {fileID: 623828721}
+  highscore: {fileID: 615217257}
   rollSpeed: 6
   boostspeed: 0
-  highscoreObject: {fileID: 623828721}
   heart: 0
   heartp: 0
   points: 0
@@ -2926,12 +2931,7 @@ MonoBehaviour:
   isplay: 0
   fromLeft: 0
   isLeft: 1
-  highscore: {fileID: 615217257}
   worldManager: {fileID: 1363021791}
-  penguen: {fileID: 543450652344530130}
-  SnowPivot: {fileID: 0}
-  rotation_speed: 10
-  rollspeedslowmul: 3
   _particleSystem: {fileID: 9130649631632428912}
 --- !u!4 &1363021795
 Transform:
@@ -3502,7 +3502,7 @@ Transform:
   m_GameObject: {fileID: 1713065573}
   m_LocalRotation: {x: 0.40221217, y: -0.34451488, z: 0.16660169, w: 0.83173245}
   m_LocalPosition: {x: 10.09, y: 34.199997, z: -10.09}
-  m_LocalScale: {x: 1, y: 1.5114489, z: 1.1893529}
+  m_LocalScale: {x: 1, y: 1.5114489, z: 1.1893533}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1056083519}
@@ -11246,7 +11246,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f1ad564dfb66c448b1d6d56d3ad9ffe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1363021790}
   restartButton: {fileID: 1971075302}
   _deadManager: {fileID: 1363021798}
   timeLeft: 2.55
