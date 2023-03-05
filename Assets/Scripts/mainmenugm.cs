@@ -52,18 +52,12 @@ public class mainmenugm : MonoBehaviour {
         PlayerPrefs.Save();
     }
 
-    public void LanguageButtonClicked()
-    {
-        if (LanguageManager.Instance.CurrentLanguage == Language.Turkish)
-        {
+    public void LanguageButtonClicked() {
+        if (LanguageManager.Instance.CurrentLanguage == Language.Turkish) {
             LanguageManager.Instance.ConvertLanguage(Language.English);
         }
-        else
-        {
+        else {
             LanguageManager.Instance.ConvertLanguage(Language.Turkish);
-            
         }
     }
-
-
 }

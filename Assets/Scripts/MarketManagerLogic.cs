@@ -18,9 +18,6 @@ public class TextureItem
 }
 public class MarketManagerLogic : MonoBehaviour
 {
-    //private const string saveKey = "MarketSave";
-    //private const string saveKey2 = "MarketSave2";
-    
     private const string HeadEquiped = "HeadEquiped";
     private const string TextureEquiped = "TextureEquiped";
     
@@ -180,7 +177,6 @@ public class MarketManagerLogic : MonoBehaviour
             if (textures[i].isBought) TextureBoughtList += "Yes ";
             else TextureBoughtList += "No ";
         }
-        
         
         PlayerPrefs.SetString(HeadBought, headBoughtList);
         PlayerPrefs.SetString(TextureBought, TextureBoughtList);

@@ -2242,33 +2242,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &942904725
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 919132147850648710}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 463367bf6d274794dbb6088b5c22c85c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  footprints:
-  - {fileID: 5730542932379283438}
-  - {fileID: 5756441826874239193}
-  - {fileID: 6399774998677273341}
-  - {fileID: 2808644120335825963}
-  - {fileID: 3730545610395563576}
-  - {fileID: 8138951715201290921}
-  - {fileID: 474315987}
-  - {fileID: 369249042233712780}
-  - {fileID: 2618305336373925671}
-  - {fileID: 785910351}
-  - {fileID: 432823873}
-  - {fileID: 520486242}
-  - {fileID: 1886944303}
-  index: 0
 --- !u!4 &1043789142 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6280031337838233641, guid: dbcf0b95f8ef5354cb53e40426786aa5,
@@ -2805,7 +2778,6 @@ MonoBehaviour:
   isplay: 0
   fromLeft: 0
   isLeft: 1
-  sounds: {fileID: 0}
   highscore: {fileID: 615217257}
   worldManager: {fileID: 1363021791}
   penguen: {fileID: 543450652344530130}
@@ -4916,7 +4888,6 @@ GameObject:
   m_Component:
   - component: {fileID: 543450651791181372}
   - component: {fileID: 942904724}
-  - component: {fileID: 942904725}
   m_Layer: 0
   m_Name: penguinanimated
   m_TagString: Untagged

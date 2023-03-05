@@ -1,69 +1,63 @@
-using System;
 using TMPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
-public class Walking : MonoBehaviour
-{
+public class Walking : MonoBehaviour {
+    
     public static Walking Instance;
+
+    [SerializeField] private Transform penguen;
+    [SerializeField] private Transform SnowPivot;
+    [SerializeField] public float rotation_speed = 2f;
+    [SerializeField] public float rollspeedslowmul = 2f;
+    [SerializeField] private GameObject highscoreObject;
+    [SerializeField] private TextMeshProUGUI highscore;
     
     public float rollSpeed = 5;
     public float boostspeed = 5;
-    [SerializeField] private GameObject highscoreObject;
     public int heart;
     public int heartp;
     public int points;
     public int coins;
     public bool isplay;
     private bool _isMoving;
-    public bool fromLeft; 
+    public bool fromLeft;
     public bool isLeft = true;
-    [SerializeField] private TextMeshProUGUI highscore;
     private TextMeshPro _highScore;
     private GameObject _box;
     public World_Manager worldManager;
     private float _playerOffset;
     private bool boosting = false;
-    
+
     private int highScore;
-    [SerializeField] private Transform penguen;
-    [SerializeField] private Transform SnowPivot;
-    [SerializeField] public float rotation_speed = 2f;
-    [SerializeField] public float rollspeedslowmul = 2f;
     private float yValue;
     
 
     private Transform particleTransform;
     [SerializeField] private ParticleSystem _particleSystem;
 
-    private void Awake()
-    {
-        if (Instance != null && Instance != this) 
-        { 
+    private void Awake() {
+        
+        if (Instance != null && Instance != this) { 
             Destroy(this); 
         } 
-        else 
-        { 
+        else { 
             Instance = this; 
         } 
     }
 
-    private void Start()
-    {
+    private void Start() {
         particleTransform = _particleSystem.gameObject.transform;
         _highScore = highscoreObject.GetComponentInChildren<TextMeshPro>();
         highScore = PlayerPrefs.GetInt("hs");
         highscore.text = highScore.ToString();
         _highScore.text += highScore.ToString();
-        if (highScore >= 10)
-        {
+        if (highScore >= 10) {
             highscoreObject.transform.position = new Vector3(-(highScore * 2) + 3, 0, (highScore * 2) - 3);
         }
     }
 
-    private void Update()
-    {
-        
-       
+    private void Update() {
+
         if (boosting)
         {
             if (boostspeed <5)

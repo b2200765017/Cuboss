@@ -1,33 +1,23 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class orbScript : MonoBehaviour
 {
     public bool istouched = false;
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.transform.tag == "Player")
-        {
-        istouched = true;
-        int pieces= other.GetComponent<Walking>().heartp;
-        int heart= other.GetComponent<Walking>().heart;
-        if (heart != 3)
-        {
-            if (pieces == 2)
-            {
-                other.GetComponent<Walking>().heart += 1;
-                other.GetComponent<Walking>().heartp = 0;
+    private void OnTriggerEnter(Collider other) {
+        if (other.CompareTag("Player")){
+            istouched = true;
+            int pieces= Walking.Instance.heartp;
+            int heart= Walking.Instance.heart;
+            if (heart != 3) {
+                if (pieces == 2) {
+                    Walking.Instance.heart += 1;
+                    Walking.Instance.heartp = 0;
+                }
+                else {
+                    Walking.Instance.heartp += 1;
+                }
             }
-            else
-            {
-                other.GetComponent<Walking>().heartp += 1;
-            }
-        }
-            
         }
         Destroy(gameObject);
     }

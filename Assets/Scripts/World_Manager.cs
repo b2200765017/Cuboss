@@ -2,9 +2,8 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-public class World_Manager : MonoBehaviour
-{
+public class World_Manager : MonoBehaviour {
+    
     [SerializeField] public List<String> _patternsList;
     public float offset = 0f;
 
