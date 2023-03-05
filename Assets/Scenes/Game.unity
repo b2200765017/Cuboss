@@ -2378,18 +2378,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &942904725
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 919132147850648710}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 463367bf6d274794dbb6088b5c22c85c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1043789142 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6280031337838233641, guid: dbcf0b95f8ef5354cb53e40426786aa5,
@@ -5037,7 +5025,6 @@ GameObject:
   m_Component:
   - component: {fileID: 543450651791181372}
   - component: {fileID: 942904724}
-  - component: {fileID: 942904725}
   m_Layer: 0
   m_Name: penguinanimated
   m_TagString: Untagged
