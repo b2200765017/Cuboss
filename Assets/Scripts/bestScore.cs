@@ -1,12 +1,9 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class bestScore : MonoBehaviour
 {
     public int scorePosition;
-    void Start()
+    void Awake()
     {
         scorePosition = PlayerPrefs.GetInt("score");
         if (scorePosition < 10) return;

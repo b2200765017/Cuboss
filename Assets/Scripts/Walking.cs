@@ -4,6 +4,8 @@ using UnityEngine;
 using Random = UnityEngine.Random;
 public class Walking : MonoBehaviour
 {
+    public static Walking Instance;
+    
     public float rollSpeed = 5;
     public float boostspeed = 5;
     [SerializeField] private GameObject highscoreObject;
@@ -15,7 +17,6 @@ public class Walking : MonoBehaviour
     private bool _isMoving;
     public bool fromLeft; 
     public bool isLeft = true;
-    public SoundManager sounds;
     [SerializeField] private TextMeshProUGUI highscore;
     private TextMeshPro _highScore;
     private GameObject _box;
@@ -29,16 +30,25 @@ public class Walking : MonoBehaviour
     [SerializeField] public float rotation_speed = 2f;
     [SerializeField] public float rollspeedslowmul = 2f;
     private float yValue;
-    private float cow = 5f;
     
 
     private Transform particleTransform;
     [SerializeField] private ParticleSystem _particleSystem;
-    
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this) 
+        { 
+            Destroy(this); 
+        } 
+        else 
+        { 
+            Instance = this; 
+        } 
+    }
 
     private void Start()
     {
-        sounds = FindObjectOfType<SoundManager>();
         particleTransform = _particleSystem.gameObject.transform;
         _highScore = highscoreObject.GetComponentInChildren<TextMeshPro>();
         highScore = PlayerPrefs.GetInt("hs");
@@ -140,18 +150,7 @@ public class Walking : MonoBehaviour
         else rollSpeed +=   Time.deltaTime / 10;
         
     }
-
-    /* private void OnCollisionEnter(Collision collision)
-    {
-        WallCooldown wall;
-        if (collision.transform.TryGetComponent(out wall))
-        {
-            if (wall.isHit)return;
-            wall.isHit = true;
-            Turn();
-        }
-    }
-*/
+    
     private void OnTriggerEnter(Collider other)
     {
         WallCooldown wall;

@@ -1,45 +1,38 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class mainmenugm : MonoBehaviour
-{
+public class mainmenugm : MonoBehaviour {
+    
+    private const string MenuMusicEnabled = "MenuMusic";
+    
     private bool isHowToMenuOpened = false;
     public Animator HowToMenuAnimator;
     private AudioSource MenuMusicSource;
     public Image musicOff;
     public Image musicOn;
-    private const string MenuMusicEnabled = "MenuMusic";
 
-    public void OnPlayButtonDown()
-    {
+    public void OnPlayButtonDown() {
        Loader.Load(Loader.Scene.Game);
     }
 
-    private void Start()
-    {
+    private void Start() {
         Application.targetFrameRate = 500;
         QualitySettings.vSyncCount = 0;
         MenuMusicSource = SoundManager.instance._sounds[0].source;
-        if (PlayerPrefs.GetInt(MenuMusicEnabled, 1) == 0)
-        {
+        if (PlayerPrefs.GetInt(MenuMusicEnabled, 1) == 0) {
             MusicButton();
         }
     }
 
-    public void EnterExitHowToMenu()
-    {
+    //TODO: Animasyon değiştirilip lean tween ile animasyon yapılsın
+    public void EnterExitHowToMenu() {
 
         if (!isHowToMenuOpened) HowToMenuAnimator.SetTrigger("open");
         else HowToMenuAnimator.SetTrigger("close");
         isHowToMenuOpened = !isHowToMenuOpened;
     }
 
-    public void MusicButton()
-    {
+    public void MusicButton() {
         if (musicOn.enabled)
         {
             musicOn.enabled = false;

@@ -2,9 +2,6 @@ using UnityEngine;
 
 public class CosmeticEquipper : MonoBehaviour
 {
-    //private const string SAVEKEY = "MarketSave";
-    //private const string SAVEKEY2 = "MarketSave2";
-    
     private const string HeadEquiped = "HeadEquiped";
     private const string TextureEquiped = "TextureEquiped";
 
