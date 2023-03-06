@@ -16,7 +16,7 @@ public class LanguageManager : MonoBehaviour
     private void Awake() {
         if (Instance != null && Instance != this) 
         { 
-            Destroy(this); 
+            Destroy(gameObject); 
         } 
         else 
         { 

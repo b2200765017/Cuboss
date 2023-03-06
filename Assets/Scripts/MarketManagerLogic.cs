@@ -64,14 +64,14 @@ public class MarketManagerLogic : MonoBehaviour
     public void NextTexture()
     {
         TextureItem current = TextureList.GetNext();
-        _Renderer.materials[0].SetTexture("_MainTex", current.item);
+        _Renderer.sharedMaterials[0].SetTexture("_MainTex", current.item);
         TextureList.SetCurrentTexture(current.item);
     }
     
     public void BeforeTexture()
     {
         TextureItem current = TextureList.GetBefore();
-        _Renderer.materials[0].SetTexture("_MainTex", current.item);
+        _Renderer.sharedMaterials[0].SetTexture("_MainTex", current.item);
         TextureList.SetCurrentTexture(current.item);
     }
     public int GetSumOfPrizes()
@@ -125,7 +125,7 @@ public class MarketManagerLogic : MonoBehaviour
         if (HeadList.GetCurrentPrefab() != null) Destroy(HeadList.GetCurrentPrefab());
         GameObject prefab = Instantiate(HeadList.GetEquipedPrefab(), HeadParent);
         HeadList.SetCurrentPrefab(prefab);
-        _Renderer.materials[0].SetTexture("_MainTex", TextureList.GetEquipedTexture());
+        _Renderer.sharedMaterials[0].SetTexture("_MainTex", TextureList.GetEquipedTexture());
         TextureList.SetCurrentTexture(TextureList.GetEquipedTexture());
     }    
 
@@ -146,7 +146,7 @@ public class MarketManagerLogic : MonoBehaviour
         Head head = HeadList.GetDefault();
         TextureItem textureItem = TextureList.GetDefault();
         GameObject prefab = Instantiate(head.item, HeadParent);
-        _Renderer.materials[0].SetTexture("_MainTex", textureItem.item);
+        _Renderer.sharedMaterials[0].SetTexture("_MainTex", textureItem.item);
         TextureList.SetCurrentTexture(textureItem.item);
         TextureList.SetCurrentItem(textureItem);
         HeadList.SetCurrentItem(head);

@@ -51,7 +51,8 @@ public class DeadManager : MonoBehaviour
             
             SoundManager.instance.Play("GameOver");
             watersplash.Play();
-
+            UIAnimator.Instance.OnGameEnd();
+            
             // Setting UI Elements
             _restart.SetActive(true);
             score1.text = score.text;

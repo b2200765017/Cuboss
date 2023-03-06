@@ -10,12 +10,12 @@ public class MarketManagerUI : MonoBehaviour
     [SerializeField] private Button headLeftButton;
     [SerializeField] private Button textureRightButton;
     [SerializeField] private Button textureLeftButton;
-    [SerializeField] private GameObject marketButtonGO;
-    [SerializeField] private GameObject marketBackButtonGO;
-    [SerializeField] private GameObject PlayButton;
+    [SerializeField] private Canvas marketButtonGO;
+    [SerializeField] private Canvas marketBackButtonGO;
+    [SerializeField] private Canvas PlayButton;
     [SerializeField] private GameObject MarketPanel;
-    [SerializeField] private GameObject BuyButtonGO;
-    [SerializeField] private GameObject EquipButtonGO;
+    [SerializeField] private Canvas BuyButtonGO;
+    [SerializeField] private Canvas EquipButtonGO;
     [SerializeField] private TextMeshProUGUI GemText;
     [SerializeField] private TextMeshProUGUI PrizeText;
     [SerializeField] private Image headLock;
@@ -73,7 +73,7 @@ public class MarketManagerUI : MonoBehaviour
         {
             MarketManagerLogic.Instance.DestroyItems();
             ShowPanel();
-            PlayButton.SetActive(false);
+            PlayButton.enabled = false;
             ChangeMarketButton();
             MarketManagerLogic.Instance.ResetIndexes();
             int sumOfPrizes = MarketManagerLogic.Instance.GetSumOfPrizes();
@@ -85,7 +85,7 @@ public class MarketManagerUI : MonoBehaviour
         marketBackButton.onClick.AddListener(() =>
         {
             HidePanel();
-            PlayButton.SetActive(true);
+            PlayButton.enabled = true;
             MarketManagerLogic.Instance.TakeOnEquipedClothes();
             SoundManager.instance.Play("Click");
             ChangeMarketButton();
@@ -102,7 +102,7 @@ public class MarketManagerUI : MonoBehaviour
             MarketManagerLogic.Instance.SetEquipedClothes();
             // Disable the equip button
             SoundManager.instance.Play("Click");
-            equipButton.gameObject.SetActive(false);
+            EquipButtonGO.enabled = false;
         });
         
         GemManager.Instance.OnGemChanged += GemManager_OnGemChanged;
@@ -127,8 +127,8 @@ public class MarketManagerUI : MonoBehaviour
 
     private void ChangeMarketButton()
     {
-        marketButtonGO.SetActive(!marketButtonGO.activeSelf);
-        marketBackButtonGO.SetActive(!marketBackButtonGO.activeSelf);
+        marketButtonGO.enabled = !marketButtonGO.enabled;
+        marketBackButtonGO.enabled = !marketBackButtonGO.enabled;
     }
 
     private void ChangeBuyEquipButton()
@@ -136,9 +136,9 @@ public class MarketManagerUI : MonoBehaviour
         if (MarketManagerLogic.Instance.IsHeadEquipable() && MarketManagerLogic.Instance.IsTextureEquipable())
         {
             PrizeText.enabled = false;
-            BuyButtonGO.SetActive(false);
-            if (!MarketManagerLogic.Instance.EquipedCheck()) EquipButtonGO.SetActive(true);
-            else  EquipButtonGO.SetActive(false);
+            BuyButtonGO.enabled = false;
+            if (!MarketManagerLogic.Instance.EquipedCheck()) EquipButtonGO.enabled = true;
+            else  EquipButtonGO.enabled = false;
             headLock.enabled = false;
             textureLock.enabled = false;
             return;
@@ -148,8 +148,8 @@ public class MarketManagerUI : MonoBehaviour
         if (MarketManagerLogic.Instance.IsHeadEquipable()) headLock.enabled = false;
         if (MarketManagerLogic.Instance.IsTextureEquipable()) textureLock.enabled = false;
         PrizeText.enabled = true;
-        BuyButtonGO.SetActive(true);
-        EquipButtonGO.SetActive(false);
+        BuyButtonGO.enabled = true;
+        EquipButtonGO.enabled = false;
     }
 
     private void SetPrize(int prize)

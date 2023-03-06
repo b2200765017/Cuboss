@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4681623705649296315}
   - component: {fileID: 8474947240773423549}
   - component: {fileID: 4439614036038877078}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemyplatform
   m_TagString: enemybox
   m_Icon: {fileID: 0}

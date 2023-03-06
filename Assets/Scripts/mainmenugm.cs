@@ -15,8 +15,11 @@ public class mainmenugm : MonoBehaviour {
        Loader.Load(Loader.Scene.Game);
     }
 
-    private void Start() {
-        Application.targetFrameRate = 400;
+    private void Start()
+    {
+        Screen.SetResolution(Screen.width,Screen.height, true);
+        UnityEngine.Rendering.DebugManager.instance.enableRuntimeUI = false;
+        Application.targetFrameRate = 150;
         QualitySettings.vSyncCount = 0;
         MenuMusicSource = SoundManager.instance._sounds[0].source;  
         if (PlayerPrefs.GetInt(MenuMusicEnabled, 1) == 0) {
@@ -24,11 +27,13 @@ public class mainmenugm : MonoBehaviour {
         }
     }
 
-    //TODO: Animasyon değiştirilip lean tween ile animasyon yapılsın
     public void EnterExitHowToMenu() {
-
-        if (!isHowToMenuOpened) HowToMenuAnimator.SetTrigger("open");
-        else HowToMenuAnimator.SetTrigger("close");
+        if (!isHowToMenuOpened) {
+            UIAnimator.Instance.OnCanvasButtonEntered();
+        }
+        else {
+            UIAnimator.Instance.OnCanvasButtonExited();
+        }
         isHowToMenuOpened = !isHowToMenuOpened;
     }
 

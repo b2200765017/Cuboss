@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b4cef69b6a3784c4f97124e88ee4f464, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a208dbc1c02699841b0a11db3f7d5514, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 836226775244200057}
   - component: {fileID: 3270805699779657710}
   - component: {fileID: 7959271703666977670}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BoostSystem
   m_TagString: Wall
   m_Icon: {fileID: 0}

@@ -25,7 +25,7 @@ public class CosmeticEquipper : MonoBehaviour
         if (HeadList.GetCurrentPrefab() != null) Destroy(HeadList.GetCurrentPrefab());
         GameObject prefab = Instantiate(HeadList.GetEquipedPrefab(), HeadParent);
         HeadList.SetCurrentPrefab(prefab);
-        _Renderer.materials[0].SetTexture("_MainTex", TextureList.GetEquipedTexture());
+        _Renderer.sharedMaterials[0].SetTexture("_MainTex", TextureList.GetEquipedTexture());
         TextureList.SetCurrentTexture(TextureList.GetEquipedTexture());
     }    
     

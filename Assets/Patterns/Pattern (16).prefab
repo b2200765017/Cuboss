@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5544768476791909277}
   - component: {fileID: 1040266683505454909}
   - component: {fileID: -3291104614079793470}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Pattern (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 8983800737142465983}
   - component: {fileID: 2307655224688215241}
   - component: {fileID: 4203348540603797694}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemyplatform (1)
   m_TagString: enemybox
   m_Icon: {fileID: 0}
@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 8368543697676064735}
   - component: {fileID: 6588510869931826043}
   - component: {fileID: 7878858326310442344}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemyplatform (2)
   m_TagString: enemybox
   m_Icon: {fileID: 0}
