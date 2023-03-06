@@ -8,7 +8,7 @@ public class PerformanceManager : MonoBehaviour
     {
         Screen.SetResolution(Screen.width,Screen.height, true);
         UnityEngine.Rendering.DebugManager.instance.enableRuntimeUI = false;
-        Application.targetFrameRate = -1;
+        Application.targetFrameRate = 500;
         QualitySettings.vSyncCount = 0;
         if (Instance == null) Instance = this;
         else
