@@ -17,10 +17,6 @@ public class mainmenugm : MonoBehaviour {
 
     private void Start()
     {
-        Screen.SetResolution(Screen.width,Screen.height, true);
-        UnityEngine.Rendering.DebugManager.instance.enableRuntimeUI = false;
-        Application.targetFrameRate = 150;
-        QualitySettings.vSyncCount = 0;
         MenuMusicSource = SoundManager.instance._sounds[0].source;  
         if (PlayerPrefs.GetInt(MenuMusicEnabled, 1) == 0) {
             MusicButton();

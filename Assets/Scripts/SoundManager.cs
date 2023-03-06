@@ -6,18 +6,7 @@ public class SoundManager : MonoBehaviour
     #region singleton
     public static SoundManager instance;
     public bool IsSoundOn = true;
-
-    private void Start()
-    {
-        if (instance == null) instance = this;
-        else
-        {
-            Destroy(gameObject);
-            return;
-        }
-        DontDestroyOnLoad(gameObject);
-        PlayMusic();
-    }
+    
     #endregion singleton
 
     public Sound[] _sounds;
@@ -55,6 +44,14 @@ public class SoundManager : MonoBehaviour
             s.source.loop = s.loop;
             s.length = s.clip.length;
         }
+        if (instance == null) instance = this;
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+        DontDestroyOnLoad(gameObject);
+        PlayMusic();
     }
     private void PlayMusic()
     {
