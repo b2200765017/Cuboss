@@ -93,7 +93,7 @@ public class Walking : MonoBehaviour {
     private void Boost() {
         if (boosting) {
             
-            if (boostspeed < 5) boostspeed += 4 * Time.deltaTime * rollspeedslowmul;
+            if (boostspeed < 5) boostspeed += 6 * Time.deltaTime * rollspeedslowmul;
             else {
                 boosting = false;
             }

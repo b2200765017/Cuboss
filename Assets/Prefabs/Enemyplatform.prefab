@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4681623705649296315}
+  - component: {fileID: 608773377944181510}
+  - component: {fileID: 1102979925350086913}
   m_Layer: 7
   m_Name: Enemyplatform
   m_TagString: enemybox
@@ -33,6 +35,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &608773377944181510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5454887570644560129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d953a20258b0d043889e4494e521b63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  penguin: {x: 0, y: 0, z: 0}
+  animator: {fileID: 2276215686085216300}
+  isTree: 1
+--- !u!65 &1102979925350086913
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5454887570644560129}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 4, z: 1}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1001 &5238730849226206030
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -48,17 +78,17 @@ PrefabInstance:
     - target: {fileID: 3480239693790179581, guid: d8488aa1a790da347a4145d91225be1f,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.17164391
+      value: 0.19591436
       objectReference: {fileID: 0}
     - target: {fileID: 3480239693790179581, guid: d8488aa1a790da347a4145d91225be1f,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.17164391
+      value: 0.19591436
       objectReference: {fileID: 0}
     - target: {fileID: 3480239693790179581, guid: d8488aa1a790da347a4145d91225be1f,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.17164391
+      value: 0.19591436
       objectReference: {fileID: 0}
     - target: {fileID: 3480239693790179581, guid: d8488aa1a790da347a4145d91225be1f,
         type: 3}
@@ -240,6 +270,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree 1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 431565a7ad618254cbbfe87434f14a94,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 431565a7ad618254cbbfe87434f14a94, type: 3}
 --- !u!1 &5833810025704884806 stripped
@@ -263,19 +298,6 @@ MonoBehaviour:
   penguin: {x: 0, y: 0, z: 0}
   animator: {fileID: 2276215686085216300}
   isTree: 1
---- !u!65 &8340766794162385209
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5833810025704884806}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.938195, y: 2.9381945, z: 13.7998}
-  m_Center: {x: 0, y: 0.00000083446486, z: 6.8999}
 --- !u!1001 &8578926184362252330
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -17,7 +17,7 @@ public class enemy : MonoBehaviour
             if (isTree) {
                 
                 animator.enabled = true;
-                if (Walking.Instance.fromLeft) {
+                if (!Walking.Instance.fromLeft) {
                     transform.Rotate(0, -90, 0);
                 } 
                 if (Walking.Instance.heart == 0) {
