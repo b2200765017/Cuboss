@@ -103,6 +103,8 @@ public class Walking : MonoBehaviour {
             {
              combotimer -= Time.deltaTime;
              timer.fillAmount = combotimer / 10;
+             if(combotimer / 10<0.1) 
+                 ComboText.alpha = combotimer;
             }
             else
             {
@@ -180,9 +182,11 @@ public class Walking : MonoBehaviour {
         }
         else if (other.transform.CompareTag("combo"))
         {
+            other.GetComponent<Animator>().enabled=true;
             combotimer = 10;
             combo=combo*2;
             ComboText.text = combo.ToString()+"X";
+            ComboText.alpha = 1;
         }
     }
     

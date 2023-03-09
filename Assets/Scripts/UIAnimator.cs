@@ -44,13 +44,12 @@ public class UIAnimator : MonoBehaviour
     {
         LeanTween.reset();
         LeanTween.scale(GameOver, UiScale, 0.7f);
-        LeanTween.alphaCanvas(InGamePanel, 1, 0.7f).setOnComplete(() =>
-        { 
+        LeanTween.alphaCanvas(InGamePanel, 1, 0.2f).setOnComplete(() =>
+        {
             LeanTween.scale(ScoreText, UiScale2, 0.4f);
             LeanTween.scale(ScoreSC, UiScale2, 0.4f).setDelay(0.05f);
             LeanTween.scale(TimeText, UiScale2, 0.4f).setDelay(0.1f);
             LeanTween.scale(TimeScore, UiScale2, 0.4f).setDelay(0.15f);
-            
             LeanTween.scale(Restart, UiScale, 0.3f).setDelay(0.5f);
             LeanTween.scale(Home, UiScale, 0.3f).setDelay(0.6f);
         });

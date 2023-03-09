@@ -54,7 +54,7 @@ public class UIManager : MonoBehaviour {
                 _coins = _walking.coins;
             }
             if (_hearts != _walking.heart) {
-                
+
                 heartText.text = _walking.heart.ToString();
                 _hearts = _walking.heart;
             }       

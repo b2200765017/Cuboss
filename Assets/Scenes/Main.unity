@@ -5355,7 +5355,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _sounds.Array.data[0].clip
       value: 
-      objectReference: {fileID: 8300000, guid: f59fbac95fc4c7647839f5e8d1558221, type: 3}
+      objectReference: {fileID: 8300000, guid: 3af308ab337497847ab57ff70d10c4f1, type: 3}
     - target: {fileID: 4419802175677100946, guid: e25ee6970cbf35641a7f859f18086467,
         type: 3}
       propertyPath: _sounds.Array.data[0].loop
@@ -5389,7 +5389,7 @@ PrefabInstance:
     - target: {fileID: 4419802175677100946, guid: e25ee6970cbf35641a7f859f18086467,
         type: 3}
       propertyPath: _sounds.Array.data[0].volume
-      value: 0
+      value: 0.19
       objectReference: {fileID: 0}
     - target: {fileID: 4419802175677100946, guid: e25ee6970cbf35641a7f859f18086467,
         type: 3}
@@ -5801,7 +5801,12 @@ PrefabInstance:
     - target: {fileID: 3065978986597363348, guid: 3d995367128a9814fa4f77bd306a6195,
         type: 3}
       propertyPath: simulationSpeed
-      value: 0.7
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3065978986597363348, guid: 3d995367128a9814fa4f77bd306a6195,
+        type: 3}
+      propertyPath: SizeModule.enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3065978986597363348, guid: 3d995367128a9814fa4f77bd306a6195,
         type: 3}
@@ -5830,8 +5835,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3065978986597363348, guid: 3d995367128a9814fa4f77bd306a6195,
         type: 3}
+      propertyPath: InitialModule.rotation3D
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3065978986597363348, guid: 3d995367128a9814fa4f77bd306a6195,
+        type: 3}
       propertyPath: InitialModule.startSize.scalar
-      value: 0.07
+      value: 0.16
       objectReference: {fileID: 0}
     - target: {fileID: 3065978986597363348, guid: 3d995367128a9814fa4f77bd306a6195,
         type: 3}
@@ -5898,6 +5908,41 @@ PrefabInstance:
       propertyPath: ColorModule.gradient.maxGradient.ctime1
       value: 65535
       objectReference: {fileID: 0}
+    - target: {fileID: 3065978986597363348, guid: 3d995367128a9814fa4f77bd306a6195,
+        type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3065978986597363348, guid: 3d995367128a9814fa4f77bd306a6195,
+        type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3065978986597363348, guid: 3d995367128a9814fa4f77bd306a6195,
+        type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3065978986597363348, guid: 3d995367128a9814fa4f77bd306a6195,
+        type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].inSlope
+      value: -3.2128541
+      objectReference: {fileID: 0}
+    - target: {fileID: 3065978986597363348, guid: 3d995367128a9814fa4f77bd306a6195,
+        type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[0].outSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3065978986597363348, guid: 3d995367128a9814fa4f77bd306a6195,
+        type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].inWeight
+      value: 0.2652805
+      objectReference: {fileID: 0}
+    - target: {fileID: 3065978986597363348, guid: 3d995367128a9814fa4f77bd306a6195,
+        type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].outSlope
+      value: -3.2128541
+      objectReference: {fileID: 0}
     - target: {fileID: 3065978986597363349, guid: 3d995367128a9814fa4f77bd306a6195,
         type: 3}
       propertyPath: m_MaxParticleSize
@@ -5907,7 +5952,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 1e3322f9dc46def4d90d42b358dcbe9d, type: 2}
+      objectReference: {fileID: 10308, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 3065978986597363350, guid: 3d995367128a9814fa4f77bd306a6195,
         type: 3}
       propertyPath: m_Name
