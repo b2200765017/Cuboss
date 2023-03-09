@@ -530,6 +530,11 @@ PrefabInstance:
       propertyPath: m_ReceiveShadows
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 83fc760fde18c944da5fc2d9df980d10,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7cf92d38762efe845859283278c00f83, type: 2}
     - target: {fileID: 919132149155446097, guid: 83fc760fde18c944da5fc2d9df980d10,
         type: 3}
       propertyPath: m_Name
@@ -5389,7 +5394,7 @@ PrefabInstance:
     - target: {fileID: 4419802175677100946, guid: e25ee6970cbf35641a7f859f18086467,
         type: 3}
       propertyPath: _sounds.Array.data[0].volume
-      value: 0.19
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4419802175677100946, guid: e25ee6970cbf35641a7f859f18086467,
         type: 3}

@@ -5,7 +5,6 @@ public class DeathCollider : MonoBehaviour {
         if (other.TryGetComponent(out fixer)) {
             fixer.Fixer();
         }
-        Debug.Log("deleted");
         other.gameObject.SetActive(false);
     }
 }

@@ -1,13 +1,62 @@
 {
-    "m_SelectedDeviceId": "",
+    "m_SelectedDeviceId": "4100cf82f2bb1283",
     "m_SelectedPackage": {
-        "deviceId": "",
-        "name": "",
-        "processId": 0,
+        "deviceId": "4100cf82f2bb1283",
+        "name": "com.cs2games.Pengo",
+        "processId": 7721,
         "exited": false
     },
     "m_SelectedPriority": 0,
-    "m_KnownPackagesForSerialization": [],
+    "m_KnownPackagesForSerialization": [
+        {
+            "deviceId": "4100cf82f2bb1283",
+            "name": "com.cs2games.Pengo",
+            "processId": 17058,
+            "exited": false
+        },
+        {
+            "deviceId": "4100cf82f2bb1283",
+            "name": "com.cs2games.Pengo",
+            "processId": 18149,
+            "exited": false
+        },
+        {
+            "deviceId": "4100cf82f2bb1283",
+            "name": "com.cs2games.Pengo",
+            "processId": 22851,
+            "exited": false
+        },
+        {
+            "deviceId": "4100cf82f2bb1283",
+            "name": "com.cs2games.Pengo",
+            "processId": 25884,
+            "exited": false
+        },
+        {
+            "deviceId": "4100cf82f2bb1283",
+            "name": "com.cs2games.Pengo",
+            "processId": 28986,
+            "exited": false
+        },
+        {
+            "deviceId": "4100cf82f2bb1283",
+            "name": "com.cs2games.Pengo",
+            "processId": 32203,
+            "exited": false
+        },
+        {
+            "deviceId": "4100cf82f2bb1283",
+            "name": "com.cs2games.Pengo",
+            "processId": 2430,
+            "exited": false
+        },
+        {
+            "deviceId": "4100cf82f2bb1283",
+            "name": "com.cs2games.Pengo",
+            "processId": 7721,
+            "exited": false
+        }
+    ],
     "m_Tags": {
         "m_Entries": [
             {
@@ -41,9 +90,20 @@
         ]
     },
     "m_MemoryViewerState": {
-        "MemoryWindowHeight": 0.0,
-        "MemoryWindowWidth": 0.0,
-        "MemoryTypeEnabled": [],
+        "MemoryWindowHeight": 300.0,
+        "MemoryWindowWidth": 170.0,
+        "MemoryTypeEnabled": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
         "MemoryGroup": 2,
         "Behavior": 0
     },
