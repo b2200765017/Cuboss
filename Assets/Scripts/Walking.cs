@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
 public class Walking : MonoBehaviour {
     
@@ -24,10 +25,11 @@ public class Walking : MonoBehaviour {
     public bool isLeft = true;
     private TextMeshPro _highScore;
     private GameObject _box;
+    public int combo = 1;
+    public float combotimer = 10;
     public World_Manager worldManager;
     private float _playerOffset;
     private bool boosting = false;
-
     private int highScore;
     private float yValue;
     private float t;
@@ -38,6 +40,8 @@ public class Walking : MonoBehaviour {
 
     private Transform particleTransform;
     [SerializeField] private ParticleSystem _particleSystem;
+    [SerializeField] private Image timer;
+    public TextMeshProUGUI ComboText;
 
     private void Awake() {
         
@@ -66,6 +70,7 @@ public class Walking : MonoBehaviour {
     private void Update() {
 
         Boost();
+        Combo();
         // Rotating the Player With a slerp function
         t = Time.deltaTime;
         if (isLeft)
@@ -90,6 +95,23 @@ public class Walking : MonoBehaviour {
         }
     }
 
+    private void Combo()
+    {
+        if (combo > 1)
+        {
+            if (combotimer > 0)
+            {
+             combotimer -= Time.deltaTime;
+             timer.fillAmount = combotimer / 10;
+            }
+            else
+            {
+                combo = 1;
+                ComboText.text = null;
+            }
+        }
+        
+    }
     private void Boost() {
         if (boosting) {
             
@@ -155,6 +177,12 @@ public class Walking : MonoBehaviour {
             else if(!wall.isLeft && !fromLeft) {
                 Turn();
             }
+        }
+        else if (other.transform.CompareTag("combo"))
+        {
+            combotimer = 10;
+            combo=combo*2;
+            ComboText.text = combo.ToString()+"X";
         }
     }
     

@@ -13,6 +13,7 @@ TagManager:
   - music
   - mainmusic
   - Wall
+  - combo
   layers:
   - Default
   - TransparentFX

@@ -9,7 +9,7 @@ public class gem : MonoBehaviour {
     }
     private void OnTriggerEnter(Collider other) {
         if (other.CompareTag("Player")) {
-            _walking.coins += worth;
+            _walking.coins += _walking.combo;
             SoundManager.instance.PlayXpCollection();
             gameObject.SetActive(false);
         }
