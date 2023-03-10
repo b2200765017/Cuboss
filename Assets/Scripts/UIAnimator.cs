@@ -43,7 +43,7 @@ public class UIAnimator : MonoBehaviour
     public void OnGameEnd()
     {
         LeanTween.reset();
-        LeanTween.alphaCanvas(InGamePanel, 1, 0.2f).setOnComplete(() =>
+        LeanTween.alphaCanvas(InGamePanel, 1, 0.4f).setOnComplete(() =>
         {
             LeanTween.scale(ScoreText, UiScale2, 0.4f);
             LeanTween.scale(ScoreSC, UiScale2, 0.4f);
