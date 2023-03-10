@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 
@@ -51,8 +52,7 @@ public class DeadManager : MonoBehaviour
             if (!_walking.fromLeft)  _rb.AddForce(new Vector3(-RandomValue,20,0), ForceMode.Force);
             else _rb.AddForce(new Vector3(0,20,RandomValue), ForceMode.Force);
             
-            
-            SoundManager.instance.Play("GameOver");
+            StartCoroutine(DelayedSFX());
             watersplash.Play();
             UIAnimator.Instance.OnGameEnd();
             
@@ -67,5 +67,16 @@ public class DeadManager : MonoBehaviour
             PlayerPrefs.SetInt(GemManager.Instance.GetGemString(), PlayerPrefs.GetInt(GemManager.Instance.GetGemString(), 0) + _walking.coins);
             enabled = false;
         }
+    }
+
+    IEnumerator DelayedSFX()
+    {
+        if (PlayerOffset < 8.5f)
+        {
+            SoundManager.instance.Play("TreeHit");
+            yield break;
+        }
+        yield return new WaitForSeconds(0.6f);
+        SoundManager.instance.Play("WaterDrop");
     }
 }
