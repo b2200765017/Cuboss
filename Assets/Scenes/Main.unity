@@ -211,6 +211,7 @@ GameObject:
   - component: {fileID: 60458119}
   - component: {fileID: 60458121}
   - component: {fileID: 60458120}
+  - component: {fileID: 60458122}
   m_Layer: 5
   m_Name: HowToPlayText (1)
   m_TagString: Untagged
@@ -338,6 +339,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 60458118}
   m_CullTransparentMesh: 1
+--- !u!114 &60458122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 60458118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92b4e844e3d841849956ae141b9ed6e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TrText: "Gronland'in tasra koylerinden bir penguenin yurek burkan hikayesi... Ekrana
+    tiklayarak penguenin y\xF6n degistirmesini saglayabilirsin. Denizden uzak dursan
+    iyi edersin cunku Pengo yuzme bilmiyor :("
+  EnText: When you want to rotate your character you just tap the screen.   Every
+    2 red gem you collect will give you a heart to escape from trees. But still be
+    carefull of the river!
 --- !u!1 &135220432
 GameObject:
   m_ObjectHideFlags: 0
@@ -5925,6 +5944,7 @@ GameObject:
   - component: {fileID: 1680170532}
   - component: {fileID: 1680170534}
   - component: {fileID: 1680170533}
+  - component: {fileID: 1680170535}
   m_Layer: 5
   m_Name: HowToPlayText
   m_TagString: Untagged
@@ -6016,7 +6036,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_enableWordWrapping: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
@@ -6050,6 +6070,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1680170531}
   m_CullTransparentMesh: 1
+--- !u!114 &1680170535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1680170531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92b4e844e3d841849956ae141b9ed6e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TrText: NE ULAN BU OYUN?!
+  EnText: HOW TO PLAY?
 --- !u!1001 &1689777801
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6613,6 +6647,7 @@ GameObject:
   - component: {fileID: 2009810915}
   - component: {fileID: 2009810917}
   - component: {fileID: 2009810916}
+  - component: {fileID: 2009810918}
   m_Layer: 5
   m_Name: PlayText
   m_TagString: Untagged
@@ -6740,6 +6775,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2009810914}
   m_CullTransparentMesh: 1
+--- !u!114 &2009810918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2009810914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92b4e844e3d841849956ae141b9ed6e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TrText: OYNA
+  EnText: PLAY
 --- !u!1001 &2054823291
 PrefabInstance:
   m_ObjectHideFlags: 0
