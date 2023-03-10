@@ -3550,7 +3550,7 @@ MonoBehaviour:
       item: {fileID: 2800000, guid: 48e437302e8cc4e47a17797a21c02f69, type: 3}
       itemPrice: 100
     - isBought: 0
-      item: {fileID: 2800000, guid: 4a5a019184883dd4487caf0e7fe824b2, type: 3}
+      item: {fileID: 2800000, guid: 5b5e4b8afcf1c194eb26ae909b8f783e, type: 3}
       itemPrice: 100
     - isBought: 0
       item: {fileID: 2800000, guid: 65baf155a7ada9d40a80353bcc83ffa2, type: 3}
@@ -3580,7 +3580,7 @@ MonoBehaviour:
       item: {fileID: 2800000, guid: 5b5e4b8afcf1c194eb26ae909b8f783e, type: 3}
       itemPrice: 100
     - isBought: 0
-      item: {fileID: 2800000, guid: 5b5e4b8afcf1c194eb26ae909b8f783e, type: 3}
+      item: {fileID: 2800000, guid: 4a5a019184883dd4487caf0e7fe824b2, type: 3}
       itemPrice: 100
     EquipedPrefab: {fileID: 0}
     EquipedTexture: {fileID: 2800000, guid: ec7d8e8c1a28d384b9f5a0dc3851d74f, type: 3}
