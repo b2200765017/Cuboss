@@ -45,13 +45,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81e56b3352fc1244ba38ef3c9556c51a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsSoundOn: 1
   _sounds:
   - name: Music
-    clip: {fileID: 8300000, guid: 90c8cadd762d05e4db011c76ef549114, type: 3}
-    volume: 0.2
+    clip: {fileID: 8300000, guid: 3af308ab337497847ab57ff70d10c4f1, type: 3}
+    volume: 0
     pitch: 1
     source: {fileID: 0}
-    loop: 0
+    loop: 1
     length: 0
   - name: Click
     clip: {fileID: 8300000, guid: 2f1810395f9aa664cad8cbd25f47e5e0, type: 3}
@@ -69,7 +70,21 @@ MonoBehaviour:
     length: 0
   - name: GameOver
     clip: {fileID: 8300000, guid: 4b15c43dd92e5014b9d6936c0e2d472d, type: 3}
-    volume: 1
+    volume: 0
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+    length: 0
+  - name: WaterDrop
+    clip: {fileID: 8300000, guid: 1c33ccaaa0304e54e8f5ebb777559367, type: 3}
+    volume: 0.4
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+    length: 0
+  - name: TreeHit
+    clip: {fileID: 8300000, guid: 7b9ceacd475e7ce4194028e7dc30c380, type: 3}
+    volume: 0.3
     pitch: 1
     source: {fileID: 0}
     loop: 0
@@ -106,35 +121,57 @@ MonoBehaviour:
   _Slides:
   - name: 1
     clip: {fileID: 8300000, guid: 63e9fc30783848b46abd35e8b3dde1d3, type: 3}
-    volume: 1
+    volume: 0.054
     pitch: 1
     source: {fileID: 0}
     loop: 0
     length: 0
   - name: 2
     clip: {fileID: 8300000, guid: 11a37fb3977db714eb9e42405a2ae4e4, type: 3}
-    volume: 1
+    volume: 0.071
     pitch: 1
     source: {fileID: 0}
     loop: 0
     length: 0
   - name: 3
     clip: {fileID: 8300000, guid: 93768359d7ad4f64582631e26a3c1211, type: 3}
-    volume: 1
+    volume: 0.097
     pitch: 1
     source: {fileID: 0}
     loop: 0
     length: 0
   - name: 4
     clip: {fileID: 8300000, guid: 89f9d9f0dd184f442bfb4cc668affeb8, type: 3}
-    volume: 1
+    volume: 0.071
     pitch: 1
     source: {fileID: 0}
     loop: 0
     length: 0
   - name: 5
     clip: {fileID: 8300000, guid: 44df8feff4a55a2459dc462cd5051c0a, type: 3}
-    volume: 1
+    volume: 0.05
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+    length: 0
+  _FootSteps:
+  - name: step1
+    clip: {fileID: 8300000, guid: cfd5f24e70a55004cbe6dfd2d4d9bfc7, type: 3}
+    volume: 0.01
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+    length: 0
+  - name: step2
+    clip: {fileID: 8300000, guid: 100b594eee90f6c4bb94407b677682e4, type: 3}
+    volume: 0.01
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+    length: 0
+  - name: step3
+    clip: {fileID: 8300000, guid: ca211877f7680ef46a9b4a5ad9e51891, type: 3}
+    volume: 0.01
     pitch: 1
     source: {fileID: 0}
     loop: 0

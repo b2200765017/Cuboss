@@ -2941,6 +2941,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4419802175677100946, guid: e25ee6970cbf35641a7f859f18086467,
         type: 3}
+      propertyPath: _FootSteps.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4419802175677100946, guid: e25ee6970cbf35641a7f859f18086467,
+        type: 3}
       propertyPath: _sounds.Array.data[0].clip
       value: 
       objectReference: {fileID: 8300000, guid: 3af308ab337497847ab57ff70d10c4f1, type: 3}
@@ -2983,6 +2988,66 @@ PrefabInstance:
         type: 3}
       propertyPath: _sounds.Array.data[3].volume
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4419802175677100946, guid: e25ee6970cbf35641a7f859f18086467,
+        type: 3}
+      propertyPath: _FootSteps.Array.data[0].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: cfd5f24e70a55004cbe6dfd2d4d9bfc7, type: 3}
+    - target: {fileID: 4419802175677100946, guid: e25ee6970cbf35641a7f859f18086467,
+        type: 3}
+      propertyPath: _FootSteps.Array.data[0].name
+      value: step1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4419802175677100946, guid: e25ee6970cbf35641a7f859f18086467,
+        type: 3}
+      propertyPath: _FootSteps.Array.data[1].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 100b594eee90f6c4bb94407b677682e4, type: 3}
+    - target: {fileID: 4419802175677100946, guid: e25ee6970cbf35641a7f859f18086467,
+        type: 3}
+      propertyPath: _FootSteps.Array.data[1].name
+      value: step2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4419802175677100946, guid: e25ee6970cbf35641a7f859f18086467,
+        type: 3}
+      propertyPath: _FootSteps.Array.data[2].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: ca211877f7680ef46a9b4a5ad9e51891, type: 3}
+    - target: {fileID: 4419802175677100946, guid: e25ee6970cbf35641a7f859f18086467,
+        type: 3}
+      propertyPath: _FootSteps.Array.data[2].name
+      value: step3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4419802175677100946, guid: e25ee6970cbf35641a7f859f18086467,
+        type: 3}
+      propertyPath: _FootSteps.Array.data[0].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4419802175677100946, guid: e25ee6970cbf35641a7f859f18086467,
+        type: 3}
+      propertyPath: _FootSteps.Array.data[1].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4419802175677100946, guid: e25ee6970cbf35641a7f859f18086467,
+        type: 3}
+      propertyPath: _FootSteps.Array.data[2].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4419802175677100946, guid: e25ee6970cbf35641a7f859f18086467,
+        type: 3}
+      propertyPath: _FootSteps.Array.data[0].volume
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4419802175677100946, guid: e25ee6970cbf35641a7f859f18086467,
+        type: 3}
+      propertyPath: _FootSteps.Array.data[1].volume
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4419802175677100946, guid: e25ee6970cbf35641a7f859f18086467,
+        type: 3}
+      propertyPath: _FootSteps.Array.data[2].volume
+      value: 0.01
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e25ee6970cbf35641a7f859f18086467, type: 3}
@@ -3560,7 +3625,7 @@ MonoBehaviour:
       item: {fileID: 2800000, guid: 4a5a019184883dd4487caf0e7fe824b2, type: 3}
       itemPrice: 100
     EquipedPrefab: {fileID: 0}
-    EquipedTexture: {fileID: 2800000, guid: ec7d8e8c1a28d384b9f5a0dc3851d74f, type: 3}
+    EquipedTexture: {fileID: 2800000, guid: 3617ae013b0689b4fa37c7f6776e8fad, type: 3}
   HeadParent: {fileID: 7208261742158485680}
   isMarketOn: 0
   _Renderer: {fileID: 8417361359835371749}
@@ -3624,7 +3689,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18d0aa28b2c26e54e8d2febb082f7b13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DefautGem: 3000
+  DefautGem: 0
 --- !u!4 &1110153175
 Transform:
   m_ObjectHideFlags: 0

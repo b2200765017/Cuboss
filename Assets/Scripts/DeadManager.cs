@@ -45,7 +45,6 @@ public class DeadManager : MonoBehaviour
             RandomValue = Random.Range(15, 20) * _walking.rollSpeed;
             if (RandomValue < 200) RandomValue = 200;
             else if (RandomValue > 300) RandomValue = 300;
-            Debug.Log(RandomValue);
 
                 // Physical Interaction with Player
             _rb.useGravity = true;
