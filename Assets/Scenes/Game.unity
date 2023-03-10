@@ -3315,7 +3315,7 @@ MonoBehaviour:
   TextureList:
     Items:
     - isBought: 0
-      item: {fileID: 2800000, guid: ec7d8e8c1a28d384b9f5a0dc3851d74f, type: 3}
+      item: {fileID: 2800000, guid: 3617ae013b0689b4fa37c7f6776e8fad, type: 3}
       itemPrice: 0
     - isBought: 0
       item: {fileID: 2800000, guid: 22c5ffe521f3d7c4c858543bbac4a3df, type: 3}
@@ -3324,7 +3324,7 @@ MonoBehaviour:
       item: {fileID: 2800000, guid: 48e437302e8cc4e47a17797a21c02f69, type: 3}
       itemPrice: 0
     - isBought: 0
-      item: {fileID: 2800000, guid: 0f0d832c061447840a038fcec4c42a1d, type: 3}
+      item: {fileID: 2800000, guid: 6b641b6a4c71c374eb689c4d36e75dbe, type: 3}
       itemPrice: 0
     - isBought: 0
       item: {fileID: 2800000, guid: 65baf155a7ada9d40a80353bcc83ffa2, type: 3}
@@ -3334,6 +3334,15 @@ MonoBehaviour:
       itemPrice: 0
     - isBought: 0
       item: {fileID: 2800000, guid: 92b968183c9d70049a67878d3458d53d, type: 3}
+      itemPrice: 0
+    - isBought: 0
+      item: {fileID: 2800000, guid: c2dba0cbef6d79648b7cb9d80a5743ef, type: 3}
+      itemPrice: 0
+    - isBought: 0
+      item: {fileID: 2800000, guid: 9b70b4c336fa14c47b3b90f0efd22f2d, type: 3}
+      itemPrice: 0
+    - isBought: 0
+      item: {fileID: 2800000, guid: c64730cbddad2854d88758ed747887d5, type: 3}
       itemPrice: 0
     EquipedPrefab: {fileID: 0}
     EquipedTexture: {fileID: 0}
