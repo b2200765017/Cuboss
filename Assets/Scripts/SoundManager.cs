@@ -12,6 +12,7 @@ public class SoundManager : MonoBehaviour
     public Sound[] _sounds;
     public Sound[] _xpCollection;
     public Sound[] _Slides;
+    public Sound[] _FootSteps;
     public float delay;
     float timer;
 
@@ -36,6 +37,15 @@ public class SoundManager : MonoBehaviour
             s.length = s.clip.length;
         }
         foreach (Sound s in _Slides)
+        {
+            s.source = gameObject.AddComponent<AudioSource>();
+            s.source.clip = s.clip;
+            s.source.volume = s.volume;
+            s.source.pitch = s.pitch;
+            s.source.loop = s.loop;
+            s.length = s.clip.length;
+        }        
+        foreach (Sound s in _FootSteps)
         {
             s.source = gameObject.AddComponent<AudioSource>();
             s.source.clip = s.clip;
@@ -86,6 +96,12 @@ public class SoundManager : MonoBehaviour
     {
         if (!IsSoundOn) return;
         Sound music = _Slides[UnityEngine.Random.Range(0,_Slides.Length)];
+        music.source.Play();
+    }  
+    public void PlayFootsteps()
+    {
+        if (!IsSoundOn) return;
+        Sound music = _FootSteps[UnityEngine.Random.Range(0,_FootSteps.Length)];
         music.source.Play();
     }
     

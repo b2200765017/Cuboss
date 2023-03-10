@@ -259,9 +259,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "When you want to rotate your character you just tap the screen. \n\nEvery
-    2 red gem you collect will give you a heart to escape from trees. But still be
-    carefull of the river!"
+  m_text: "When you want to rotate your character you just tap the screen. \n\nbe
+    carefull of the river and don't forget to have fun!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e43c120e8d5fdec47950d6e91d1848c7, type: 2}
   m_sharedMaterial: {fileID: 4739159110683287884, guid: e43c120e8d5fdec47950d6e91d1848c7,
@@ -354,9 +353,8 @@ MonoBehaviour:
   TrText: "Gronland'in tasra koylerinden bir penguenin yurek burkan hikayesi... Ekrana
     tiklayarak penguenin y\xF6n degistirmesini saglayabilirsin. Denizden uzak dursan
     iyi edersin cunku Pengo yuzme bilmiyor :("
-  EnText: When you want to rotate your character you just tap the screen.   Every
-    2 red gem you collect will give you a heart to escape from trees. But still be
-    carefull of the river!
+  EnText: When you want to rotate your character you just tap the screen.   be carefull
+    of the river and don't forget to have fun!
 --- !u!1 &135220432
 GameObject:
   m_ObjectHideFlags: 0
@@ -6082,7 +6080,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92b4e844e3d841849956ae141b9ed6e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TrText: NE ULAN BU OYUN?!
+  TrText: NASIL OYNANIR?
   EnText: HOW TO PLAY?
 --- !u!1001 &1689777801
 PrefabInstance:
