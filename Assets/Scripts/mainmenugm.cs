@@ -8,6 +8,8 @@ public class mainmenugm : MonoBehaviour {
     private bool isHowToMenuOpened = false;
     public Animator HowToMenuAnimator;
     private AudioSource MenuMusicSource;
+    public Image trflag;
+    public Image enflag;
     public Image musicOff;
     public Image musicOn;
 
@@ -20,6 +22,12 @@ public class mainmenugm : MonoBehaviour {
         MenuMusicSource = SoundManager.instance._sounds[0].source;  
         if (PlayerPrefs.GetInt(MenuMusicEnabled, 1) == 0) {
             MusicButton();
+        }
+
+        if (LanguageManager.Instance.CurrentLanguage == Language.Turkish)
+        {
+            trflag.enabled = true;
+            enflag.enabled = false;
         }
     }
 
@@ -56,9 +64,13 @@ public class mainmenugm : MonoBehaviour {
     public void LanguageButtonClicked() {
         if (LanguageManager.Instance.CurrentLanguage == Language.Turkish) {
             LanguageManager.Instance.ConvertLanguage(Language.English);
+            trflag.enabled = false;
+            enflag.enabled = true;
         }
         else {
             LanguageManager.Instance.ConvertLanguage(Language.Turkish);
+            trflag.enabled = true;
+            enflag.enabled = false;
         }
     }
 }
