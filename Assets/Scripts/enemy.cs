@@ -18,15 +18,13 @@ public class enemy : MonoBehaviour
                 
                 animator.enabled = true;
                 if (!Walking.Instance.fromLeft) {
-                    transform.Rotate(0, -90, 0);
+                    transform.Rotate(0, -90f, 0);
                 } 
-                if (Walking.Instance.heart == 0) {
-                    penguin = other.transform.position;
-                    other.transform.position = new Vector3(penguin.x, penguin.y - 2, penguin.z);
-                    _deadManager.dead = true;
-                }
-                else Walking.Instance.heart -= 1;
-                }
+                
+                penguin = other.transform.position;
+                other.transform.position = new Vector3(penguin.x, penguin.y - 2, penguin.z);
+                _deadManager.dead = true;
+            }
             else _deadManager.dead = true;
         }
     }

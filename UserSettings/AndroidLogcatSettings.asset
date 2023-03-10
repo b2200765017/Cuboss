@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "4100cf82f2bb1283",
         "name": "com.cs2games.Pengo",
-        "processId": 4249,
+        "processId": 7721,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -54,60 +54,6 @@
             "deviceId": "4100cf82f2bb1283",
             "name": "com.cs2games.Pengo",
             "processId": 7721,
-            "exited": false
-        },
-        {
-            "deviceId": "4100cf82f2bb1283",
-            "name": "com.cs2games.Pengo",
-            "processId": 28629,
-            "exited": false
-        },
-        {
-            "deviceId": "4100cf82f2bb1283",
-            "name": "com.cs2games.Pengo",
-            "processId": 2012,
-            "exited": false
-        },
-        {
-            "deviceId": "4100cf82f2bb1283",
-            "name": "com.cs2games.Pengo",
-            "processId": 9373,
-            "exited": false
-        },
-        {
-            "deviceId": "4100cf82f2bb1283",
-            "name": "com.cs2games.Pengo",
-            "processId": 16886,
-            "exited": false
-        },
-        {
-            "deviceId": "4100cf82f2bb1283",
-            "name": "com.cs2games.Pengo",
-            "processId": 23184,
-            "exited": false
-        },
-        {
-            "deviceId": "4100cf82f2bb1283",
-            "name": "com.cs2games.Pengo",
-            "processId": 26016,
-            "exited": false
-        },
-        {
-            "deviceId": "4100cf82f2bb1283",
-            "name": "com.cs2games.Pengo",
-            "processId": 30364,
-            "exited": false
-        },
-        {
-            "deviceId": "4100cf82f2bb1283",
-            "name": "com.cs2games.Pengo",
-            "processId": 31974,
-            "exited": false
-        },
-        {
-            "deviceId": "4100cf82f2bb1283",
-            "name": "com.cs2games.Pengo",
-            "processId": 4249,
             "exited": false
         }
     ],
