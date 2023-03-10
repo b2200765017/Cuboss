@@ -158,13 +158,10 @@ public class Walking : MonoBehaviour {
     }
     
     public void AssigningRollSpeed() {
-        
-        if (rollSpeed < 10 &&rollSpeed >= 7)   rollSpeed += 5*Time.deltaTime / 10;
-        
-        else if (rollSpeed < 7)    rollSpeed += 7f*Time.deltaTime / 10;
-        
-        else if(rollSpeed > 10 && rollSpeed<15)   rollSpeed += Time.deltaTime / 8;
-        
+        if(rollSpeed<=3)   rollSpeed += 15*Time.deltaTime;
+        else if (3 < rollSpeed && rollSpeed <= 7)  rollSpeed += 5f*Time.deltaTime;
+        else if (rollSpeed > 7 && rollSpeed <= 10) rollSpeed += 5*Time.deltaTime / 10;
+        else if (rollSpeed > 10 && rollSpeed<= 15)   rollSpeed += Time.deltaTime / 8;
         else rollSpeed +=   Time.deltaTime / 10;
     }
     

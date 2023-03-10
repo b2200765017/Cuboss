@@ -8,7 +8,7 @@ public class UIManager : MonoBehaviour {
     [SerializeField] DeadManager _deadManager;
     public float timeLeft=3;
     private bool gameStarted;
-    
+    [SerializeField] private GameObject StartTrail;
     [SerializeField] TextMeshProUGUI pointsText;
     [SerializeField] TextMeshProUGUI coinsText;
     [SerializeField] TextMeshProUGUI heartText;
@@ -30,7 +30,7 @@ public class UIManager : MonoBehaviour {
             
             timeLeft -= Time.deltaTime;
             if ( timeLeft < 0 && !gameStarted ) {
-            
+                StartTrail.SetActive(true);
                 gameStarted = true;
                 _walking.isplay = true;
             }

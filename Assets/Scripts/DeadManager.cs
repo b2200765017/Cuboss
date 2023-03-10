@@ -41,9 +41,12 @@ public class DeadManager : MonoBehaviour
             _walking.isplay = false;
             trail.emitting = false;
             
-            RandomValue = Random.Range(25, 25) * _walking.rollSpeed;
+            RandomValue = Random.Range(15, 20) * _walking.rollSpeed;
+            if (RandomValue < 200) RandomValue = 200;
+            else if (RandomValue > 300) RandomValue = 300;
+            Debug.Log(RandomValue);
 
-            // Physical Interaction with Player
+                // Physical Interaction with Player
             _rb.useGravity = true;
             if (!_walking.fromLeft)  _rb.AddForce(new Vector3(-RandomValue,20,0), ForceMode.Force);
             else _rb.AddForce(new Vector3(0,20,RandomValue), ForceMode.Force);

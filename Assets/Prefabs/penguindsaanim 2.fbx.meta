@@ -24,7 +24,7 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -36,7 +36,7 @@ ModelImporter:
       name: Armature|ArmatureAction.002
       takeName: Armature|ArmatureAction.002
       internalID: 6093225430303232669
-      firstFrame: 0
+      firstFrame: 128
       lastFrame: 268
       wrapMode: 0
       orientationOffsetY: 0
