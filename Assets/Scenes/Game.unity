@@ -1116,8 +1116,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4285464831
-  m_fontColor: {r: 1, g: 0, b: 0.43646812, a: 1}
+    rgba: 4278255615
+  m_fontColor: {r: 1, g: 1, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 2
   m_fontColorGradient:
@@ -2129,6 +2129,7 @@ GameObject:
   - component: {fileID: 756562365}
   - component: {fileID: 756562367}
   - component: {fileID: 756562366}
+  - component: {fileID: 756562368}
   m_Layer: 5
   m_Name: Game Over!
   m_TagString: Untagged
@@ -2212,7 +2213,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
+  m_VerticalAlignment: 1024
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -2254,6 +2255,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 756562364}
   m_CullTransparentMesh: 1
+--- !u!114 &756562368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 756562364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92b4e844e3d841849956ae141b9ed6e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TrText: AH LAN!
+  EnText: GAME OVER!
 --- !u!1 &785910351
 GameObject:
   m_ObjectHideFlags: 0
@@ -4559,7 +4574,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0.023529412, a: 0.89411765}
+  m_Color: {r: 1, g: 0, b: 0.023529412, a: 0.92941177}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
