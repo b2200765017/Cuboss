@@ -746,7 +746,7 @@ PrefabInstance:
     - target: {fileID: 4419802175677100946, guid: e25ee6970cbf35641a7f859f18086467,
         type: 3}
       propertyPath: _sounds.Array.data[3].volume
-      value: 0.105
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e25ee6970cbf35641a7f859f18086467, type: 3}
@@ -3323,7 +3323,7 @@ MonoBehaviour:
       item: {fileID: 2800000, guid: 48e437302e8cc4e47a17797a21c02f69, type: 3}
       itemPrice: 0
     - isBought: 0
-      item: {fileID: 2800000, guid: 6b641b6a4c71c374eb689c4d36e75dbe, type: 3}
+      item: {fileID: 2800000, guid: 4a5a019184883dd4487caf0e7fe824b2, type: 3}
       itemPrice: 0
     - isBought: 0
       item: {fileID: 2800000, guid: 65baf155a7ada9d40a80353bcc83ffa2, type: 3}
@@ -3342,6 +3342,15 @@ MonoBehaviour:
       itemPrice: 0
     - isBought: 0
       item: {fileID: 2800000, guid: c64730cbddad2854d88758ed747887d5, type: 3}
+      itemPrice: 0
+    - isBought: 0
+      item: {fileID: 2800000, guid: 6a000cc6c0c16a24084e1dc63c118b7b, type: 3}
+      itemPrice: 0
+    - isBought: 0
+      item: {fileID: 2800000, guid: b1cd02afd93b3fe4ca7168aa3cf19c70, type: 3}
+      itemPrice: 0
+    - isBought: 0
+      item: {fileID: 2800000, guid: 5b5e4b8afcf1c194eb26ae909b8f783e, type: 3}
       itemPrice: 0
     EquipedPrefab: {fileID: 0}
     EquipedTexture: {fileID: 0}
@@ -4435,7 +4444,7 @@ RectTransform:
   m_GameObject: {fileID: 1971075302}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.45, y: 0.45, z: 0.45}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7916640492402387545}
@@ -4466,7 +4475,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0.46666667, a: 0.80784315}
+  m_Color: {r: 1, g: 0, b: 0.023529412, a: 0.89411765}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4749,8 +4758,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4286054268
-  m_fontColor: {r: 0.48591927, g: 1, b: 0.4660377, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 2
   m_fontColorGradient:
@@ -12631,17 +12640,17 @@ PrefabInstance:
     - target: {fileID: 829662603267936428, guid: 2cc8f0167fe1b894baa1198efe8b8062,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
-      value: 0.9433962
+      value: 0.9622642
       objectReference: {fileID: 0}
     - target: {fileID: 829662603267936428, guid: 2cc8f0167fe1b894baa1198efe8b8062,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.g
-      value: 0.9202563
+      value: 0.9477394
       objectReference: {fileID: 0}
     - target: {fileID: 829662603267936428, guid: 2cc8f0167fe1b894baa1198efe8b8062,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
-      value: 0.9202563
+      value: 0.9477394
       objectReference: {fileID: 0}
     - target: {fileID: 829662603267936428, guid: 2cc8f0167fe1b894baa1198efe8b8062,
         type: 3}
