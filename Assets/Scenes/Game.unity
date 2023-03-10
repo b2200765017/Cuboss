@@ -3211,6 +3211,7 @@ MonoBehaviour:
   score1: {fileID: 2055862386}
   coins: {fileID: 7916640490792858795}
   coins1: {fileID: 351010710}
+  isTree: 0
 --- !u!65 &1363021801
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4602,8 +4603,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4278255615
+  m_fontColor: {r: 1, g: 1, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 2
   m_fontColorGradient:
@@ -8819,7 +8820,7 @@ PrefabInstance:
     - target: {fileID: 6280031337838233641, guid: dbcf0b95f8ef5354cb53e40426786aa5,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -13.2
+      value: -12.8
       objectReference: {fileID: 0}
     - target: {fileID: 6280031337838233641, guid: dbcf0b95f8ef5354cb53e40426786aa5,
         type: 3}
@@ -8829,7 +8830,7 @@ PrefabInstance:
     - target: {fileID: 6280031337838233641, guid: dbcf0b95f8ef5354cb53e40426786aa5,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 13.2
+      value: 12.8
       objectReference: {fileID: 0}
     - target: {fileID: 6280031337838233641, guid: dbcf0b95f8ef5354cb53e40426786aa5,
         type: 3}

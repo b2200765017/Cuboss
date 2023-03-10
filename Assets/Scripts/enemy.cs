@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class enemy : MonoBehaviour
@@ -15,7 +16,7 @@ public class enemy : MonoBehaviour
     {
         if (other.CompareTag("Player")) {
             if (isTree) {
-                
+                SoundManager.instance.Play("TreeHit");
                 animator.enabled = true;
                 if (!Walking.Instance.fromLeft) {
                     transform.Rotate(0, -90f, 0);
@@ -24,8 +25,14 @@ public class enemy : MonoBehaviour
                 penguin = other.transform.position;
                 other.transform.position = new Vector3(penguin.x, penguin.y - 2, penguin.z);
                 _deadManager.dead = true;
+                _deadManager.isTree = true;
             }
-            else _deadManager.dead = true;
+            else
+            {
+                _deadManager.dead = true;
+            }
         }
     }
+    
+
 }

@@ -23,6 +23,7 @@ public class DeadManager : MonoBehaviour
     public TextMeshProUGUI score1;
     public TextMeshProUGUI coins;
     public TextMeshProUGUI coins1;
+    public bool isTree = false;
 
     void Start()
     {
@@ -50,8 +51,8 @@ public class DeadManager : MonoBehaviour
             _rb.useGravity = true;
             if (!_walking.fromLeft)  _rb.AddForce(new Vector3(-RandomValue,20,0), ForceMode.Force);
             else _rb.AddForce(new Vector3(0,20,RandomValue), ForceMode.Force);
-            
-            StartCoroutine(DelayedSFX());
+
+            if (!isTree) StartCoroutine(DelayedSFX());
             watersplash.Play();
             UIAnimator.Instance.OnGameEnd();
             
@@ -67,14 +68,8 @@ public class DeadManager : MonoBehaviour
             enabled = false;
         }
     }
-
     IEnumerator DelayedSFX()
     {
-        if (PlayerOffset < 8.5f)
-        {
-            SoundManager.instance.Play("TreeHit");
-            yield break;
-        }
         yield return new WaitForSeconds(0.6f);
         SoundManager.instance.Play("WaterDrop");
     }
