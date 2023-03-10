@@ -26,7 +26,7 @@ public class Walking : MonoBehaviour {
     private TextMeshPro _highScore;
     private GameObject _box;
     public int combo = 1;
-    public float combotimer = 10;
+    public float combotimer = 20;
     public World_Manager worldManager;
     private float _playerOffset;
     private bool boosting = false;
@@ -102,8 +102,8 @@ public class Walking : MonoBehaviour {
             if (combotimer > 0)
             {
              combotimer -= Time.deltaTime;
-             timer.fillAmount = combotimer / 10;
-             if(combotimer / 10<0.1) 
+             timer.fillAmount = combotimer / 20;
+             if(combotimer / 20<0.1) 
                  ComboText.alpha = combotimer;
             }
             else
@@ -183,7 +183,7 @@ public class Walking : MonoBehaviour {
         else if (other.transform.CompareTag("combo"))
         {
             other.GetComponent<Animator>().enabled=true;
-            combotimer = 10;
+            combotimer = 20;
             combo=combo*2;
             ComboText.text = combo.ToString()+"X";
             ComboText.alpha = 1;
