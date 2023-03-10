@@ -182,7 +182,7 @@ public class Walking : MonoBehaviour {
         }
         else if (other.transform.CompareTag("combo"))
         {
-            other.GetComponent<Animator>().enabled=true;
+            other.GetComponent<Animator>().SetTrigger("combo");
             combotimer = 20;
             combo=combo*2;
             ComboText.text = combo.ToString()+"X";

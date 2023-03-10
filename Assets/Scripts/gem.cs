@@ -11,7 +11,7 @@ public class gem : MonoBehaviour {
         if (other.CompareTag("Player")) {
             _walking.coins += _walking.combo;
             SoundManager.instance.PlayXpCollection();
-            gameObject.SetActive(false);
+            transform.parent.gameObject.SetActive(false);
         }
     }
 }
