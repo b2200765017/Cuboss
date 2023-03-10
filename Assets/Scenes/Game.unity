@@ -2335,8 +2335,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 160
-  m_fontSizeBase: 160
+  m_fontSize: 140
+  m_fontSizeBase: 140
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3392,8 +3392,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.5, y: 1.348956, z: 1.5}
-  m_Center: {x: 0, y: -0.25413173, z: 0}
+  m_Size: {x: 1.5, y: 1.5, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &1363021808
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3429,7 +3429,7 @@ MonoBehaviour:
         type: 3}
       itemPrice: 0
     - isBought: 0
-      item: {fileID: 1173946594081887180, guid: 3e7c958a575c3a8488424bba51141a4e,
+      item: {fileID: 5482863274174233233, guid: 808f8ffacc35b0b4098ba6da54d3571b,
         type: 3}
       itemPrice: 0
     - isBought: 0
@@ -3448,7 +3448,11 @@ MonoBehaviour:
         type: 3}
       itemPrice: 0
     - isBought: 0
-      item: {fileID: 5482863274174233233, guid: 808f8ffacc35b0b4098ba6da54d3571b,
+      item: {fileID: 1173946594081887180, guid: 3e7c958a575c3a8488424bba51141a4e,
+        type: 3}
+      itemPrice: 0
+    - isBought: 0
+      item: {fileID: 7294837996984027412, guid: 055f9e1e9f074e441ad969ce2d693b80,
         type: 3}
       itemPrice: 0
     - isBought: 0
@@ -3469,7 +3473,7 @@ MonoBehaviour:
       item: {fileID: 2800000, guid: 48e437302e8cc4e47a17797a21c02f69, type: 3}
       itemPrice: 0
     - isBought: 0
-      item: {fileID: 2800000, guid: 4a5a019184883dd4487caf0e7fe824b2, type: 3}
+      item: {fileID: 2800000, guid: 5b5e4b8afcf1c194eb26ae909b8f783e, type: 3}
       itemPrice: 0
     - isBought: 0
       item: {fileID: 2800000, guid: 65baf155a7ada9d40a80353bcc83ffa2, type: 3}
@@ -3496,7 +3500,7 @@ MonoBehaviour:
       item: {fileID: 2800000, guid: b1cd02afd93b3fe4ca7168aa3cf19c70, type: 3}
       itemPrice: 0
     - isBought: 0
-      item: {fileID: 2800000, guid: 5b5e4b8afcf1c194eb26ae909b8f783e, type: 3}
+      item: {fileID: 2800000, guid: 4a5a019184883dd4487caf0e7fe824b2, type: 3}
       itemPrice: 0
     EquipedPrefab: {fileID: 0}
     EquipedTexture: {fileID: 0}
@@ -12162,17 +12166,17 @@ PrefabInstance:
     - target: {fileID: 829662603267936428, guid: 2cc8f0167fe1b894baa1198efe8b8062,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
-      value: 0.9622642
+      value: 0.9811321
       objectReference: {fileID: 0}
     - target: {fileID: 829662603267936428, guid: 2cc8f0167fe1b894baa1198efe8b8062,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.g
-      value: 0.9477394
+      value: 0.91078675
       objectReference: {fileID: 0}
     - target: {fileID: 829662603267936428, guid: 2cc8f0167fe1b894baa1198efe8b8062,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
-      value: 0.9477394
+      value: 0.91078675
       objectReference: {fileID: 0}
     - target: {fileID: 829662603267936428, guid: 2cc8f0167fe1b894baa1198efe8b8062,
         type: 3}
