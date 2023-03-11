@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "4100cf82f2bb1283",
         "name": "com.cs2games.Pengo",
-        "processId": 7721,
+        "processId": 19343,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -54,6 +54,18 @@
             "deviceId": "4100cf82f2bb1283",
             "name": "com.cs2games.Pengo",
             "processId": 7721,
+            "exited": false
+        },
+        {
+            "deviceId": "4100cf82f2bb1283",
+            "name": "com.cs2games.Pengo",
+            "processId": 15702,
+            "exited": false
+        },
+        {
+            "deviceId": "4100cf82f2bb1283",
+            "name": "com.cs2games.Pengo",
+            "processId": 19343,
             "exited": false
         }
     ],
