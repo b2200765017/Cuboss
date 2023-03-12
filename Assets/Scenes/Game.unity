@@ -3232,6 +3232,7 @@ MonoBehaviour:
   score1: {fileID: 2055862386}
   coins: {fileID: 7916640490792858795}
   coins1: {fileID: 351010710}
+  canvas: {fileID: 7916640491951086091}
   isTree: 0
 --- !u!65 &1363021801
 BoxCollider:
@@ -4325,8 +4326,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -100}
-  m_SizeDelta: {x: 1400, y: 2150}
+  m_AnchoredPosition: {x: 0, y: -50}
+  m_SizeDelta: {x: 1400, y: 2200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1971075304
 MonoBehaviour:

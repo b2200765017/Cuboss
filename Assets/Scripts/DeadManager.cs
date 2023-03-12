@@ -23,6 +23,7 @@ public class DeadManager : MonoBehaviour
     public TextMeshProUGUI score1;
     public TextMeshProUGUI coins;
     public TextMeshProUGUI coins1;
+    public Canvas canvas;
     public bool isTree = false;
 
     void Start()
@@ -66,6 +67,7 @@ public class DeadManager : MonoBehaviour
 
             PlayerPrefs.SetInt(GemManager.Instance.GetGemString(), PlayerPrefs.GetInt(GemManager.Instance.GetGemString(), 0) + _walking.coins);
             enabled = false;
+            canvas.enabled = false;
         }
     }
     IEnumerator DelayedSFX()
