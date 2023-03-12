@@ -136,21 +136,21 @@ MonoBehaviour:
   _FootSteps:
   - name: step1
     clip: {fileID: 8300000, guid: cfd5f24e70a55004cbe6dfd2d4d9bfc7, type: 3}
-    volume: 0.01
+    volume: 0.005
     pitch: 1
     source: {fileID: 0}
     loop: 0
     length: 0
   - name: step2
     clip: {fileID: 8300000, guid: 100b594eee90f6c4bb94407b677682e4, type: 3}
-    volume: 0.01
+    volume: 0.005
     pitch: 1
     source: {fileID: 0}
     loop: 0
     length: 0
   - name: step3
     clip: {fileID: 8300000, guid: ca211877f7680ef46a9b4a5ad9e51891, type: 3}
-    volume: 0.01
+    volume: 0.005
     pitch: 1
     source: {fileID: 0}
     loop: 0

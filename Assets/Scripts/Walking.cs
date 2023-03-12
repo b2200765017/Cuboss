@@ -160,9 +160,9 @@ public class Walking : MonoBehaviour {
     public void AssigningRollSpeed() {
         if(rollSpeed<=3)   rollSpeed += 15*Time.deltaTime;
         else if (3 < rollSpeed && rollSpeed <= 7)  rollSpeed += (5f*Time.deltaTime);
-        else if (rollSpeed > 7 && rollSpeed <= 10) rollSpeed += (Time.deltaTime) / 4;
-        else if (rollSpeed > 10 && rollSpeed<= 15)   rollSpeed += (Time.deltaTime) / 10;
-        else rollSpeed +=   (Time.deltaTime) / 12;
+        else if (rollSpeed > 7 && rollSpeed <= 10) rollSpeed += (Time.deltaTime) / 3;
+        else if (rollSpeed > 10 && rollSpeed<= 15)   rollSpeed += (Time.deltaTime) / 7;
+        else rollSpeed +=   (Time.deltaTime) / 10;
     }
     
     private void OnTriggerEnter(Collider other) {
