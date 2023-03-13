@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6107120826182023821}
   - component: {fileID: 7036208532206917771}
-  - component: {fileID: 8173916678020331877}
   m_Layer: 0
   m_Name: gemplatform2
   m_TagString: gembox
@@ -47,19 +46,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.868856, z: 1}
   m_Center: {x: 0, y: 0.56557214, z: 0}
---- !u!114 &8173916678020331877
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6884608156170215479}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d67d871ff8775004687f87eec063d57b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  worth: 10
 --- !u!1001 &4014877157501489488
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -155,7 +141,7 @@ PrefabInstance:
     - target: {fileID: 6489539184037797428, guid: 1714363d334cb8a4d8c625d8f4798b68,
         type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: gembox
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 714753880836553418, guid: 1714363d334cb8a4d8c625d8f4798b68, type: 3}
@@ -166,3 +152,23 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 4014877157501489488}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7906293454697254756 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6489539184037797428, guid: 1714363d334cb8a4d8c625d8f4798b68,
+    type: 3}
+  m_PrefabInstance: {fileID: 4014877157501489488}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &375490823140456683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7906293454697254756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d67d871ff8775004687f87eec063d57b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  worth: 10
+  gem_animator: {fileID: 0}
