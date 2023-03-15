@@ -174,7 +174,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2921562192647327429}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: cef809588679885428a871c4a6a32246, type: 2}
   m_CullingMode: 0
@@ -199,6 +199,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   worth: 1
-  myPrefab: {fileID: 1958472987494442024, guid: 0309ad772eca08648b862559903376ce,
-    type: 3}
+  countdown: 0
   gem_animator: {fileID: 3391795194889120805}
