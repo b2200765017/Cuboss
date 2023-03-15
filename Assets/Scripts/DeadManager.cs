@@ -46,12 +46,13 @@ public class DeadManager : MonoBehaviour
             
             RandomValue = Random.Range(15, 20) * _walking.rollSpeed;
             if (RandomValue < 200) RandomValue = 200;
-            else if (RandomValue > 300) RandomValue = 300;
+            else if (RandomValue > 350) RandomValue = 350;
+            Debug.Log(RandomValue);
 
                 // Physical Interaction with Player
             _rb.useGravity = true;
-            if (!_walking.fromLeft)  _rb.AddForce(new Vector3(-RandomValue,20,0), ForceMode.Force);
-            else _rb.AddForce(new Vector3(0,20,RandomValue), ForceMode.Force);
+            if (!_walking.fromLeft)  _rb.AddForce(new Vector3(-RandomValue,140,0), ForceMode.Force);
+            else _rb.AddForce(new Vector3(0,140,RandomValue), ForceMode.Force);
 
             if (!isTree) StartCoroutine(DelayedSFX());
             watersplash.Play();

@@ -100,35 +100,35 @@ MonoBehaviour:
   _Slides:
   - name: 1
     clip: {fileID: 8300000, guid: 63e9fc30783848b46abd35e8b3dde1d3, type: 3}
-    volume: 0.03
+    volume: 0.02
     pitch: 1
     source: {fileID: 0}
     loop: 0
     length: 0
   - name: 2
     clip: {fileID: 8300000, guid: 11a37fb3977db714eb9e42405a2ae4e4, type: 3}
-    volume: 0.03
+    volume: 0.02
     pitch: 1
     source: {fileID: 0}
     loop: 0
     length: 0
   - name: 3
     clip: {fileID: 8300000, guid: 93768359d7ad4f64582631e26a3c1211, type: 3}
-    volume: 0.03
+    volume: 0.02
     pitch: 1
     source: {fileID: 0}
     loop: 0
     length: 0
   - name: 4
     clip: {fileID: 8300000, guid: 89f9d9f0dd184f442bfb4cc668affeb8, type: 3}
-    volume: 0.03
+    volume: 0.02
     pitch: 1
     source: {fileID: 0}
     loop: 0
     length: 0
   - name: 5
     clip: {fileID: 8300000, guid: 44df8feff4a55a2459dc462cd5051c0a, type: 3}
-    volume: 0.03
+    volume: 0.02
     pitch: 1
     source: {fileID: 0}
     loop: 0
@@ -136,21 +136,21 @@ MonoBehaviour:
   _FootSteps:
   - name: step1
     clip: {fileID: 8300000, guid: cfd5f24e70a55004cbe6dfd2d4d9bfc7, type: 3}
-    volume: 0.005
+    volume: 0.002
     pitch: 1
     source: {fileID: 0}
     loop: 0
     length: 0
   - name: step2
     clip: {fileID: 8300000, guid: 100b594eee90f6c4bb94407b677682e4, type: 3}
-    volume: 0.005
+    volume: 0.002
     pitch: 1
     source: {fileID: 0}
     loop: 0
     length: 0
   - name: step3
     clip: {fileID: 8300000, guid: ca211877f7680ef46a9b4a5ad9e51891, type: 3}
-    volume: 0.005
+    volume: 0.002
     pitch: 1
     source: {fileID: 0}
     loop: 0

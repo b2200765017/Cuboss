@@ -9,10 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6107120826182023821}
-  - component: {fileID: 7036208532206917771}
   m_Layer: 0
   m_Name: gemplatform2
-  m_TagString: gembox
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33,19 +32,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &7036208532206917771
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6884608156170215479}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1.868856, z: 1}
-  m_Center: {x: 0, y: 0.56557214, z: 0}
 --- !u!1001 &4014877157501489488
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -172,3 +158,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   worth: 10
   gem_animator: {fileID: 0}
+--- !u!65 &1591534300259006233
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7906293454697254756}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.0000002, y: 3.9999998, z: 2.0000002}
+  m_Center: {x: 0, y: 0, z: 0}

@@ -1,9 +1,12 @@
+using System;
+using System.Threading;
 using UnityEngine;
 
 public class gem : MonoBehaviour {
     
     private Walking _walking;
     public int worth;
+    public int countdown;
     [SerializeField] Animator gem_animator;
     private void Start() {
         _walking = FindObjectOfType<Walking>();

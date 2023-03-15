@@ -6,7 +6,10 @@ public class GemFixer : MonoBehaviour {
         foreach (Transform transform in transform) {
             if (transform.CompareTag("gembox"))
             {
-                transform.GetComponent<Animator>().enabled = false;
+                if (TryGetComponent(out Animator animator))
+                {
+                    animator.enabled = false;
+                }
             }
         }
     }
