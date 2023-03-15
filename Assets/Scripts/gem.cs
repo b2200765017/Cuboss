@@ -14,7 +14,7 @@ public class gem : MonoBehaviour {
     private void OnTriggerEnter(Collider other) {
         if (other.CompareTag("Player"))
         {
-            gem_animator.enabled = true;
+            gem_animator.SetTrigger("collect");
             _walking.coins += _walking.combo;
             SoundManager.instance.PlayXpCollection();
         }
