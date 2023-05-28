@@ -37,7 +37,7 @@ public class LanguageManager : MonoBehaviour
         {
             CurrentLanguage = Language.English;
         }
-
+        CurrentLanguage = Language.English;
         GetPreferedLanguage();
         OnLanguageChange?.Invoke(this, EventArgs.Empty);
     }
@@ -50,7 +50,7 @@ public class LanguageManager : MonoBehaviour
             switch (index)
             {
                 case 0:
-                    CurrentLanguage = Language.Turkish;
+                    CurrentLanguage = Language.English;
                     break;
                 case 1:
                     CurrentLanguage = Language.English;
