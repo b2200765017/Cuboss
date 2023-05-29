@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6642168879070906300
 Transform:
   m_ObjectHideFlags: 0
@@ -229,7 +229,7 @@ Transform:
   m_GameObject: {fileID: 6215225621088526217}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.802361, y: -2.7, z: 0.1}
-  m_LocalScale: {x: 9.028504, y: 5.6, z: 8}
+  m_LocalScale: {x: 9.028504, y: 5.6, z: 7.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5433629310415662767}
@@ -337,17 +337,17 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   colorGradientTexture: {fileID: 0}
   shallowColor: {r: 0, g: 0.7725491, b: 0.62352943, a: 0.5019608}
-  deepColor: {r: 0.01176471, g: 0.28620335, b: 0.50980073, a: 1}
+  deepColor: {r: 0.01176471, g: 0.2861629, b: 0.50980073, a: 1}
   colorDepth: 0.84
-  horizonColor: {r: 0, g: 0.22737986, b: 0.8, a: 1}
+  horizonColor: {r: 0, g: 0.22733942, b: 0.8, a: 1}
   horizonDistance: 20
   shoreFade: 1
-  shoreColor: {r: 0, g: 0.98039216, b: 0.30188963, a: 0}
+  shoreColor: {r: 0, g: 0.98039216, b: 0.30184922, a: 0}
   shoreStrength: 0
   shoreBlend: 1
   shoreDepth: 0.74
   waveColor: {r: 0, g: 0, b: 0, a: 0}
-  underwaterColor: {r: 0.20385414, g: 0.30973274, b: 0.517647, a: 1}
+  underwaterColor: {r: 0.20381582, g: 0.30969232, b: 0.517647, a: 1}
   underwaterColorStrength: 1
   underwaterRefractionStrength: 0.099
   surfaceFoamTexture: {fileID: 2800000, guid: d3b0d77dfe711a04c8ff18ecc260aa66, type: 3}
